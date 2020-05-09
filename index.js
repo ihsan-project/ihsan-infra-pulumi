@@ -2,6 +2,9 @@
 const aws = require("@pulumi/aws");
 const pulumi = require("@pulumi/pulumi");
 const mime = require("mime");
+const cloudflare = require("@pulumi/cloudflare");
+
+const DOMAIN_NAME = "admin.khatmapp.com";
 
 // Create an S3 Bucket Policy to allow public read of all objects in bucket
 // This reusable function can be pulled out into its own module
@@ -22,7 +25,8 @@ function publicReadPolicyForBucket(bucketName) {
 }
 
 // Create an S3 bucket
-let siteBucket = new aws.s3.Bucket("admin.khatmapp.com", {
+let siteBucket = new aws.s3.Bucket(DOMAIN_NAME, {
+    bucket: DOMAIN_NAME, // Disable pulumi unique autonaming or else DNS doesn't work for static S3 buckets
     website: {
       indexDocument: "index.html",
       errorDocument: "index.html", // Required for SPA
@@ -33,6 +37,14 @@ let siteBucket = new aws.s3.Bucket("admin.khatmapp.com", {
 let bucketPolicy = new aws.s3.BucketPolicy("bucketPolicy", {
     bucket: siteBucket.bucket,
     policy: siteBucket.bucket.apply(publicReadPolicyForBucket)
+});
+
+const record = new cloudflare.Record("website-record", {
+    name: DOMAIN_NAME,
+    type: "CNAME",
+    value: siteBucket.websiteEndpoint,
+    zoneId: process.env.CLOUDFLARE_ZONE_ID,
+    proxied: true
 });
 
 let siteDir = "www"; // directory for content files
@@ -46,6 +58,7 @@ for (let item of require("fs").readdirSync(siteDir)) {
       contentType: mime.getType(filePath) || undefined, // set the MIME type of the file
     });
 }
+
 
 exports.bucketName = siteBucket.bucket; // create a stack export for bucket name
 exports.websiteUrl = siteBucket.websiteEndpoint; // output the endpoint as a stack output
