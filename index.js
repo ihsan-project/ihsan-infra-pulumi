@@ -2,6 +2,7 @@
 const aws = require("@pulumi/aws");
 const pulumi = require("@pulumi/pulumi");
 const {createStaticSPASite} = require("./lib/static_site.js");
+const {recordCNAME} = require("./lib/dns.js");
 const {createECS} = require("./lib/ecs.js");
 const {createVPC} = require("./lib/vpc.js");
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
@@ -11,6 +12,7 @@ const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 const vpc = createVPC("khatm-app");
 const {listener, service, cluster} = createECS(vpc);
 const dashboardName = "khatm-api";
+recordCNAME("api", listener.endpoint.hostname);
 
 const services = {
     ecs: {service, cluster}
