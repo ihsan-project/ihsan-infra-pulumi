@@ -11,11 +11,12 @@ const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 
 // createStaticSPASite("admin.khatmapp.com"); // TODO: Disable this for now. Causing problems when updating
 const security = createVPC("khatm-app");
-createRDS(security);
-const {listener, service, cluster} = createECS(security);
+const db = createRDS(security);
+const {listener, service, cluster} = createECS(security, db);
 recordCNAME("api", listener.endpoint.hostname);
 
 const services = {
+    db,
     ecs: {service, cluster}
 }
 const dashboardName = "khatm-api";
