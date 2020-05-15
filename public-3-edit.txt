@@ -1,0 +1,1351 @@
+backend.go:410] found username for access token
+backend.go:410] found username for access token
+eventsink.go:59] Registering resource: t=pulumi:pulumi:Stack, name=khatm-production, custom=false
+eventsink.go:59] RegisterResource RPC prepared: t=pulumi:pulumi:Stack, name=khatm-production
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-production[pulumi:pulumi:Stack]; err: null, resp: urn:pulumi:production::khatm::pulumi:pulumi:Stack::khatm-production,,,,
+eventsink.go:59] Running program '/Users/mmislam101/git/khatm-infrastructure' in pwd '/Users/mmislam101/git/khatm-infrastructure' w/ args:
+eventsink.go:59] Registering resource: t=awsx:x:ec2:Vpc, name=khatm-app-vpc, custom=false
+eventsink.go:59] Invoking function: tok=aws:index/getAvailabilityZones:getAvailabilityZones asynchronously
+eventsink.go:59] Registering resource: t=awsx:x:ec2:SecurityGroup, name=khatm-app-lb-sg, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroup:SecurityGroup, name=khatm-app-lb-sg, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:EgressSecurityGroupRule, name=http-out, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=http-out, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:SecurityGroup, name=khatm-app-app-sg, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroup:SecurityGroup, name=khatm-app-app-sg, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:IngressSecurityGroupRule, name=lb-sg-in, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=lb-sg-in, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:EgressSecurityGroupRule, name=all-out, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=all-out, custom=true
+eventsink.go:59] Registering resource: t=aws:lb:ApplicationLoadBalancer, name=api-alb, custom=false
+eventsink.go:59] Registering resource: t=aws:lb/loadBalancer:LoadBalancer, name=api-alb, custom=true
+eventsink.go:59] Registering resource: t=awsx:lb:ApplicationTargetGroup, name=http-target, custom=false
+eventsink.go:59] Registering resource: t=aws:lb/targetGroup:TargetGroup, name=http-target, custom=true
+eventsink.go:59] Registering resource: t=awsx:lb:ApplicationListener, name=https-listener, custom=false
+eventsink.go:59] Registering resource: t=aws:lb/listener:Listener, name=https-listener, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:IngressSecurityGroupRule, name=https-listener-external-0-ingress, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=https-listener-external-0-ingress, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:EgressSecurityGroupRule, name=https-listener-external-0-egress, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=https-listener-external-0-egress, custom=true
+eventsink.go:59] Registering resource: t=aws:cloudwatch/logGroup:LogGroup, name=api-logs, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ecs:Cluster, name=api-cluster, custom=false
+eventsink.go:59] Registering resource: t=aws:ecs/cluster:Cluster, name=api-cluster, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:autoscaling:AutoScalingGroup, name=api-scale, custom=false
+eventsink.go:59] Registering resource: t=awsx:x:autoscaling:AutoScalingLaunchConfiguration, name=api-scale, custom=false
+eventsink.go:59] Registering resource: t=aws:iam/role:Role, name=api-scale, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-scale-5e4162cd, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-scale-efc8f10d, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/instanceProfile:InstanceProfile, name=api-scale, custom=true
+eventsink.go:59] Invoking function: tok=aws:ssm/getParameter:getParameter asynchronously
+eventsink.go:59] Registering resource: t=aws:ec2/launchConfiguration:LaunchConfiguration, name=api-scale, custom=true
+eventsink.go:59] Registering resource: t=aws:cloudformation/stack:Stack, name=api-scale, custom=true
+eventsink.go:59] Reading resource: id=Output<T>, t=aws:autoscaling/group:Group, name=api-scale
+eventsink.go:59] Registering resource: t=awsx:x:ecs:EC2TaskDefinition, name=api-orchestrator, custom=false
+eventsink.go:59] Registering resource: t=aws:cloudwatch/logGroup:LogGroup, name=api-orchestrator, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/role:Role, name=api-orchestrator-task, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-orchestrator-task-32be53a2, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-orchestrator-task-fd1a00e5, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/role:Role, name=api-orchestrator-execution, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-orchestrator-execution-9a42f520, custom=true
+eventsink.go:59] Registering resource: t=aws:ecr/repository:Repository, name=khatm-images, custom=true
+eventsink.go:59] Registering resource: t=aws:ecr/lifecyclePolicy:LifecyclePolicy, name=khatm-images, custom=true
+eventsink.go:59] Registering resource: t=aws:ecs/taskDefinition:TaskDefinition, name=api-orchestrator, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ecs:EC2Service, name=api-orchestrator, custom=false
+eventsink.go:59] Registering resource: t=aws:ecs/service:Service, name=api-orchestrator, custom=true
+eventsink.go:59] Registering resource: t=cloudflare:index/record:Record, name=api-record, custom=true
+eventsink.go:59] Registering resource: t=aws:cloudwatch/dashboard:Dashboard, name=khatm-api, custom=true
+eventsink.go:59] , obj={"name":"/aws/service/ecs/optimized-ami/amazon-linux/recommended"}
+eventsink.go:59] , obj={}
+eventsink.go:59] Registering resource: t=aws:s3/bucket:Bucket, name=api-scale, custom=true
+eventsink.go:59] RegisterResource RPC prepared: t=aws:cloudwatch/logGroup:LogGroup, name=api-logs
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:Vpc, name=khatm-app-vpc
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:SecurityGroup, name=khatm-app-lb-sg
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:SecurityGroup, name=khatm-app-app-sg
+eventsink.go:59] RegisterResource RPC prepared: t=aws:lb:ApplicationLoadBalancer, name=api-alb
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ecs:Cluster, name=api-cluster
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ecs:EC2TaskDefinition, name=api-orchestrator
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ecs:EC2Service, name=api-orchestrator
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-app-sg[awsx:x:ec2:SecurityGroup]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup::khatm-app-app-sg,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup::khatm-app-app-sg
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:IngressSecurityGroupRule, name=lb-sg-in
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:EgressSecurityGroupRule, name=all-out
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator[awsx:x:ecs:EC2TaskDefinition]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition::api-orchestrator,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition::api-orchestrator
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ecr/repository:Repository, name=khatm-images
+eventsink.go:59] RegisterResource RPC prepared: t=aws:cloudwatch/logGroup:LogGroup, name=api-orchestrator
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/role:Role, name=api-orchestrator-task
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/role:Role, name=api-orchestrator-execution
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-lb-sg[awsx:x:ec2:SecurityGroup]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup::khatm-app-lb-sg,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup::khatm-app-lb-sg
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:EgressSecurityGroupRule, name=http-out
+eventsink.go:59] RegisterResource RPC finished: resource:api-alb[aws:lb:ApplicationLoadBalancer]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer::api-alb,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer::api-alb
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:lb:ApplicationTargetGroup, name=http-target
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator[awsx:x:ecs:EC2Service]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2Service::api-orchestrator,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ecs:EC2Service::api-orchestrator
+eventsink.go:59] RegisterResource RPC finished: resource:api-cluster[awsx:x:ecs:Cluster]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster::api-cluster,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ecs:Cluster::api-cluster
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:autoscaling:AutoScalingGroup, name=api-scale
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ecs/cluster:Cluster, name=api-cluster
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc[awsx:x:ec2:Vpc]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc::khatm-app-vpc,,,,
+eventsink.go:59] Setting AWS metadata API timeout to 100ms
+eventsink.go:59] Ignoring AWS metadata API endpoint at default location as it doesn't return any instance-id
+eventsink.go:59] AWS Auth provider used: "StaticProvider"
+eventsink.go:59] No assume_role block read from configuration
+eventsink.go:59] Building AWS auth structure
+eventsink.go:59] Setting AWS metadata API timeout to 100ms
+eventsink.go:59] Ignoring AWS metadata API endpoint at default location as it doesn't return any instance-id
+eventsink.go:59] AWS Auth provider used: "EnvProvider"
+eventsink.go:59] Trying to get account information via sts:GetCallerIdentity
+eventsink.go:59] Trying to get account information via sts:GetCallerIdentity
+eventsink.go:59] Reading Availability Zones.
+eventsink.go:59] Reading SSM Parameter: {
+eventsink.go:59]   Name: "/aws/service/ecs/optimized-ami/amazon-linux/recommended",
+eventsink.go:59]   WithDecryption: true
+eventsink.go:59] }
+eventsink.go:59] RegisterResource RPC finished: resource:lb-sg-in[awsx:x:ec2:IngressSecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:IngressSecurityGroupRule::lb-sg-in,,,,
+eventsink.go:59] Reading Availability Zones: {
+eventsink.go:59]
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:IngressSecurityGroupRule::lb-sg-in
+eventsink.go:59] RegisterResource RPC finished: resource:all-out[awsx:x:ec2:EgressSecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule::all-out,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule::all-out
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup::khatm-app-app-sg; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition::api-orchestrator; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:http-out[awsx:x:ec2:EgressSecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule::http-out,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule::http-out
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup::khatm-app-lb-sg; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:api-logs[aws:cloudwatch/logGroup:LogGroup]; err: null, resp: urn:pulumi:production::khatm::aws:cloudwatch/logGroup:LogGroup::api-logs,,__defaults,,,,,,,,name,name,,,api-logs-e01f541,retentionInDays,,7,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-images[aws:ecr/repository:Repository]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:ecr/repository:Repository::khatm-images,,__defaults,,,,,,,,imageTagMutability,,,name,imageTagMutability,,,MUTABLE,name,,,khatm-images-bce366b,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ecr/lifecyclePolicy:LifecyclePolicy, name=khatm-images
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator[aws:cloudwatch/logGroup:LogGroup]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:cloudwatch/logGroup:LogGroup::api-orchestrator,,__defaults,,,,,,,,name,name,,,api-orchestrator-c07312e,retentionInDays,,1,,
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator-task[aws:iam/role:Role]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:iam/role:Role::api-orchestrator-task,,__defaults,,,,,,,,forceDetachPolicies,,,maxSessionDuration,,,name,,,path,assumeRolePolicy,,,{"Version":"2012-10-17","Statement":[{"Action":"sts:AssumeRole","Principal":{"Service":"ecs-tasks.amazonaws.com"},"Effect":"Allow","Sid":""}]},forceDetachPolicies,,,,false,maxSessionDuration,,3600,name,,,api-orchestrator-task-dd0b34c,path,,,/,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-orchestrator-task-32be53a2
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-orchestrator-task-fd1a00e5
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule::http-out; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer::api-alb; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator-execution[aws:iam/role:Role]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:iam/role:Role::api-orchestrator-execution,,__defaults,,,,,,,,forceDetachPolicies,,,maxSessionDuration,,,name,,,path,assumeRolePolicy,,,{"Version":"2012-10-17","Statement":[{"Action":"sts:AssumeRole","Principal":{"Service":"ecs-tasks.amazonaws.com"},"Effect":"Allow","Sid":""}]},forceDetachPolicies,,,,false,maxSessionDuration,,3600,name,,,api-orchestrator-execution-159ed7c,path,,,/,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-orchestrator-execution-9a42f520
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ecs:EC2Service::api-orchestrator; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[awsx:x:autoscaling:AutoScalingGroup]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup::api-scale,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup::api-scale
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:autoscaling:AutoScalingLaunchConfiguration, name=api-scale
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:IngressSecurityGroupRule::lb-sg-in; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ecs:Cluster::api-cluster; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule::all-out; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:api-cluster[aws:ecs/cluster:Cluster]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$aws:ecs/cluster:Cluster::api-cluster,,__defaults,,,,,,,,name,name,,,api-cluster-52a7414,,
+eventsink.go:59] RegisterResource RPC finished: resource:http-target[awsx:lb:ApplicationTargetGroup]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup::http-target,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup::http-target
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:lb:ApplicationListener, name=https-listener
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-images[aws:ecr/lifecyclePolicy:LifecyclePolicy]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:ecr/lifecyclePolicy:LifecyclePolicy::khatm-images,,__defaults,,,,,,,policy,,,{"rules":[{"rulePriority":10,"description":"remove untagged images","selection":{"tagStatus":"untagged","countType":"imageCountMoreThan","countNumber":1},"action":{"type":"expire"}}]},repository,,,khatm-images-bce366b,,
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator-task-32be53a2[aws:iam/rolePolicyAttachment:RolePolicyAttachment]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:iam/rolePolicyAttachment:RolePolicyAttachment::api-orchestrator-task-32be53a2,,__defaults,,,,,,,policyArn,,,arn:aws:iam::aws:policy/AWSLambdaFullAccess,role,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator-task-fd1a00e5[aws:iam/rolePolicyAttachment:RolePolicyAttachment]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:iam/rolePolicyAttachment:RolePolicyAttachment::api-orchestrator-task-fd1a00e5,,__defaults,,,,,,,policyArn,,,arn:aws:iam::aws:policy/AmazonEC2ContainerServiceFullAccess,role,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator-execution-9a42f520[aws:iam/rolePolicyAttachment:RolePolicyAttachment]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:iam/rolePolicyAttachment:RolePolicyAttachment::api-orchestrator-execution-9a42f520,,__defaults,,,,,,,policyArn,,,arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy,role,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[awsx:x:autoscaling:AutoScalingLaunchConfiguration]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration::api-scale,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration::api-scale
+eventsink.go:59] RegisterResource RPC prepared: t=aws:s3/bucket:Bucket, name=api-scale
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/role:Role, name=api-scale
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup::api-scale; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:https-listener[awsx:lb:ApplicationListener]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener::https-listener,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener::https-listener
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:IngressSecurityGroupRule, name=https-listener-external-0-ingress
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:EgressSecurityGroupRule, name=https-listener-external-0-egress
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup::http-target; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[aws:s3/bucket:Bucket]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration$aws:s3/bucket:Bucket::api-scale,,__defaults,,,,,,,,acl,,,bucket,,,forceDestroy,acl,,,private,bucket,,,api-scale-85b679e,forceDestroy,,,,false,,
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration::api-scale; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[aws:iam/role:Role]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration$aws:iam/role:Role::api-scale,,__defaults,,,,,,,,forceDetachPolicies,,,maxSessionDuration,,,name,,,path,assumeRolePolicy,,,{"Version":"2012-10-17","Statement":[{"Action":["sts:AssumeRole"],"Effect":"Allow","Principal":{"Service":["ec2.amazonaws.com"]}}]},forceDetachPolicies,,,,false,maxSessionDuration,,3600,name,,,api-scale-d300342,path,,,/,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-scale-5e4162cd
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-scale-efc8f10d
+eventsink.go:59] RegisterResource RPC finished: resource:https-listener-external-0-egress[awsx:x:ec2:EgressSecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:EgressSecurityGroupRule::https-listener-external-0-egress,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:EgressSecurityGroupRule::https-listener-external-0-egress
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener::https-listener; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:https-listener-external-0-ingress[awsx:x:ec2:IngressSecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:IngressSecurityGroupRule::https-listener-external-0-ingress,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:IngressSecurityGroupRule::https-listener-external-0-ingress
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale-5e4162cd[aws:iam/rolePolicyAttachment:RolePolicyAttachment]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration$aws:iam/rolePolicyAttachment:RolePolicyAttachment::api-scale-5e4162cd,,__defaults,,,,,,,policyArn,,,arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role,role,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale-efc8f10d[aws:iam/rolePolicyAttachment:RolePolicyAttachment]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration$aws:iam/rolePolicyAttachment:RolePolicyAttachment::api-scale-efc8f10d,,__defaults,,,,,,,policyArn,,,arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess,role,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/instanceProfile:InstanceProfile, name=api-scale
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:EgressSecurityGroupRule::https-listener-external-0-egress; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:IngressSecurityGroupRule::https-listener-external-0-ingress; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[aws:iam/instanceProfile:InstanceProfile]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration$aws:iam/instanceProfile:InstanceProfile::api-scale,,__defaults,,,,,,,,name,,,path,name,,,api-scale-3a62158,path,,,/,role,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] Invoke RPC finished: tok=aws:ssm/getParameter:getParameter; err: null, resp: arn,,,arn:aws:ssm:us-east-1:952442618488:parameter/aws/service/ecs/optimized-ami/amazon-linux/recommended,id,,,/aws/service/ecs/optimized-ami/amazon-linux/recommended,name,,,/aws/service/ecs/optimized-ami/amazon-linux/recommended,type,,,String,value,,,{"schema_version":1,"image_name":"amzn-ami-2018.03.20200430-amazon-ecs-optimized","image_id":"ami-040d7258a1baecb27","os":"Amazon Linux","ecs_runtime_version":"Docker version 19.03.6-ce","ecs_agent_version":"1.39.0"},version,,43,withDecryption,,,,true,
+eventsink.go:59] Invoke RPC finished: tok=aws:index/getAvailabilityZones:getAvailabilityZones; err: null, resp: groupNames,,,,,,,,us-east-1,id,,,2020-05-15 16:46:54.725392 +0000 UTC,names,,,,,,,,us-east-1a,,,us-east-1b,,,us-east-1c,,,us-east-1d,,,us-east-1e,,,us-east-1f,zoneIds,,,,,,,,use1-az1,,,use1-az2,,,use1-az4,,,use1-az6,,,use1-az3,,,use1-az5,
+eventsink.go:59] Registering resource: t=aws:ec2/vpc:Vpc, name=khatm-app-vpc, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-public-0, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-public-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-public-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-public-0, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-public-1, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-public-1, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-public-1, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-public-1, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-private-0, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-private-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-private-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-private-0, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-private-1, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-private-1, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-private-1, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-private-1, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:NatGateway, name=khatm-app-vpc-0, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/eip:Eip, name=khatm-app-vpc-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/natGateway:NatGateway, name=khatm-app-vpc-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/route:Route, name=khatm-app-vpc-private-0-nat-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/route:Route, name=khatm-app-vpc-private-1-nat-1, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:InternetGateway, name=khatm-app-vpc, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/internetGateway:InternetGateway, name=khatm-app-vpc, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/route:Route, name=khatm-app-vpc-public-0-ig, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/route:Route, name=khatm-app-vpc-public-1-ig, custom=true
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc::khatm-app-vpc
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:NatGateway, name=khatm-app-vpc-0
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:InternetGateway, name=khatm-app-vpc
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-public-0
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-public-1
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-private-0
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-private-1
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/vpc:Vpc, name=khatm-app-vpc
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-0[awsx:x:ec2:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-public-0,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-public-0
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-0[awsx:x:ec2:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-private-0,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-private-0
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-1[awsx:x:ec2:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-private-1,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-private-1
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc[awsx:x:ec2:InternetGateway]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway::khatm-app-vpc,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway::khatm-app-vpc
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-1[awsx:x:ec2:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-public-1,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-public-1
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-0[awsx:x:ec2:NatGateway]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway::khatm-app-vpc-0,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway::khatm-app-vpc-0
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/eip:Eip, name=khatm-app-vpc-0
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc::khatm-app-vpc; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc[aws:ec2/vpc:Vpc]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::khatm-app-vpc,,__defaults,,,,,,,assignGeneratedIpv6CidrBlock,,,,false,cidrBlock,,,10.0.0.0/16,enableDnsHostnames,,,,true,enableDnsSupport,,,,true,instanceTenancy,,,default,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/internetGateway:InternetGateway, name=khatm-app-vpc
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroup:SecurityGroup, name=khatm-app-lb-sg
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroup:SecurityGroup, name=khatm-app-app-sg
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-public-0
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-public-1
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-private-0
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-private-1
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-public-0
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-public-1
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-private-0
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-private-1
+eventsink.go:59] RegisterResource RPC prepared: t=aws:lb/targetGroup:TargetGroup, name=http-target
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-public-0; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-private-0; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-private-1; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway::khatm-app-vpc; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-public-1; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway::khatm-app-vpc-0; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-0[aws:ec2/eip:Eip]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway$aws:ec2/eip:Eip::khatm-app-vpc-0,,__defaults,,,,,,,tags,,,,,Name,,,khatm-app-vpc-0,__defaults,,,,,,,vpc,,,,true,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-0[aws:ec2/subnet:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::khatm-app-vpc-private-0,,__defaults,,,,,,,assignIpv6AddressOnCreation,,,,false,availabilityZone,,,us-east-1a,cidrBlock,,,10.0.128.0/18,ipv6CidrBlock,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,mapPublicIpOnLaunch,,,,false,tags,,,,,Name,,,khatm-app-vpc-private-0,__defaults,,,,,,,type,,,private,vpcId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-1[aws:ec2/subnet:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::khatm-app-vpc-private-1,,__defaults,,,,,,,assignIpv6AddressOnCreation,,,,false,availabilityZone,,,us-east-1b,cidrBlock,,,10.0.192.0/18,ipv6CidrBlock,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,mapPublicIpOnLaunch,,,,false,tags,,,,,Name,,,khatm-app-vpc-private-1,__defaults,,,,,,,type,,,private,vpcId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:http-target[aws:lb/targetGroup:TargetGroup]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$aws:lb/targetGroup:TargetGroup::http-target,,__defaults,,,,,,,,lambdaMultiValueHeadersEnabled,,,name,,,proxyProtocolV2,,,slowStart,deregistrationDelay,,300,lambdaMultiValueHeadersEnabled,,,,false,name,,,http-target-7bee5f0,port,,80,protocol,,,HTTP,proxyProtocolV2,,,,false,slowStart,,0,tags,,,,,Name,,,http-target,__defaults,,,,,,,targetType,,,ip,vpcId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-1[aws:ec2/routeTable:RouteTable]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::khatm-app-vpc-public-1,,__defaults,,,,,,,vpcId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc[aws:ec2/internetGateway:InternetGateway]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway$aws:ec2/internetGateway:InternetGateway::khatm-app-vpc,,__defaults,,,,,,,vpcId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/route:Route, name=khatm-app-vpc-public-1-ig
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-0[aws:ec2/routeTable:RouteTable]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::khatm-app-vpc-private-0,,__defaults,,,,,,,vpcId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-private-0
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-1[aws:ec2/routeTable:RouteTable]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::khatm-app-vpc-private-1,,__defaults,,,,,,,vpcId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-private-1
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-lb-sg[aws:ec2/securityGroup:SecurityGroup]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$aws:ec2/securityGroup:SecurityGroup::khatm-app-lb-sg,,__defaults,,,,,,,,name,,,revokeRulesOnDelete,description,,,Managed by Pulumi,name,,,khatm-app-lb-sg-a5751ad,revokeRulesOnDelete,,,,false,vpcId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=http-out
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=https-listener-external-0-ingress
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=https-listener-external-0-egress
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-0[aws:ec2/routeTable:RouteTable]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::khatm-app-vpc-public-0,,__defaults,,,,,,,vpcId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/route:Route, name=khatm-app-vpc-public-0-ig
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-0[aws:ec2/subnet:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::khatm-app-vpc-public-0,,__defaults,,,,,,,assignIpv6AddressOnCreation,,,,false,availabilityZone,,,us-east-1a,cidrBlock,,,10.0.0.0/18,ipv6CidrBlock,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,mapPublicIpOnLaunch,,,,true,tags,,,,,Name,,,khatm-app-vpc-public-0,__defaults,,,,,,,type,,,public,vpcId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-public-0
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-app-sg[aws:ec2/securityGroup:SecurityGroup]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$aws:ec2/securityGroup:SecurityGroup::khatm-app-app-sg,,__defaults,,,,,,,,name,,,revokeRulesOnDelete,description,,,Managed by Pulumi,name,,,khatm-app-app-sg-e9bc66a,revokeRulesOnDelete,,,,false,vpcId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=all-out
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=lb-sg-in
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/launchConfiguration:LaunchConfiguration, name=api-scale
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-1[aws:ec2/subnet:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::khatm-app-vpc-public-1,,__defaults,,,,,,,assignIpv6AddressOnCreation,,,,false,availabilityZone,,,us-east-1b,cidrBlock,,,10.0.64.0/18,ipv6CidrBlock,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,mapPublicIpOnLaunch,,,,true,tags,,,,,Name,,,khatm-app-vpc-public-1,__defaults,,,,,,,type,,,public,vpcId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-public-1
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-1-ig[aws:ec2/route:Route]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/route:Route::khatm-app-vpc-public-1-ig,,__defaults,,,,,,,destinationCidrBlock,,,0.0.0.0/0,gatewayId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,routeTableId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-0[aws:ec2/routeTableAssociation:RouteTableAssociation]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::khatm-app-vpc-private-0,,__defaults,,,,,,,routeTableId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,subnetId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-1[aws:ec2/routeTableAssociation:RouteTableAssociation]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::khatm-app-vpc-private-1,,__defaults,,,,,,,routeTableId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,subnetId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:https-listener-external-0-ingress[aws:ec2/securityGroupRule:SecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:IngressSecurityGroupRule$aws:ec2/securityGroupRule:SecurityGroupRule::https-listener-external-0-ingress,,__defaults,,,,,,,,self,cidrBlocks,,,,,,,,0.0.0.0/0,description,,,Externally available at port 443,fromPort,,443,protocol,,,tcp,securityGroupId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,self,,,,false,toPort,,443,type,,,ingress,,
+eventsink.go:59] RegisterResource RPC finished: resource:https-listener-external-0-egress[aws:ec2/securityGroupRule:SecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:EgressSecurityGroupRule$aws:ec2/securityGroupRule:SecurityGroupRule::https-listener-external-0-egress,,__defaults,,,,,,,,self,cidrBlocks,,,,,,,,0.0.0.0/0,description,,,Externally available at port 443,fromPort,,443,protocol,,,tcp,securityGroupId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,self,,,,false,toPort,,443,type,,,egress,,
+eventsink.go:59] RegisterResource RPC finished: resource:http-out[aws:ec2/securityGroupRule:SecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule$aws:ec2/securityGroupRule:SecurityGroupRule::http-out,,__defaults,,,,,,,,self,cidrBlocks,,,,,,,,0.0.0.0/0,description,,,allow http out,fromPort,,80,protocol,,,tcp,securityGroupId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,self,,,,false,toPort,,80,type,,,egress,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-0-ig[aws:ec2/route:Route]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/route:Route::khatm-app-vpc-public-0-ig,,__defaults,,,,,,,destinationCidrBlock,,,0.0.0.0/0,gatewayId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,routeTableId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-0[aws:ec2/routeTableAssociation:RouteTableAssociation]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::khatm-app-vpc-public-0,,__defaults,,,,,,,routeTableId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,subnetId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/natGateway:NatGateway, name=khatm-app-vpc-0
+eventsink.go:59] RegisterResource RPC finished: resource:all-out[aws:ec2/securityGroupRule:SecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule$aws:ec2/securityGroupRule:SecurityGroupRule::all-out,,__defaults,,,,,,,,self,cidrBlocks,,,,,,,,0.0.0.0/0,description,,,allow all http out,fromPort,,0,protocol,,,-1,securityGroupId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,self,,,,false,toPort,,0,type,,,egress,,
+eventsink.go:59] RegisterResource RPC finished: resource:lb-sg-in[aws:ec2/securityGroupRule:SecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:IngressSecurityGroupRule$aws:ec2/securityGroupRule:SecurityGroupRule::lb-sg-in,,__defaults,,,,,,,description,,,allow http from lb in,fromPort,,80,protocol,,,tcp,securityGroupId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,sourceSecurityGroupId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,toPort,,80,type,,,ingress,,
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[aws:ec2/launchConfiguration:LaunchConfiguration]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration$aws:ec2/launchConfiguration:LaunchConfiguration::api-scale,,__defaults,,,,,,,,associatePublicIpAddress,,,name,associatePublicIpAddress,,,,false,ebsBlockDevices,,,,,,,,,,__defaults,,,,,,,deleteOnTermination,,,,true,deviceName,,,/dev/xvdb,volumeSize,,5,volumeType,,,gp2,,,,,__defaults,,,,,,,deleteOnTermination,,,,true,deviceName,,,/dev/xvdcz,volumeSize,,50,volumeType,,,gp2,enableMonitoring,,,,true,iamInstanceProfile,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,imageId,,,ami-040d7258a1baecb27,instanceType,,,t2.nano,name,,,api-scale-2164f0a,placementTenancy,,,default,rootBlockDevice,,,,,__defaults,,,,,,,deleteOnTermination,,,,true,volumeSize,,8,volumeType,,,gp2,securityGroups,,,,,,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,userData,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-1[aws:ec2/routeTableAssociation:RouteTableAssociation]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::khatm-app-vpc-public-1,,__defaults,,,,,,,routeTableId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,subnetId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:cloudformation/stack:Stack, name=api-scale
+eventsink.go:59] RegisterResource RPC prepared: t=aws:lb/loadBalancer:LoadBalancer, name=api-alb
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-0[aws:ec2/natGateway:NatGateway]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway$aws:ec2/natGateway:NatGateway::khatm-app-vpc-0,,__defaults,,,,,,,allocationId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,subnetId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/route:Route, name=khatm-app-vpc-private-0-nat-0
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/route:Route, name=khatm-app-vpc-private-1-nat-1
+eventsink.go:59] RegisterResource RPC finished: resource:api-alb[aws:lb/loadBalancer:LoadBalancer]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$aws:lb/loadBalancer:LoadBalancer::api-alb,,__defaults,,,,,,,,dropInvalidHeaderFields,,,enableCrossZoneLoadBalancing,,,enableDeletionProtection,,,enableHttp2,,,idleTimeout,,,name,dropInvalidHeaderFields,,,,false,enableCrossZoneLoadBalancing,,,,false,enableDeletionProtection,,,,false,enableHttp2,,,,true,idleTimeout,,60,internal,,,,false,loadBalancerType,,,application,name,,,api-alb-9055cfd,securityGroups,,,,,,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,subnets,,,,,,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,tags,,,,,Name,,,api-alb,__defaults,,,,,,,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:lb/listener:Listener, name=https-listener
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[aws:cloudformation/stack:Stack]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$aws:cloudformation/stack:Stack::api-scale,,__defaults,,,,,,,name,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,templateBody,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] ReadResource RPC prepared: id=04da6b54-80e4-46f7-96ec-b56ff0331ba9, t=aws:autoscaling/group:Group, name=api-scale
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-1-nat-1[aws:ec2/route:Route]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/route:Route::khatm-app-vpc-private-1-nat-1,,__defaults,,,,,,,destinationCidrBlock,,,0.0.0.0/0,natGatewayId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,routeTableId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-0-nat-0[aws:ec2/route:Route]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/route:Route::khatm-app-vpc-private-0-nat-0,,__defaults,,,,,,,destinationCidrBlock,,,0.0.0.0/0,natGatewayId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,routeTableId,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC finished: resource:https-listener[aws:lb/listener:Listener]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$aws:lb/listener:Listener::https-listener,,__defaults,,,,,,,certificateArn,,,arn:aws:acm:us-east-1:952442618488:certificate/3fc83113-436f-4019-aedc-bc17a936c755,defaultActions,,,,,,,,,,__defaults,,,,,,,targetGroupArn,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,type,,,forward,loadBalancerArn,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,port,,443,protocol,,,HTTPS,sslPolicy,,,ELBSecurityPolicy-2016-08,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::pulumi:pulumi:Stack::khatm-production
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ecs/taskDefinition:TaskDefinition, name=api-orchestrator
+eventsink.go:59] ReadResource RPC finished: resource:api-scale[aws:autoscaling/group:Group]#...; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$aws:autoscaling/group:Group::api-scale,
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::pulumi:pulumi:Stack::khatm-production; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator[aws:ecs/taskDefinition:TaskDefinition]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:ecs/taskDefinition:TaskDefinition::api-orchestrator,,__defaults,,,,,,,containerDefinitions,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,executionRoleArn,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,family,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,networkMode,,,awsvpc,requiresCompatibilities,,,,,,,,EC2,taskRoleArn,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ecs/service:Service, name=api-orchestrator
+eventsink.go:59] RegisterResource RPC prepared: t=cloudflare:index/record:Record, name=api-record
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator[aws:ecs/service:Service]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2Service$aws:ecs/service:Service::api-orchestrator,,__defaults,,,,,,,,deploymentMaximumPercent,,,deploymentMinimumHealthyPercent,,,enableEcsManagedTags,,,name,,,schedulingStrategy,cluster,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,deploymentMaximumPercent,,200,deploymentMinimumHealthyPercent,,100,desiredCount,,1,enableEcsManagedTags,,,,false,launchType,,,EC2,loadBalancers,,,,,,,,,,containerName,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,containerPort,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,name,,,api-orchestrator-23ed199,networkConfiguration,,,,,__defaults,,,,,,,assignPublicIp,,,,false,securityGroups,,,,,,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,subnets,,,,,,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,schedulingStrategy,,,REPLICA,taskDefinition,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,waitForSteadyState,,,,true,,
+eventsink.go:59] Cloudflare Client configured for user: mmislam101@gmail.com
+eventsink.go:59] RegisterResource RPC prepared: t=aws:cloudwatch/dashboard:Dashboard, name=khatm-api
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-api[aws:cloudwatch/dashboard:Dashboard]; err: null, resp: urn:pulumi:production::khatm::aws:cloudwatch/dashboard:Dashboard::khatm-api,,__defaults,,,,,,,dashboardBody,,,{"widgets":[{"x":0,"y":0,"width":8,"height":6,"type":"metric","properties":{"metrics":[["AWS/ECS","CPUUtilization","ServiceName","api-orchestrator-23ed199","ClusterName","api-cluster-52a7414",{"stat":"Average","period":300,"visible":true,"yAxis":"left"}],["AWS/ECS","MemoryUtilization","ServiceName","api-orchestrator-23ed199","ClusterName","api-cluster-52a7414",{"stat":"Average","period":300,"visible":true,"yAxis":"left"}]],"title":"ECS Service","period":300,"region":"us-east-1","view":"singleValue","stacked":false}},{"x":8,"y":0,"width":16,"height":6,"type":"metric","properties":{"metrics":[["AWS/ECS","CPUUtilization","ServiceName","api-orchestrator-23ed199","ClusterName","api-cluster-52a7414",{"stat":"Average","period":300,"visible":true,"yAxis":"left"}]],"title":"ECS Service CPU","period":300,"region":"us-east-1","view":"timeSeries","stacked":false}},{"x":0,"y":6,"width":8,"height":6,"type":"metric","properties":{"metrics":[["AWS/ECS","MemoryReservation","ClusterName","api-cluster-52a7414",{"stat":"Average","period":300,"visible":true,"yAxis":"left"}],["AWS/ECS","MemoryUtilization","ClusterName","api-cluster-52a7414",{"stat":"Average","period":300,"visible":true,"yAxis":"left"}]],"title":"ECS Cluster Memory","period":300,"region":"us-east-1","view":"singleValue","stacked":false}},{"x":8,"y":6,"width":16,"height":6,"type":"metric","properties":{"metrics":[["AWS/ECS","CPUUtilization","ClusterName","api-cluster-52a7414",{"stat":"Average","period":300,"visible":true,"yAxis":"left"}]],"title":"ECS Cluster CPU","period":300,"region":"us-east-1","view":"timeSeries","stacked":false}}]},dashboardName,,,khatm-api,,
+eventsink.go:59] RegisterResource RPC finished: resource:api-record[cloudflare:index/record:Record]; err: null, resp: urn:pulumi:production::khatm::cloudflare:index/record:Record::api-record,,__defaults,,,,,,,name,,,api,proxied,,,,true,type,,,CNAME,value,,,04da6b54-80e4-46f7-96ec-b56ff0331ba9,zoneId,,,7cd2d7064f6b0f7e4af0cc47f7f686f8,,
+ignore.go:44] Explicitly ignoring and discarding error: rpc error: code = Canceled desc = grpc: the client connection is closing
+backend.go:410] found username for access token
+eventsink.go:59] Registering resource: t=pulumi:pulumi:Stack, name=khatm-production, custom=false
+eventsink.go:59] RegisterResource RPC prepared: t=pulumi:pulumi:Stack, name=khatm-production
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-production[pulumi:pulumi:Stack]; err: null, resp: urn:pulumi:production::khatm::pulumi:pulumi:Stack::khatm-production,,,,
+eventsink.go:59] Running program '/Users/mmislam101/git/khatm-infrastructure' in pwd '/Users/mmislam101/git/khatm-infrastructure' w/ args:
+eventsink.go:59] Registering resource: t=awsx:x:ec2:Vpc, name=khatm-app-vpc, custom=false
+eventsink.go:59] Invoking function: tok=aws:index/getAvailabilityZones:getAvailabilityZones asynchronously
+eventsink.go:59] Registering resource: t=awsx:x:ec2:SecurityGroup, name=khatm-app-lb-sg, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroup:SecurityGroup, name=khatm-app-lb-sg, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:EgressSecurityGroupRule, name=http-out, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=http-out, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:SecurityGroup, name=khatm-app-app-sg, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroup:SecurityGroup, name=khatm-app-app-sg, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:IngressSecurityGroupRule, name=lb-sg-in, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=lb-sg-in, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:EgressSecurityGroupRule, name=all-out, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=all-out, custom=true
+eventsink.go:59] Registering resource: t=aws:lb:ApplicationLoadBalancer, name=api-alb, custom=false
+eventsink.go:59] Registering resource: t=aws:lb/loadBalancer:LoadBalancer, name=api-alb, custom=true
+eventsink.go:59] Registering resource: t=awsx:lb:ApplicationTargetGroup, name=http-target, custom=false
+eventsink.go:59] Registering resource: t=aws:lb/targetGroup:TargetGroup, name=http-target, custom=true
+eventsink.go:59] Registering resource: t=awsx:lb:ApplicationListener, name=https-listener, custom=false
+eventsink.go:59] Registering resource: t=aws:lb/listener:Listener, name=https-listener, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:IngressSecurityGroupRule, name=https-listener-external-0-ingress, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=https-listener-external-0-ingress, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:EgressSecurityGroupRule, name=https-listener-external-0-egress, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=https-listener-external-0-egress, custom=true
+eventsink.go:59] Registering resource: t=aws:cloudwatch/logGroup:LogGroup, name=api-logs, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ecs:Cluster, name=api-cluster, custom=false
+eventsink.go:59] Registering resource: t=aws:ecs/cluster:Cluster, name=api-cluster, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:autoscaling:AutoScalingGroup, name=api-scale, custom=false
+eventsink.go:59] Registering resource: t=awsx:x:autoscaling:AutoScalingLaunchConfiguration, name=api-scale, custom=false
+eventsink.go:59] Registering resource: t=aws:iam/role:Role, name=api-scale, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-scale-5e4162cd, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-scale-efc8f10d, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/instanceProfile:InstanceProfile, name=api-scale, custom=true
+eventsink.go:59] Invoking function: tok=aws:ssm/getParameter:getParameter asynchronously
+eventsink.go:59] Registering resource: t=aws:ec2/launchConfiguration:LaunchConfiguration, name=api-scale, custom=true
+eventsink.go:59] Registering resource: t=aws:cloudformation/stack:Stack, name=api-scale, custom=true
+eventsink.go:59] Reading resource: id=Output<T>, t=aws:autoscaling/group:Group, name=api-scale
+eventsink.go:59] Registering resource: t=awsx:x:ecs:EC2TaskDefinition, name=api-orchestrator, custom=false
+eventsink.go:59] Registering resource: t=aws:cloudwatch/logGroup:LogGroup, name=api-orchestrator, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/role:Role, name=api-orchestrator-task, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-orchestrator-task-32be53a2, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-orchestrator-task-fd1a00e5, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/role:Role, name=api-orchestrator-execution, custom=true
+eventsink.go:59] Registering resource: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-orchestrator-execution-9a42f520, custom=true
+eventsink.go:59] Registering resource: t=aws:ecr/repository:Repository, name=khatm-images, custom=true
+eventsink.go:59] Registering resource: t=aws:ecr/lifecyclePolicy:LifecyclePolicy, name=khatm-images, custom=true
+eventsink.go:59] Registering resource: t=aws:ecs/taskDefinition:TaskDefinition, name=api-orchestrator, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ecs:EC2Service, name=api-orchestrator, custom=false
+eventsink.go:59] Registering resource: t=aws:ecs/service:Service, name=api-orchestrator, custom=true
+eventsink.go:59] Registering resource: t=cloudflare:index/record:Record, name=api-record, custom=true
+eventsink.go:59] Registering resource: t=aws:cloudwatch/dashboard:Dashboard, name=khatm-api, custom=true
+eventsink.go:59] , obj={"name":"/aws/service/ecs/optimized-ami/amazon-linux/recommended"}
+eventsink.go:59] , obj={}
+eventsink.go:59] Registering resource: t=aws:s3/bucket:Bucket, name=api-scale, custom=true
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:Vpc, name=khatm-app-vpc
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ecs:Cluster, name=api-cluster
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:SecurityGroup, name=khatm-app-app-sg
+eventsink.go:59] RegisterResource RPC prepared: t=aws:lb:ApplicationLoadBalancer, name=api-alb
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:SecurityGroup, name=khatm-app-lb-sg
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ecs:EC2TaskDefinition, name=api-orchestrator
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ecs:EC2Service, name=api-orchestrator
+eventsink.go:59] RegisterResource RPC prepared: t=aws:cloudwatch/logGroup:LogGroup, name=api-logs
+eventsink.go:59] Setting AWS metadata API timeout to 100ms
+eventsink.go:59] RegisterResource RPC finished: resource:api-alb[aws:lb:ApplicationLoadBalancer]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer::api-alb,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer::api-alb
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:lb:ApplicationTargetGroup, name=http-target
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-app-sg[awsx:x:ec2:SecurityGroup]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup::khatm-app-app-sg,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup::khatm-app-app-sg
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:IngressSecurityGroupRule, name=lb-sg-in
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:EgressSecurityGroupRule, name=all-out
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator[awsx:x:ecs:EC2Service]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2Service::api-orchestrator,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ecs:EC2Service::api-orchestrator
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-lb-sg[awsx:x:ec2:SecurityGroup]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup::khatm-app-lb-sg,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup::khatm-app-lb-sg
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:EgressSecurityGroupRule, name=http-out
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc[awsx:x:ec2:Vpc]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc::khatm-app-vpc,,,,
+eventsink.go:59] RegisterResource RPC finished: resource:api-cluster[awsx:x:ecs:Cluster]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster::api-cluster,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ecs:Cluster::api-cluster
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:autoscaling:AutoScalingGroup, name=api-scale
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ecs/cluster:Cluster, name=api-cluster
+eventsink.go:59] Ignoring AWS metadata API endpoint at default location as it doesn't return any instance-id
+eventsink.go:59] AWS Auth provider used: "StaticProvider"
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator[awsx:x:ecs:EC2TaskDefinition]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition::api-orchestrator,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition::api-orchestrator
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ecr/repository:Repository, name=khatm-images
+eventsink.go:59] RegisterResource RPC prepared: t=aws:cloudwatch/logGroup:LogGroup, name=api-orchestrator
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/role:Role, name=api-orchestrator-task
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/role:Role, name=api-orchestrator-execution
+eventsink.go:59] No assume_role block read from configuration
+eventsink.go:59] Building AWS auth structure
+eventsink.go:59] Setting AWS metadata API timeout to 100ms
+eventsink.go:59] Ignoring AWS metadata API endpoint at default location as it doesn't return any instance-id
+eventsink.go:59] AWS Auth provider used: "EnvProvider"
+eventsink.go:59] Trying to get account information via sts:GetCallerIdentity
+eventsink.go:59] Trying to get account information via sts:GetCallerIdentity
+eventsink.go:59] Reading Availability Zones.
+eventsink.go:59] Reading SSM Parameter: {
+eventsink.go:59]   Name: "/aws/service/ecs/optimized-ami/amazon-linux/recommended",
+eventsink.go:59]   WithDecryption: true
+eventsink.go:59] }
+eventsink.go:59] Reading Availability Zones: {
+eventsink.go:59]
+eventsink.go:59] }
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer::api-alb; err: null, resp:
+eventsink.go:59] Creating CloudWatch Log Group: api-logs-a983bb6
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup::khatm-app-app-sg; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ecs:EC2Service::api-orchestrator; err: null, resp:
+eventsink.go:59] Invoke RPC finished: tok=aws:ssm/getParameter:getParameter; err: null, resp: arn,,,arn:aws:ssm:us-east-1:952442618488:parameter/aws/service/ecs/optimized-ami/amazon-linux/recommended,id,,,/aws/service/ecs/optimized-ami/amazon-linux/recommended,name,,,/aws/service/ecs/optimized-ami/amazon-linux/recommended,type,,,String,value,,,{"schema_version":1,"image_name":"amzn-ami-2018.03.20200430-amazon-ecs-optimized","image_id":"ami-040d7258a1baecb27","os":"Amazon Linux","ecs_runtime_version":"Docker version 19.03.6-ce","ecs_agent_version":"1.39.0"},version,,43,withDecryption,,,,true,
+eventsink.go:59] Invoke RPC finished: tok=aws:index/getAvailabilityZones:getAvailabilityZones; err: null, resp: groupNames,,,,,,,,us-east-1,id,,,2020-05-15 16:47:26.644504 +0000 UTC,names,,,,,,,,us-east-1a,,,us-east-1b,,,us-east-1c,,,us-east-1d,,,us-east-1e,,,us-east-1f,zoneIds,,,,,,,,use1-az1,,,use1-az2,,,use1-az4,,,use1-az6,,,use1-az3,,,use1-az5,
+eventsink.go:59] Registering resource: t=aws:ec2/vpc:Vpc, name=khatm-app-vpc, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-public-0, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-public-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-public-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-public-0, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-public-1, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-public-1, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-public-1, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-public-1, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-private-0, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-private-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-private-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-private-0, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-private-1, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-private-1, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-private-1, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-private-1, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:NatGateway, name=khatm-app-vpc-0, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/eip:Eip, name=khatm-app-vpc-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/natGateway:NatGateway, name=khatm-app-vpc-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/route:Route, name=khatm-app-vpc-private-0-nat-0, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/route:Route, name=khatm-app-vpc-private-1-nat-1, custom=true
+eventsink.go:59] Registering resource: t=awsx:x:ec2:InternetGateway, name=khatm-app-vpc, custom=false
+eventsink.go:59] Registering resource: t=aws:ec2/internetGateway:InternetGateway, name=khatm-app-vpc, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/route:Route, name=khatm-app-vpc-public-0-ig, custom=true
+eventsink.go:59] Registering resource: t=aws:ec2/route:Route, name=khatm-app-vpc-public-1-ig, custom=true
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc::khatm-app-vpc
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:NatGateway, name=khatm-app-vpc-0
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:InternetGateway, name=khatm-app-vpc
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-public-0
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-public-1
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-private-0
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:Subnet, name=khatm-app-vpc-private-1
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/vpc:Vpc, name=khatm-app-vpc
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup::khatm-app-lb-sg; err: null, resp:
+eventsink.go:59] Creating ECS cluster api-cluster-ae02d95
+eventsink.go:59] Reading CloudWatch Log Group: "api-logs-a983bb6"
+eventsink.go:59] RegisterResource RPC finished: resource:http-target[awsx:lb:ApplicationTargetGroup]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup::http-target,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup::http-target
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:lb:ApplicationListener, name=https-listener
+eventsink.go:59] RegisterResource RPC finished: resource:all-out[awsx:x:ec2:EgressSecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule::all-out,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule::all-out
+eventsink.go:59] RegisterResource RPC finished: resource:lb-sg-in[awsx:x:ec2:IngressSecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:IngressSecurityGroupRule::lb-sg-in,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:IngressSecurityGroupRule::lb-sg-in
+eventsink.go:59] ECS cluster arn:aws:ecs:us-east-1:952442618488:cluster/api-cluster-ae02d95 created
+eventsink.go:59] Waiting for state to become: [ACTIVE]
+eventsink.go:59] RegisterResource RPC finished: resource:http-out[awsx:x:ec2:EgressSecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule::http-out,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule::http-out
+eventsink.go:59] Found Log Group: {
+eventsink.go:59]   Arn: "arn:aws:logs:us-east-1:952442618488:log-group:api-logs-a983bb6:*",
+eventsink.go:59]   CreationTime: 1589561247215,
+eventsink.go:59]   LogGroupName: "api-logs-a983bb6",
+eventsink.go:59]   MetricFilterCount: 0,
+eventsink.go:59]   RetentionInDays: 7,
+eventsink.go:59]   StoredBytes: 0
+eventsink.go:59] }
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ecs:Cluster::api-cluster; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition::api-orchestrator; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[awsx:x:autoscaling:AutoScalingGroup]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup::api-scale,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup::api-scale
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:autoscaling:AutoScalingLaunchConfiguration, name=api-scale
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc::khatm-app-vpc; err: null, resp:
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup::http-target; err: null, resp:
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule::all-out; err: null, resp:
+eventsink.go:59] Creating ECR repository: {
+eventsink.go:59]   ImageTagMutability: "MUTABLE",
+eventsink.go:59]   RepositoryName: "khatm-images-05cd386",
+eventsink.go:59]   Tags: []
+eventsink.go:59] }
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:IngressSecurityGroupRule::lb-sg-in; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule::http-out; err: null, resp:
+eventsink.go:59] Creating CloudWatch Log Group: api-orchestrator-b8645fb
+eventsink.go:59] ECR repository created: "arn:aws:ecr:us-east-1:952442618488:repository/khatm-images-05cd386"
+eventsink.go:59] Reading ECR repository khatm-images-05cd386
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup::api-scale; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-1[awsx:x:ec2:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-private-1,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-private-1
+eventsink.go:59] VPC create config: {
+eventsink.go:59]   AmazonProvidedIpv6CidrBlock: false,
+eventsink.go:59]   CidrBlock: "10.0.0.0/16",
+eventsink.go:59]   InstanceTenancy: "default"
+eventsink.go:59] }
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator-task[aws:iam/role:Role]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:iam/role:Role::api-orchestrator-task,api-orchestrator-task-e4c01f5,arn,,,arn:aws:iam::952442618488:role/api-orchestrator-task-e4c01f5,assumeRolePolicy,,,{"Version":"2012-10-17","Statement":[{"Sid":"","Effect":"Allow","Principal":{"Service":"ecs-tasks.amazonaws.com"},"Action":"sts:AssumeRole"}]},createDate,,,2020-05-15T16:47:29Z,description,,,,forceDetachPolicies,,,,false,id,,,api-orchestrator-task-e4c01f5,maxSessionDuration,,3600,name,,,api-orchestrator-task-e4c01f5,path,,,/,tags,,,,,,uniqueId,,,AROA53QQBAJ4JBPU5I5HL,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-orchestrator-task-32be53a2
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-orchestrator-task-fd1a00e5
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator-execution[aws:iam/role:Role]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:iam/role:Role::api-orchestrator-execution,api-orchestrator-execution-5022e89,arn,,,arn:aws:iam::952442618488:role/api-orchestrator-execution-5022e89,assumeRolePolicy,,,{"Version":"2012-10-17","Statement":[{"Sid":"","Effect":"Allow","Principal":{"Service":"ecs-tasks.amazonaws.com"},"Action":"sts:AssumeRole"}]},createDate,,,2020-05-15T16:47:29Z,description,,,,forceDetachPolicies,,,,false,id,,,api-orchestrator-execution-5022e89,maxSessionDuration,,3600,name,,,api-orchestrator-execution-5022e89,path,,,/,tags,,,,,,uniqueId,,,AROA53QQBAJ4DHHSYKZO4,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-orchestrator-execution-9a42f520
+eventsink.go:59] VPC ID: vpc-05614b92f1559e423
+eventsink.go:59] Waiting for VPC (vpc-05614b92f1559e423) to become available
+eventsink.go:59] Waiting for state to become: [available]
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-private-1; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-1[awsx:x:ec2:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-public-1,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-public-1
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-0[awsx:x:ec2:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-private-0,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-private-0
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc[awsx:x:ec2:InternetGateway]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway::khatm-app-vpc,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway::khatm-app-vpc
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-0[awsx:x:ec2:NatGateway]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway::khatm-app-vpc-0,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway::khatm-app-vpc-0
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/eip:Eip, name=khatm-app-vpc-0
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-images[aws:ecr/repository:Repository]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:ecr/repository:Repository::khatm-images,khatm-images-05cd386,arn,,,arn:aws:ecr:us-east-1:952442618488:repository/khatm-images-05cd386,id,,,khatm-images-05cd386,imageScanningConfiguration,,,,,scanOnPush,,,,false,imageTagMutability,,,MUTABLE,name,,,khatm-images-05cd386,registryId,,,952442618488,repositoryUrl,,,952442618488.dkr.ecr.us-east-1.amazonaws.com/khatm-images-05cd386,tags,,,,,,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ecr/lifecyclePolicy:LifecyclePolicy, name=khatm-images
+eventsink.go:59] Reading ECR repository credentials 952442618488
+eventsink.go:59] Building container image at '"./app"'
+eventsink.go:59] Invoking function: tok=aws:ecr/getCredentials:getCredentials asynchronously
+eventsink.go:59] , obj={"registryId":"952442618488"}
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-0[awsx:x:ec2:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-public-0,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-public-0
+eventsink.go:59] RegisterResource RPC finished: resource:https-listener[awsx:lb:ApplicationListener]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener::https-listener,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener::https-listener
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:IngressSecurityGroupRule, name=https-listener-external-0-ingress
+eventsink.go:59] RegisterResource RPC prepared: t=awsx:x:ec2:EgressSecurityGroupRule, name=https-listener-external-0-egress
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[awsx:x:autoscaling:AutoScalingLaunchConfiguration]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration::api-scale,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration::api-scale
+eventsink.go:59] RegisterResource RPC prepared: t=aws:s3/bucket:Bucket, name=api-scale
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/role:Role, name=api-scale
+eventsink.go:59] Received ECR repository credentials {
+eventsink.go:59]   AuthorizationData: [{
+eventsink.go:59]       AuthorizationToken: "QVdTOmV5SndZWGxzYjJGa0lqb2lNRFJzU0RKUVJVWmtUMVpEZDFaRGNuRlpjMVJqU1c1cGJrWmpkV3hxVkdFd2NWQmthbmwzU0U1aFRrcHNSMDQ0UTB4U1ptSjROV05YV0cxblVEVnFXVEUwU213clFsWldWMmhzVTBsSWFrbE9XRVJRVDFOa2JtNXlUMDExWkZOM1lrWlNZVlF5ZG05WU5XUnpURzlFTVcxWE9Ya3lUbkI1V0ZsNE9HOHplVlF4UTB4RGIzZE5abTF2YTJ3dlpUVkRWRnBFTkUxMWN5dDVTRWx2Y2xOU1pUWmpURVp5Ym5OUlVHbzVUV1ZJVm5wMlduQTBOMGgwZGpWTlkydzVUMFk1WTJRMk1HMXFaV0puUkc5aU1qa3laRE50VWpaTWNXWlZOMUJRTTBwMVpVZG9lVlY2WXpkMFZqZHBUMWxNYzI5clVXTnZSRVphWXpoTk5WaFdZekJ0WWxwUlJFMHJjamRRVm1KU1lVaFVObkJ3VkRORk5tUlJObTVtY3poNVFYUnhSM3BhYVVFeGVIaFFWMVZSU21OS2IwZHZkRlF6WlVGelJEbGFjSHB5VFVKNE5rRnhTVzR3YVdaNWMwdGhjbTVQWlZOTlNETmllazVxVW1Ka05WaE5PV055ZEhnM2VrbDVUMmxHTjJkdVl6QllPRnB2YzI1MksxQlpTMFp0TkN0bmMzZExUVlJEWTNJM1pXRmlZWFZ2UkVrd2NuRlVZMHRJTm0xUlJqZDNWMUJUVVV4amNVcFdVa053WXpGQ2RVSXJSMlZZWjBjMVJsVlBPRXBKYTJwa2FqbElUSFZMVTNSa05IVjRSMDlZU1U5a1FtVk9jRkZFY0hSQ2RrdGpjbWsyWjBwMVVITkVjV3hMY1ZkcFJWVXlZelZHVld4emFXNTZhMEoxVGs4ek1VaDBkRU5PUVVkSWNtTnJRMVZpV0dGUFlXbDVTMmg1ZFRsQmVqQnFVbEJUYUVWS1JrNXFaMmt4VmpKQmVURTVRek12V2pGT1pVSlFXVk5PVFM5d1JsZEdSSFV6WWtaYVNsUlNkMjUxTlhGNWR6aHhORkJsY21wUGNtTkhaMGxHTkZsVFpFRkNWWG8wVm1ocFluVjFUa2RXUWl0YWVFMWFMMUZQYVhvcmFVMUdSR0ZVWmtWcGVXTnZZMmd2WVcxQ1JDOXJlbGhHU21sRVN6aHlOMFEzWWk4M2RFUkZPRzF4YzBVeVdVZzVkVzV6WTJaUFYyWk9RaXRFT1dKSVFqUXJlRmxQTlc0d00wNDVlVWg1ZW1Kc2J6YzVaMVZWT1ZkRVVqRXdOUzl1UmtFd2EwMU5VRXhPTDFoWE5HUlhWV0kxYm5wYVRFSXpjRkZTTVVGM1RFOXBTR3hTTVZCV2FYRXJSbHBGVEhSNGFWSjRka3h1V2twbmN6aFdUMUV2Uml0R1NWZERiVVZTWTNaWFZqUlpjVlE1ZUZGVFRIUkVTR2RWWVVSeVdsQmFkbVpvTUc1eVNXMVVZbXhOYXpkRFowazFaWGgxVlhOeFRITTVRazVTZEZOb2NXSmhkbVpSUXpaQk5HRTBPV3cwVEU4NVRrZFpaVGhXVDNsa2RrcHhkM0I1UVVGTldtdG9kVGRKYUc1NU9DOUdiREZTU1VWeFIyOHpRMmgwYjNGTWVUZEllRXhzUzJ4WmFEaHJOWEZCTUZOb1ltUTVWemcxZWtKVE5VUk1NRkpuZVhWUGNWcE5ZemxqVG1kU1pqUlRaSFpSWVRabmJHSlFXSFlyZVNzeWVWWTJkMVIyVVVNNFNVWjRWa1ZFYURsRVJUWXphVXBrV0M5Tk9YTXpXbTUyV2tOMmFHaHJaV1JDVnpSSlZUbGxjV1l3ZEZCMmRWUTVUME51SzFKRlVsTk1TMk56WVVrek0xQTRWMXBNTVVOcFFsRndUSE55VW01Q1pEQlJXVEppV1drd2RWZHpNVmMwYzBKeVUwaElMMW8xU0Zrck5WTlViSGhJUWxoaWJuRnhkRTEyYm0xTmIwTk5UbEpMSWl3aVpHRjBZV3RsZVNJNklrRlJSVUpCU0doM2JUQlpZVWxUU21WU2RFcHROVzR4UnpaMWNXVmxhMWgxYjFoWVVHVTFWVVpqWlRsU2NUZ3ZNVFIzUVVGQlNEUjNaa0ZaU2t0dldrbG9kbU5PUVZGalIyOUhPSGRpVVVsQ1FVUkNiMEpuYTNGb2EybEhPWGN3UWtKM1JYZElaMWxLV1VsYVNVRlhWVVJDUVVWMVRVSkZSVVJMY0dadVdXRlFTMjFKYkRSVFExRlRVVWxDUlVsQk4xRkRSRk5IVGxaV1VVaGhWa1pOUTFwUU9YRjZWRzlxWmpBNFRqSjVUa2g0V2xwNGIwdFRkVmhPY1V0cGIyWlJha3hFTVc5YVJYQnZkSEZEVWtKbWRDODJOV3BFUW1oSldFaGlMMkV3T0VrOUlpd2lkbVZ5YzJsdmJpSTZJaklpTENKMGVYQmxJam9pUkVGVVFWOUxSVmtpTENKbGVIQnBjbUYwYVc5dUlqb3hOVGc1TmpBME5EVXlmUT09",
+eventsink.go:59]       ExpiresAt: 2020-05-16 04:47:32 +0000 UTC,
+eventsink.go:59]       ProxyEndpoint: "https://952442618488.dkr.ecr.us-east-1.amazonaws.com"
+eventsink.go:59]     }]
+eventsink.go:59] }
+eventsink.go:59] Invoke RPC finished: tok=aws:ecr/getCredentials:getCredentials; err: null, resp: authorizationToken,,,QVdTOmV5SndZWGxzYjJGa0lqb2lNRFJzU0RKUVJVWmtUMVpEZDFaRGNuRlpjMVJqU1c1cGJrWmpkV3hxVkdFd2NWQmthbmwzU0U1aFRrcHNSMDQ0UTB4U1ptSjROV05YV0cxblVEVnFXVEUwU213clFsWldWMmhzVTBsSWFrbE9XRVJRVDFOa2JtNXlUMDExWkZOM1lrWlNZVlF5ZG05WU5XUnpURzlFTVcxWE9Ya3lUbkI1V0ZsNE9HOHplVlF4UTB4RGIzZE5abTF2YTJ3dlpUVkRWRnBFTkUxMWN5dDVTRWx2Y2xOU1pUWmpURVp5Ym5OUlVHbzVUV1ZJVm5wMlduQTBOMGgwZGpWTlkydzVUMFk1WTJRMk1HMXFaV0puUkc5aU1qa3laRE50VWpaTWNXWlZOMUJRTTBwMVpVZG9lVlY2WXpkMFZqZHBUMWxNYzI5clVXTnZSRVphWXpoTk5WaFdZekJ0WWxwUlJFMHJjamRRVm1KU1lVaFVObkJ3VkRORk5tUlJObTVtY3poNVFYUnhSM3BhYVVFeGVIaFFWMVZSU21OS2IwZHZkRlF6WlVGelJEbGFjSHB5VFVKNE5rRnhTVzR3YVdaNWMwdGhjbTVQWlZOTlNETmllazVxVW1Ka05WaE5PV055ZEhnM2VrbDVUMmxHTjJkdVl6QllPRnB2YzI1MksxQlpTMFp0TkN0bmMzZExUVlJEWTNJM1pXRmlZWFZ2UkVrd2NuRlVZMHRJTm0xUlJqZDNWMUJUVVV4amNVcFdVa053WXpGQ2RVSXJSMlZZWjBjMVJsVlBPRXBKYTJwa2FqbElUSFZMVTNSa05IVjRSMDlZU1U5a1FtVk9jRkZFY0hSQ2RrdGpjbWsyWjBwMVVITkVjV3hMY1ZkcFJWVXlZelZHVld4emFXNTZhMEoxVGs4ek1VaDBkRU5PUVVkSWNtTnJRMVZpV0dGUFlXbDVTMmg1ZFRsQmVqQnFVbEJUYUVWS1JrNXFaMmt4VmpKQmVURTVRek12V2pGT1pVSlFXVk5PVFM5d1JsZEdSSFV6WWtaYVNsUlNkMjUxTlhGNWR6aHhORkJsY21wUGNtTkhaMGxHTkZsVFpFRkNWWG8wVm1ocFluVjFUa2RXUWl0YWVFMWFMMUZQYVhvcmFVMUdSR0ZVWmtWcGVXTnZZMmd2WVcxQ1JDOXJlbGhHU21sRVN6aHlOMFEzWWk4M2RFUkZPRzF4YzBVeVdVZzVkVzV6WTJaUFYyWk9RaXRFT1dKSVFqUXJlRmxQTlc0d00wNDVlVWg1ZW1Kc2J6YzVaMVZWT1ZkRVVqRXdOUzl1UmtFd2EwMU5VRXhPTDFoWE5HUlhWV0kxYm5wYVRFSXpjRkZTTVVGM1RFOXBTR3hTTVZCV2FYRXJSbHBGVEhSNGFWSjRka3h1V2twbmN6aFdUMUV2Uml0R1NWZERiVVZTWTNaWFZqUlpjVlE1ZUZGVFRIUkVTR2RWWVVSeVdsQmFkbVpvTUc1eVNXMVVZbXhOYXpkRFowazFaWGgxVlhOeFRITTVRazVTZEZOb2NXSmhkbVpSUXpaQk5HRTBPV3cwVEU4NVRrZFpaVGhXVDNsa2RrcHhkM0I1UVVGTldtdG9kVGRKYUc1NU9DOUdiREZTU1VWeFIyOHpRMmgwYjNGTWVUZEllRXhzUzJ4WmFEaHJOWEZCTUZOb1ltUTVWemcxZWtKVE5VUk1NRkpuZVhWUGNWcE5ZemxqVG1kU1pqUlRaSFpSWVRabmJHSlFXSFlyZVNzeWVWWTJkMVIyVVVNNFNVWjRWa1ZFYURsRVJUWXphVXBrV0M5Tk9YTXpXbTUyV2tOMmFHaHJaV1JDVnpSSlZUbGxjV1l3ZEZCMmRWUTVUME51SzFKRlVsTk1TMk56WVVrek0xQTRWMXBNTVVOcFFsRndUSE55VW01Q1pEQlJXVEppV1drd2RWZHpNVmMwYzBKeVUwaElMMW8xU0Zrck5WTlViSGhJUWxoaWJuRnhkRTEyYm0xTmIwTk5UbEpMSWl3aVpHRjBZV3RsZVNJNklrRlJSVUpCU0doM2JUQlpZVWxUU21WU2RFcHROVzR4UnpaMWNXVmxhMWgxYjFoWVVHVTFWVVpqWlRsU2NUZ3ZNVFIzUVVGQlNEUjNaa0ZaU2t0dldrbG9kbU5PUVZGalIyOUhPSGRpVVVsQ1FVUkNiMEpuYTNGb2EybEhPWGN3UWtKM1JYZElaMWxLV1VsYVNVRlhWVVJDUVVWMVRVSkZSVVJMY0dadVdXRlFTMjFKYkRSVFExRlRVVWxDUlVsQk4xRkRSRk5IVGxaV1VVaGhWa1pOUTFwUU9YRjZWRzlxWmpBNFRqSjVUa2g0V2xwNGIwdFRkVmhPY1V0cGIyWlJha3hFTVc5YVJYQnZkSEZEVWtKbWRDODJOV3BFUW1oSldFaGlMMkV3T0VrOUlpd2lkbVZ5YzJsdmJpSTZJaklpTENKMGVYQmxJam9pUkVGVVFWOUxSVmtpTENKbGVIQnBjbUYwYVc5dUlqb3hOVGc1TmpBME5EVXlmUT09,expiresAt,,,2020-05-16T04:47:32Z,id,,,952442618488,proxyEndpoint,,,https://952442618488.dkr.ecr.us-east-1.amazonaws.com,registryId,,,952442618488,
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-public-1; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-private-0; err: null, resp:
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway::khatm-app-vpc; err: null, resp:
+eventsink.go:59] 'docker version' => {"Client":{"Platform":{"Name":"Docker Engine - Community"},"Version":"19.03.8","ApiVersion":"1.40","DefaultAPIVersion":"1.40","GitCommit":"afacb8b","GoVersion":"go1.12.17","Os":"darwin","Arch":"amd64","BuildTime":"Wed Mar 11 01:21:11 2020","Experimental":false},"Server":{"Platform":{"Name":"Docker Engine - Community"},"Components":[{"Name":"Engine","Version":"19.03.8","Details":{"ApiVersion":"1.40","Arch":"amd64","BuildTime":"Wed Mar 11 01:29:16 2020","Experimental":"false","GitCommit":"afacb8b","GoVersion":"go1.12.17","KernelVersion":"4.19.76-linuxkit","MinAPIVersion":"1.12","Os":"linux"}},{"Name":"containerd","Version":"v1.2.13","Details":{"GitCommit":"7ad184331fa3e55e52b890ea95e65ba581ae3429"}},{"Name":"runc","Version":"1.0.0-rc10","Details":{"GitCommit":"dc9208a3303feef5b3839f4323d9beb36df0a9dd"}},{"Name":"docker-init","Version":"0.18.0","Details":{"GitCommit":"fec3683"}}],"Version":"19.03.8","ApiVersion":"1.40","MinAPIVersion":"1.12","GitCommit":"afacb8b","GoVersion":"go1.12.17","Os":"linux","Arch":"amd64","KernelVersion":"4.19.76-linuxkit","BuildTime":"2020-03-11T01:29:16.000000000+00:00"}}
+eventsink.go:59] EIP create configuration: {
+eventsink.go:59]   Domain: "vpc"
+eventsink.go:59] }
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway::khatm-app-vpc-0; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:api-logs[aws:cloudwatch/logGroup:LogGroup]; err: null, resp: urn:pulumi:production::khatm::aws:cloudwatch/logGroup:LogGroup::api-logs,api-logs-a983bb6,arn,,,arn:aws:logs:us-east-1:952442618488:log-group:api-logs-a983bb6:*,id,,,api-logs-a983bb6,kmsKeyId,,,,name,,,api-logs-a983bb6,retentionInDays,,7,tags,,,,,,,
+eventsink.go:59] Reading CloudWatch Log Group: "api-orchestrator-b8645fb"
+eventsink.go:59] EIP Allocate: {
+eventsink.go:59]   AllocationId: "eipalloc-0318eb9f1688acb39",
+eventsink.go:59]   Domain: "vpc",
+eventsink.go:59]   NetworkBorderGroup: "us-east-1",
+eventsink.go:59]   PublicIp: "3.232.145.134",
+eventsink.go:59]   PublicIpv4Pool: "amazon"
+eventsink.go:59] }
+eventsink.go:59] EIP ID: eipalloc-0318eb9f1688acb39 (domain: vpc)
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet::khatm-app-vpc-public-0; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator-execution-9a42f520[aws:iam/rolePolicyAttachment:RolePolicyAttachment]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:iam/rolePolicyAttachment:RolePolicyAttachment::api-orchestrator-execution-9a42f520,api-orchestrator-execution-5022e89-20200515164734007200000003,id,,,api-orchestrator-execution-5022e89-20200515164734007200000003,policyArn,,,arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy,role,,,api-orchestrator-execution-5022e89,,
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator-task-fd1a00e5[aws:iam/rolePolicyAttachment:RolePolicyAttachment]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:iam/rolePolicyAttachment:RolePolicyAttachment::api-orchestrator-task-fd1a00e5,api-orchestrator-task-e4c01f5-20200515164733855200000002,id,,,api-orchestrator-task-e4c01f5-20200515164733855200000002,policyArn,,,arn:aws:iam::aws:policy/AmazonEC2ContainerServiceFullAccess,role,,,api-orchestrator-task-e4c01f5,,
+eventsink.go:59] Found Log Group: {
+eventsink.go:59]   Arn: "arn:aws:logs:us-east-1:952442618488:log-group:api-orchestrator-b8645fb:*",
+eventsink.go:59]   CreationTime: 1589561253819,
+eventsink.go:59]   LogGroupName: "api-orchestrator-b8645fb",
+eventsink.go:59]   MetricFilterCount: 0,
+eventsink.go:59]   RetentionInDays: 1,
+eventsink.go:59]   StoredBytes: 0
+eventsink.go:59] }
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator-task-32be53a2[aws:iam/rolePolicyAttachment:RolePolicyAttachment]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:iam/rolePolicyAttachment:RolePolicyAttachment::api-orchestrator-task-32be53a2,api-orchestrator-task-e4c01f5-20200515164733711000000001,id,,,api-orchestrator-task-e4c01f5-20200515164733711000000001,policyArn,,,arn:aws:iam::aws:policy/AWSLambdaFullAccess,role,,,api-orchestrator-task-e4c01f5,,
+eventsink.go:59] EIP describe configuration: {
+eventsink.go:59]   AllocationIds: ["eipalloc-0318eb9f1688acb39"]
+eventsink.go:59] } (domain: vpc)
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResource RPC finished: resource:https-listener-external-0-ingress[awsx:x:ec2:IngressSecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:IngressSecurityGroupRule::https-listener-external-0-ingress,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:IngressSecurityGroupRule::https-listener-external-0-ingress
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener::https-listener; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-images[aws:ecr/lifecyclePolicy:LifecyclePolicy]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:ecr/lifecyclePolicy:LifecyclePolicy::khatm-images,khatm-images-05cd386,id,,,khatm-images-05cd386,policy,,,{"rules":[{"rulePriority":10,"description":"remove untagged images","selection":{"tagStatus":"untagged","countType":"imageCountMoreThan","countNumber":1},"action":{"type":"expire"}}]},registryId,,,952442618488,repository,,,khatm-images-05cd386,,
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration::api-scale; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator[aws:cloudwatch/logGroup:LogGroup]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:cloudwatch/logGroup:LogGroup::api-orchestrator,api-orchestrator-b8645fb,arn,,,arn:aws:logs:us-east-1:952442618488:log-group:api-orchestrator-b8645fb:*,id,,,api-orchestrator-b8645fb,kmsKeyId,,,,name,,,api-orchestrator-b8645fb,retentionInDays,,1,tags,,,,,,,
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:IngressSecurityGroupRule::https-listener-external-0-ingress; err: null, resp:
+eventsink.go:59] RegisterResource RPC finished: resource:https-listener-external-0-egress[awsx:x:ec2:EgressSecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:EgressSecurityGroupRule::https-listener-external-0-egress,,,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:EgressSecurityGroupRule::https-listener-external-0-egress
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-0[aws:ec2/eip:Eip]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway$aws:ec2/eip:Eip::khatm-app-vpc-0,eipalloc-0318eb9f1688acb39,associationId,,,,domain,,,vpc,id,,,eipalloc-0318eb9f1688acb39,instance,,,,networkInterface,,,,privateIp,,,,publicDns,,,ec2-3-232-145-134.compute-1.amazonaws.com,publicIp,,,3.232.145.134,publicIpv4Pool,,,amazon,tags,,,,,Name,,,khatm-app-vpc-0,vpc,,,,true,,
+eventsink.go:59] S3 bucket create: api-scale-3204a2b
+eventsink.go:59] S3 bucket api-scale-3204a2b has canned ACL private
+eventsink.go:59] S3 bucket create: api-scale-3204a2b, using region: us-east-1
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Trying to create new S3 bucket: "api-scale-3204a2b"
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:EgressSecurityGroupRule::https-listener-external-0-egress; err: null, resp:
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[aws:iam/role:Role]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration$aws:iam/role:Role::api-scale,api-scale-12fce9a,arn,,,arn:aws:iam::952442618488:role/api-scale-12fce9a,assumeRolePolicy,,,{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"ec2.amazonaws.com"},"Action":"sts:AssumeRole"}]},createDate,,,2020-05-15T16:47:36Z,description,,,,forceDetachPolicies,,,,false,id,,,api-scale-12fce9a,maxSessionDuration,,3600,name,,,api-scale-12fce9a,path,,,/,tags,,,,,,uniqueId,,,AROA53QQBAJ4CK6QD2PVV,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-scale-5e4162cd
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/rolePolicyAttachment:RolePolicyAttachment, name=api-scale-efc8f10d
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc[aws:ec2/vpc:Vpc]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$aws:ec2/vpc:Vpc::khatm-app-vpc,vpc-05614b92f1559e423,__meta,,,{"schema_version":"1"},arn,,,arn:aws:ec2:us-east-1:952442618488:vpc/vpc-05614b92f1559e423,assignGeneratedIpv6CidrBlock,,,,false,cidrBlock,,,10.0.0.0/16,defaultNetworkAclId,,,acl-01309b80c593c0ff4,defaultRouteTableId,,,rtb-0b9307beb2f844bf0,defaultSecurityGroupId,,,sg-0134f5dab8730826c,dhcpOptionsId,,,dopt-b0c22eca,enableClassiclink,,,,false,enableClassiclinkDnsSupport,,,,false,enableDnsHostnames,,,,true,enableDnsSupport,,,,true,id,,,vpc-05614b92f1559e423,instanceTenancy,,,default,ipv6AssociationId,,,,ipv6CidrBlock,,,,mainRouteTableId,,,rtb-0b9307beb2f844bf0,ownerId,,,952442618488,tags,,,,,,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/internetGateway:InternetGateway, name=khatm-app-vpc
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroup:SecurityGroup, name=khatm-app-lb-sg
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroup:SecurityGroup, name=khatm-app-app-sg
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-public-0
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-public-1
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-private-0
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTable:RouteTable, name=khatm-app-vpc-private-1
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-public-0
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-public-1
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-private-0
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/subnet:Subnet, name=khatm-app-vpc-private-1
+eventsink.go:59] RegisterResource RPC prepared: t=aws:lb/targetGroup:TargetGroup, name=http-target
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RouteTable create config: {
+eventsink.go:59]   VpcId: "vpc-05614b92f1559e423"
+eventsink.go:59] }
+eventsink.go:59] RouteTable create config: {
+eventsink.go:59]   VpcId: "vpc-05614b92f1559e423"
+eventsink.go:59] }
+eventsink.go:59] S3 bucket: api-scale-3204a2b, read ACL grants policy: {
+eventsink.go:59]   Grants: [{
+eventsink.go:59]       Grantee: {
+eventsink.go:59]         DisplayName: "admin",
+eventsink.go:59]         ID: "3ecde0889e0be1d744a8f4a5e11b3633f6dc673277ecbb96878f2f16ebebff7b",
+eventsink.go:59]         Type: "CanonicalUser"
+eventsink.go:59]       },
+eventsink.go:59]       Permission: "FULL_CONTROL"
+eventsink.go:59]     }],
+eventsink.go:59]   Owner: {
+eventsink.go:59]     DisplayName: "admin",
+eventsink.go:59]     ID: "3ecde0889e0be1d744a8f4a5e11b3633f6dc673277ecbb96878f2f16ebebff7b"
+eventsink.go:59]   }
+eventsink.go:59] }
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Route Table ID: rtb-090842c720a6f6ed4
+eventsink.go:59] Waiting for route table (rtb-090842c720a6f6ed4) to become available
+eventsink.go:59] Waiting for state to become: [ready]
+eventsink.go:59] Subnet ID: subnet-023b4f783b316ee0f
+eventsink.go:59] Waiting for subnet (subnet-023b4f783b316ee0f) to become available
+eventsink.go:59] Waiting for state to become: [available]
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Security Group create configuration: {
+eventsink.go:59]   Description: "Managed by Pulumi",
+eventsink.go:59]   GroupName: "khatm-app-app-sg-48023c9",
+eventsink.go:59]   VpcId: "vpc-05614b92f1559e423"
+eventsink.go:59] }
+eventsink.go:59] Route Table ID: rtb-047bc01beb52e64c2
+eventsink.go:59] Waiting for route table (rtb-047bc01beb52e64c2) to become available
+eventsink.go:59] Waiting for state to become: [ready]
+eventsink.go:59] Subnet ID: subnet-0d77706e6075f470a
+eventsink.go:59] Waiting for subnet (subnet-0d77706e6075f470a) to become available
+eventsink.go:59] RouteTable create config: {
+eventsink.go:59]   VpcId: "vpc-05614b92f1559e423"
+eventsink.go:59] }
+eventsink.go:59] Waiting for state to become: [available]
+eventsink.go:59] Subnet ID: subnet-0ae6b2f2df0813293
+eventsink.go:59] Waiting for subnet (subnet-0ae6b2f2df0813293) to become available
+eventsink.go:59] Waiting for state to become: [available]
+eventsink.go:59] Security Group create configuration: {
+eventsink.go:59]   Description: "Managed by Pulumi",
+eventsink.go:59]   GroupName: "khatm-app-lb-sg-aa454a0",
+eventsink.go:59]   VpcId: "vpc-05614b92f1559e423"
+eventsink.go:59] }
+eventsink.go:59] Subnet ID: subnet-0d50c83ebaf57cfce
+eventsink.go:59] Waiting for subnet (subnet-0d50c83ebaf57cfce) to become available
+eventsink.go:59] Waiting for state to become: [available]
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Creating internet gateway
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Security Group ID: sg-07d57c033b1495bd5
+eventsink.go:59] Waiting for Security Group (sg-07d57c033b1495bd5) to exist
+eventsink.go:59] Waiting for state to become: [exists]
+eventsink.go:59] RouteTable create config: {
+eventsink.go:59]   VpcId: "vpc-05614b92f1559e423"
+eventsink.go:59] }
+eventsink.go:59] Route Table ID: rtb-072d97cfde6c31b3b
+eventsink.go:59] Waiting for route table (rtb-072d97cfde6c31b3b) to become available
+eventsink.go:59] Waiting for state to become: [ready]
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale-5e4162cd[aws:iam/rolePolicyAttachment:RolePolicyAttachment]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration$aws:iam/rolePolicyAttachment:RolePolicyAttachment::api-scale-5e4162cd,api-scale-12fce9a-20200515164738375300000004,id,,,api-scale-12fce9a-20200515164738375300000004,policyArn,,,arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role,role,,,api-scale-12fce9a,,
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Security Group ID: sg-08f8e94da05748bb0
+eventsink.go:59] Waiting for Security Group (sg-08f8e94da05748bb0) to exist
+eventsink.go:59] Waiting for state to become: [exists]
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale-efc8f10d[aws:iam/rolePolicyAttachment:RolePolicyAttachment]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration$aws:iam/rolePolicyAttachment:RolePolicyAttachment::api-scale-efc8f10d,api-scale-12fce9a-20200515164738512000000005,id,,,api-scale-12fce9a-20200515164738512000000005,policyArn,,,arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess,role,,,api-scale-12fce9a,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:iam/instanceProfile:InstanceProfile, name=api-scale
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-0[aws:ec2/routeTable:RouteTable]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::khatm-app-vpc-public-0,rtb-090842c720a6f6ed4,id,,,rtb-090842c720a6f6ed4,ownerId,,,952442618488,propagatingVgws,,,,,,,routes,,,,,,,tags,,,,,,vpcId,,,vpc-05614b92f1559e423,,
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Revoking default egress rule for Security Group for sg-07d57c033b1495bd5
+eventsink.go:59] Route Table ID: rtb-0379c21bd3e8f867d
+eventsink.go:59] Waiting for route table (rtb-0379c21bd3e8f867d) to become available
+eventsink.go:59] Waiting for state to become: [ready]
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-1[aws:ec2/routeTable:RouteTable]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::khatm-app-vpc-public-1,rtb-047bc01beb52e64c2,id,,,rtb-047bc01beb52e64c2,ownerId,,,952442618488,propagatingVgws,,,,,,,routes,,,,,,,tags,,,,,,vpcId,,,vpc-05614b92f1559e423,,
+eventsink.go:59] Revoking default egress rule for Security Group for sg-08f8e94da05748bb0
+eventsink.go:59] Attaching Internet Gateway 'igw-057bd092a10f61a57' to VPC 'vpc-05614b92f1559e423'
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Revoking default IPv6 egress rule for Security Group for sg-07d57c033b1495bd5
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-0[aws:ec2/subnet:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::khatm-app-vpc-private-0,subnet-023b4f783b316ee0f,__meta,,,{"schema_version":"1"},arn,,,arn:aws:ec2:us-east-1:952442618488:subnet/subnet-023b4f783b316ee0f,assignIpv6AddressOnCreation,,,,false,availabilityZone,,,us-east-1a,availabilityZoneId,,,use1-az1,cidrBlock,,,10.0.128.0/18,id,,,subnet-023b4f783b316ee0f,ipv6CidrBlock,,,,ipv6CidrBlockAssociationId,,,,mapPublicIpOnLaunch,,,,false,outpostArn,,,,ownerId,,,952442618488,tags,,,,,Name,,,khatm-app-vpc-private-0,type,,,private,vpcId,,,vpc-05614b92f1559e423,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-1[aws:ec2/routeTable:RouteTable]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::khatm-app-vpc-private-1,rtb-072d97cfde6c31b3b,id,,,rtb-072d97cfde6c31b3b,ownerId,,,952442618488,propagatingVgws,,,,,,,routes,,,,,,,tags,,,,,,vpcId,,,vpc-05614b92f1559e423,,
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Waiting for internet gateway (igw-057bd092a10f61a57) to attach
+eventsink.go:59] Waiting for state to become: [available]
+eventsink.go:59] Revoking default IPv6 egress rule for Security Group for sg-08f8e94da05748bb0
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-0[aws:ec2/routeTable:RouteTable]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTable:RouteTable::khatm-app-vpc-private-0,rtb-0379c21bd3e8f867d,id,,,rtb-0379c21bd3e8f867d,ownerId,,,952442618488,propagatingVgws,,,,,,,routes,,,,,,,tags,,,,,,vpcId,,,vpc-05614b92f1559e423,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-private-0
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-1[aws:ec2/subnet:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::khatm-app-vpc-private-1,subnet-0d50c83ebaf57cfce,__meta,,,{"schema_version":"1"},arn,,,arn:aws:ec2:us-east-1:952442618488:subnet/subnet-0d50c83ebaf57cfce,assignIpv6AddressOnCreation,,,,false,availabilityZone,,,us-east-1b,availabilityZoneId,,,use1-az2,cidrBlock,,,10.0.192.0/18,id,,,subnet-0d50c83ebaf57cfce,ipv6CidrBlock,,,,ipv6CidrBlockAssociationId,,,,mapPublicIpOnLaunch,,,,false,outpostArn,,,,ownerId,,,952442618488,tags,,,,,Name,,,khatm-app-vpc-private-1,type,,,private,vpcId,,,vpc-05614b92f1559e423,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-private-1
+eventsink.go:59] Creating route table association: subnet-023b4f783b316ee0f => rtb-0379c21bd3e8f867d
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Creating route table association: subnet-0d50c83ebaf57cfce => rtb-072d97cfde6c31b3b
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Waiting for Security Group (sg-08f8e94da05748bb0) to exist
+eventsink.go:59] Waiting for state to become: [exists]
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[aws:iam/instanceProfile:InstanceProfile]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration$aws:iam/instanceProfile:InstanceProfile::api-scale,api-scale-202570a,arn,,,arn:aws:iam::952442618488:instance-profile/api-scale-202570a,createDate,,,2020-05-15T16:47:40Z,id,,,api-scale-202570a,name,,,api-scale-202570a,path,,,/,role,,,api-scale-12fce9a,roles,,,,,,,uniqueId,,,AIPA53QQBAJ4L7CDTMR3C,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-0[aws:ec2/subnet:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::khatm-app-vpc-public-0,subnet-0d77706e6075f470a,__meta,,,{"schema_version":"1"},arn,,,arn:aws:ec2:us-east-1:952442618488:subnet/subnet-0d77706e6075f470a,assignIpv6AddressOnCreation,,,,false,availabilityZone,,,us-east-1a,availabilityZoneId,,,use1-az1,cidrBlock,,,10.0.0.0/18,id,,,subnet-0d77706e6075f470a,ipv6CidrBlock,,,,ipv6CidrBlockAssociationId,,,,mapPublicIpOnLaunch,,,,true,outpostArn,,,,ownerId,,,952442618488,tags,,,,,Name,,,khatm-app-vpc-public-0,type,,,public,vpcId,,,vpc-05614b92f1559e423,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-public-0
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-1[aws:ec2/subnet:Subnet]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/subnet:Subnet::khatm-app-vpc-public-1,subnet-0ae6b2f2df0813293,__meta,,,{"schema_version":"1"},arn,,,arn:aws:ec2:us-east-1:952442618488:subnet/subnet-0ae6b2f2df0813293,assignIpv6AddressOnCreation,,,,false,availabilityZone,,,us-east-1b,availabilityZoneId,,,use1-az2,cidrBlock,,,10.0.64.0/18,id,,,subnet-0ae6b2f2df0813293,ipv6CidrBlock,,,,ipv6CidrBlockAssociationId,,,,mapPublicIpOnLaunch,,,,true,outpostArn,,,,ownerId,,,952442618488,tags,,,,,Name,,,khatm-app-vpc-public-1,type,,,public,vpcId,,,vpc-05614b92f1559e423,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/routeTableAssociation:RouteTableAssociation, name=khatm-app-vpc-public-1
+eventsink.go:59] Creating route table association: subnet-0d77706e6075f470a => rtb-090842c720a6f6ed4
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Waiting for Security Group (sg-08f8e94da05748bb0) to exist
+eventsink.go:59] Waiting for state to become: [exists]
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-0[aws:ec2/routeTableAssociation:RouteTableAssociation]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::khatm-app-vpc-private-0,rtbassoc-0b8eec7add344d2cb,id,,,rtbassoc-0b8eec7add344d2cb,routeTableId,,,rtb-0379c21bd3e8f867d,subnetId,,,subnet-023b4f783b316ee0f,,
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc[aws:ec2/internetGateway:InternetGateway]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:InternetGateway$aws:ec2/internetGateway:InternetGateway::khatm-app-vpc,igw-057bd092a10f61a57,id,,,igw-057bd092a10f61a57,ownerId,,,952442618488,tags,,,,,,vpcId,,,vpc-05614b92f1559e423,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/route:Route, name=khatm-app-vpc-public-0-ig
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/route:Route, name=khatm-app-vpc-public-1-ig
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-1[aws:ec2/routeTableAssociation:RouteTableAssociation]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::khatm-app-vpc-private-1,rtbassoc-0dc95016f787ec9d7,id,,,rtbassoc-0dc95016f787ec9d7,routeTableId,,,rtb-072d97cfde6c31b3b,subnetId,,,subnet-0d50c83ebaf57cfce,,
+eventsink.go:59] Creating route table association: subnet-0ae6b2f2df0813293 => rtb-047bc01beb52e64c2
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-app-sg[aws:ec2/securityGroup:SecurityGroup]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$aws:ec2/securityGroup:SecurityGroup::khatm-app-app-sg,sg-07d57c033b1495bd5,__meta,,,{"schema_version":"1"},arn,,,arn:aws:ec2:us-east-1:952442618488:security-group/sg-07d57c033b1495bd5,description,,,Managed by Pulumi,egress,,,,,,,id,,,sg-07d57c033b1495bd5,ingress,,,,,,,name,,,khatm-app-app-sg-48023c9,ownerId,,,952442618488,revokeRulesOnDelete,,,,false,tags,,,,,,vpcId,,,vpc-05614b92f1559e423,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=all-out
+eventsink.go:59] Route create config: {
+eventsink.go:59]   DestinationCidrBlock: "0.0.0.0/0",
+eventsink.go:59]   GatewayId: "igw-057bd092a10f61a57",
+eventsink.go:59]   RouteTableId: "rtb-090842c720a6f6ed4"
+eventsink.go:59] }
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Association ID: rtbassoc-0ad0d3211a53c6827
+eventsink.go:59] Route create config: {
+eventsink.go:59]   DestinationCidrBlock: "0.0.0.0/0",
+eventsink.go:59]   GatewayId: "igw-057bd092a10f61a57",
+eventsink.go:59]   RouteTableId: "rtb-047bc01beb52e64c2"
+eventsink.go:59] }
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-lb-sg[aws:ec2/securityGroup:SecurityGroup]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$aws:ec2/securityGroup:SecurityGroup::khatm-app-lb-sg,sg-08f8e94da05748bb0,__meta,,,{"schema_version":"1"},arn,,,arn:aws:ec2:us-east-1:952442618488:security-group/sg-08f8e94da05748bb0,description,,,Managed by Pulumi,egress,,,,,,,id,,,sg-08f8e94da05748bb0,ingress,,,,,,,name,,,khatm-app-lb-sg-aa454a0,ownerId,,,952442618488,revokeRulesOnDelete,,,,false,tags,,,,,,vpcId,,,vpc-05614b92f1559e423,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=http-out
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=lb-sg-in
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=https-listener-external-0-ingress
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/securityGroupRule:SecurityGroupRule, name=https-listener-external-0-egress
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-0[aws:ec2/routeTableAssociation:RouteTableAssociation]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::khatm-app-vpc-public-0,rtbassoc-0f53a0cc8345abcde,id,,,rtbassoc-0f53a0cc8345abcde,routeTableId,,,rtb-090842c720a6f6ed4,subnetId,,,subnet-0d77706e6075f470a,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/natGateway:NatGateway, name=khatm-app-vpc-0
+eventsink.go:59] Locking "sg-07d57c033b1495bd5"
+eventsink.go:59] Locked "sg-07d57c033b1495bd5"
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-1[aws:ec2/routeTableAssociation:RouteTableAssociation]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/routeTableAssociation:RouteTableAssociation::khatm-app-vpc-public-1,rtbassoc-0ad0d3211a53c6827,id,,,rtbassoc-0ad0d3211a53c6827,routeTableId,,,rtb-047bc01beb52e64c2,subnetId,,,subnet-0ae6b2f2df0813293,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:lb/loadBalancer:LoadBalancer, name=api-alb
+eventsink.go:59] Locking "sg-08f8e94da05748bb0"
+eventsink.go:59] Locked "sg-08f8e94da05748bb0"
+eventsink.go:59] Locking "sg-08f8e94da05748bb0"
+eventsink.go:59] Reading ECS Cluster: {
+eventsink.go:59]   Clusters: ["arn:aws:ecs:us-east-1:952442618488:cluster/api-cluster-ae02d95"],
+eventsink.go:59]   Include: ["TAGS"]
+eventsink.go:59] }
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Authorizing security group sg-07d57c033b1495bd5 Egress rule: {
+eventsink.go:59]   IpProtocol: "-1",
+eventsink.go:59]   IpRanges: [{
+eventsink.go:59]       CidrIp: "0.0.0.0/0",
+eventsink.go:59]       Description: "allow all http out"
+eventsink.go:59]     }]
+eventsink.go:59] }
+eventsink.go:59] Locking "sg-08f8e94da05748bb0"
+eventsink.go:59] Locking "sg-07d57c033b1495bd5"
+eventsink.go:59] Authorizing security group sg-08f8e94da05748bb0 Ingress rule: {
+eventsink.go:59]   FromPort: 443,
+eventsink.go:59]   IpProtocol: "tcp",
+eventsink.go:59]   IpRanges: [{
+eventsink.go:59]       CidrIp: "0.0.0.0/0",
+eventsink.go:59]       Description: "Externally available at port 443"
+eventsink.go:59]     }],
+eventsink.go:59]   ToPort: 443
+eventsink.go:59] }
+eventsink.go:59] Create NAT Gateway: {
+eventsink.go:59]   AllocationId: "eipalloc-0318eb9f1688acb39",
+eventsink.go:59]   SubnetId: "subnet-0d77706e6075f470a"
+eventsink.go:59] }
+eventsink.go:59] Computed group rule ID sgrule-2063751994
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] ALB create configuration: {
+eventsink.go:59]   Name: "api-alb-096856a",
+eventsink.go:59]   SecurityGroups: ["sg-08f8e94da05748bb0"],
+eventsink.go:59]   Subnets: ["subnet-0ae6b2f2df0813293","subnet-0d77706e6075f470a"],
+eventsink.go:59]   Tags: [{
+eventsink.go:59]       Key: "Name",
+eventsink.go:59]       Value: "api-alb"
+eventsink.go:59]     }],
+eventsink.go:59]   Type: "application"
+eventsink.go:59] }
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-0-ig[aws:ec2/route:Route]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/route:Route::khatm-app-vpc-public-0-ig,r-rtb-090842c720a6f6ed41080289494,destinationCidrBlock,,,0.0.0.0/0,destinationPrefixListId,,,,egressOnlyGatewayId,,,,gatewayId,,,igw-057bd092a10f61a57,id,,,r-rtb-090842c720a6f6ed41080289494,instanceId,,,,instanceOwnerId,,,,natGatewayId,,,,networkInterfaceId,,,,origin,,,CreateRoute,routeTableId,,,rtb-090842c720a6f6ed4,state,,,active,transitGatewayId,,,,vpcPeeringConnectionId,,,,,
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[aws:s3/bucket:Bucket]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration$aws:s3/bucket:Bucket::api-scale,api-scale-3204a2b,accelerationStatus,,,,acl,,,private,arn,,,arn:aws:s3:::api-scale-3204a2b,bucket,,,api-scale-3204a2b,bucketDomainName,,,api-scale-3204a2b.s3.amazonaws.com,bucketRegionalDomainName,,,api-scale-3204a2b.s3.amazonaws.com,corsRules,,,,,,,forceDestroy,,,,false,grants,,,,,,,hostedZoneId,,,Z3AQBSTGFYJSTF,id,,,api-scale-3204a2b,lifecycleRules,,,,,,,loggings,,,,,,,objectLockConfiguration,0,region,,,us-east-1,replicationConfiguration,0,requestPayer,,,BucketOwner,serverSideEncryptionConfiguration,0,tags,,,,,,versioning,,,,,enabled,,,,false,mfaDelete,,,,false,website,0,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-public-1-ig[aws:ec2/route:Route]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/route:Route::khatm-app-vpc-public-1-ig,r-rtb-047bc01beb52e64c21080289494,destinationCidrBlock,,,0.0.0.0/0,destinationPrefixListId,,,,egressOnlyGatewayId,,,,gatewayId,,,igw-057bd092a10f61a57,id,,,r-rtb-047bc01beb52e64c21080289494,instanceId,,,,instanceOwnerId,,,,natGatewayId,,,,networkInterfaceId,,,,origin,,,CreateRoute,routeTableId,,,rtb-047bc01beb52e64c2,state,,,active,transitGatewayId,,,,vpcPeeringConnectionId,,,,,
+eventsink.go:59] Computed group rule ID sgrule-321932546
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] NAT Gateway ID: nat-0ed76984facee455b
+eventsink.go:59] Waiting for NAT Gateway (nat-0ed76984facee455b) to become available
+eventsink.go:59] Waiting for state to become: [available]
+eventsink.go:59] Found rule for Security Group Rule (sgrule-2063751994): {
+eventsink.go:59]   IpProtocol: "-1",
+eventsink.go:59]   IpRanges: [{
+eventsink.go:59]       CidrIp: "0.0.0.0/0",
+eventsink.go:59]       Description: "allow all http out"
+eventsink.go:59]     }]
+eventsink.go:59] }
+eventsink.go:59] Unlocking "sg-07d57c033b1495bd5"
+eventsink.go:59] Unlocked "sg-07d57c033b1495bd5"
+eventsink.go:59] Locked "sg-07d57c033b1495bd5"
+eventsink.go:59] RegisterResource RPC finished: resource:api-cluster[aws:ecs/cluster:Cluster]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$aws:ecs/cluster:Cluster::api-cluster,arn:aws:ecs:us-east-1:952442618488:cluster/api-cluster-ae02d95,arn,,,arn:aws:ecs:us-east-1:952442618488:cluster/api-cluster-ae02d95,capacityProviders,,,,,,,defaultCapacityProviderStrategies,,,,,,,id,,,arn:aws:ecs:us-east-1:952442618488:cluster/api-cluster-ae02d95,name,,,api-cluster-ae02d95,settings,,,,,,,,,,name,,,containerInsights,value,,,disabled,tags,,,,,,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/launchConfiguration:LaunchConfiguration, name=api-scale
+eventsink.go:59] RegisterResource RPC finished: resource:all-out[aws:ec2/securityGroupRule:SecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule$aws:ec2/securityGroupRule:SecurityGroupRule::all-out,sgrule-2063751994,__meta,,,{"schema_version":"2"},cidrBlocks,,,,,,,,0.0.0.0/0,description,,,allow all http out,fromPort,,0,id,,,sgrule-2063751994,protocol,,,-1,securityGroupId,,,sg-07d57c033b1495bd5,self,,,,false,toPort,,0,type,,,egress,,
+eventsink.go:59] Describing AMI "ami-040d7258a1baecb27" to get root block device name
+eventsink.go:59] Waiting 200ms before next try
+eventsink.go:59] Found rule for Security Group Rule (sgrule-321932546): {
+eventsink.go:59]   FromPort: 443,
+eventsink.go:59]   IpProtocol: "tcp",
+eventsink.go:59]   IpRanges: [{
+eventsink.go:59]       CidrIp: "0.0.0.0/0",
+eventsink.go:59]       Description: "Externally available at port 443"
+eventsink.go:59]     }],
+eventsink.go:59]   ToPort: 443
+eventsink.go:59] }
+eventsink.go:59] Unlocking "sg-08f8e94da05748bb0"
+eventsink.go:59] Unlocked "sg-08f8e94da05748bb0"
+eventsink.go:59] Locked "sg-08f8e94da05748bb0"
+eventsink.go:59] Authorizing security group sg-07d57c033b1495bd5 Ingress rule: {
+eventsink.go:59]   FromPort: 80,
+eventsink.go:59]   IpProtocol: "tcp",
+eventsink.go:59]   ToPort: 80,
+eventsink.go:59]   UserIdGroupPairs: [{
+eventsink.go:59]       Description: "allow http from lb in",
+eventsink.go:59]       GroupId: "sg-08f8e94da05748bb0",
+eventsink.go:59]       UserId: ""
+eventsink.go:59]     }]
+eventsink.go:59] }
+eventsink.go:59] RegisterResource RPC finished: resource:https-listener-external-0-ingress[aws:ec2/securityGroupRule:SecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:IngressSecurityGroupRule$aws:ec2/securityGroupRule:SecurityGroupRule::https-listener-external-0-ingress,sgrule-321932546,__meta,,,{"schema_version":"2"},cidrBlocks,,,,,,,,0.0.0.0/0,description,,,Externally available at port 443,fromPort,,443,id,,,sgrule-321932546,protocol,,,tcp,securityGroupId,,,sg-08f8e94da05748bb0,self,,,,false,toPort,,443,type,,,ingress,,
+eventsink.go:59] Describing AMI "ami-040d7258a1baecb27" to get root block device name
+eventsink.go:59] Computed group rule ID sgrule-1338656963
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Authorizing security group sg-08f8e94da05748bb0 Egress rule: {
+eventsink.go:59]   FromPort: 443,
+eventsink.go:59]   IpProtocol: "tcp",
+eventsink.go:59]   IpRanges: [{
+eventsink.go:59]       CidrIp: "0.0.0.0/0",
+eventsink.go:59]       Description: "Externally available at port 443"
+eventsink.go:59]     }],
+eventsink.go:59]   ToPort: 443
+eventsink.go:59] }
+eventsink.go:59] Waiting 400ms before next try
+eventsink.go:59] autoscaling create launch configuration: {
+eventsink.go:59]   BlockDeviceMappings: [{
+eventsink.go:59]       DeviceName: "/dev/xvdcz",
+eventsink.go:59]       Ebs: {
+eventsink.go:59]         DeleteOnTermination: true,
+eventsink.go:59]         VolumeSize: 50,
+eventsink.go:59]         VolumeType: "gp2"
+eventsink.go:59]       }
+eventsink.go:59]     },{
+eventsink.go:59]       DeviceName: "/dev/xvdb",
+eventsink.go:59]       Ebs: {
+eventsink.go:59]         DeleteOnTermination: true,
+eventsink.go:59]         VolumeSize: 5,
+eventsink.go:59]         VolumeType: "gp2"
+eventsink.go:59]       }
+eventsink.go:59]     },{
+eventsink.go:59]       DeviceName: "/dev/xvda",
+eventsink.go:59]       Ebs: {
+eventsink.go:59]         DeleteOnTermination: true,
+eventsink.go:59]         VolumeSize: 8,
+eventsink.go:59]         VolumeType: "gp2"
+eventsink.go:59]       }
+eventsink.go:59]     }],
+eventsink.go:59]   EbsOptimized: false,
+eventsink.go:59]   IamInstanceProfile: "api-scale-202570a",
+eventsink.go:59]   ImageId: "ami-040d7258a1baecb27",
+eventsink.go:59]   InstanceMonitoring: {
+eventsink.go:59]     Enabled: true
+eventsink.go:59]   },
+eventsink.go:59]   InstanceType: "t2.nano",
+eventsink.go:59]   LaunchConfigurationName: "api-scale-89cb5e3",
+eventsink.go:59]   PlacementTenancy: "default",
+eventsink.go:59]   SecurityGroups: ["sg-07d57c033b1495bd5"],
+eventsink.go:59]   UserData: "I2Nsb3VkLWNvbmZpZwogICAgICAgIHJlcG9fdXBncmFkZV9leGNsdWRlOgogICAgICAgICAgICAtIGtlcm5lbCoKICAgICAgICBwYWNrYWdlczoKICAgICAgICAgICAgLSBhd3MtY2ZuLWJvb3RzdHJhcAogICAgICAgICAgICAtIGF3cy1jbGkKICAgICAgICAgICAgLSBuZnMtdXRpbHMKICAgICAgICBtb3VudHM6CiAgICAgICAgICAgIC0gWycvZGV2L3h2ZGInLCAnbm9uZScsICdzd2FwJywgJ3N3JywgJzAnLCAnMCddCiAgICAgICAgYm9vdGNtZDoKICAgICAgICAgICAgLSBta3N3YXAgL2Rldi94dmRiCiAgICAgICAgICAgIC0gc3dhcG9uIC9kZXYveHZkYgogICAgICAgICAgICAtIGVjaG8gRUNTX0VOR0lORV9BVVRIX1RZUEU9ZG9ja2VyID4+IC9ldGMvZWNzL2Vjcy5jb25maWcKICAgICAgICAgICAgLSBlY2hvIEVDU19DTFVTVEVSPSdhcm46YXdzOmVjczp1cy1lYXN0LTE6OTUyNDQyNjE4NDg4OmNsdXN0ZXIvYXBpLWNsdXN0ZXItYWUwMmQ5NScgPj4gL2V0Yy9lY3MvZWNzLmNvbmZpZwogICAgICAgIHJ1bmNtZDoKICAgICAgICAgICAgIyBTZXQgYW5kIHVzZSB2YXJpYWJsZXMgaW4gdGhlIHNhbWUgY29tbWFuZCwgc2luY2UgaXQncyBub3Qgb2J2aW91cyBpZgogICAgICAgICAgICAjIGRpZmZlcmVudCBjb21tYW5kcyB3aWxsIHJ1biBpbiBkaWZmZXJlbnQgc2hlbGxzLgogICAgICAgICAgICAtIHwKICAgICAgICAgICAgICAgICMgS25vY2sgb25lIGxldHRlciBvZmYgb2YgYXZhaWxhYmlsaXR5IHpvbmUgdG8gZ2V0IHJlZ2lvbi4KICAgICAgICAgICAgICAgIEFXU19BVkFJTEFCSUxJVFlfWk9ORT0kKGN1cmwgLXMgMTY5LjI1NC4xNjkuMjU0LzIwMTYtMDktMDIvbWV0YS1kYXRhL3BsYWNlbWVudC9hdmFpbGFiaWxpdHktem9uZSkKICAgICAgICAgICAgICAgIEFXU19SRUdJT049JChlY2hvICRBV1NfQVZBSUxBQklMSVRZX1pPTkUgfCBzZWQgJ3MvLiQvLycpCgoKICAgICAgICAgICAgICAgICMgRGlzYWJsZSBjb250YWluZXIgYWNjZXNzIHRvIEVDMiBtZXRhZGF0YSBpbnN0YW5jZQogICAgICAgICAgICAgICAgIyBTZWUgaHR0cDovL2RvY3MuYXdzLmFtYXpvbi5jb20vQW1hem9uRUNTL2xhdGVzdC9kZXZlbG9wZXJndWlkZS9pbnN0YW5jZV9JQU1fcm9sZS5odG1sCiAgICAgICAgICAgICAgICBpcHRhYmxlcyAtLWluc2VydCBGT1JXQVJEIDEgLS1pbi1pbnRlcmZhY2UgZG9ja2VyKyAtLWRlc3RpbmF0aW9uIDE2OS4yNTQuMTY5LjI1NC8zMiAtLWp1bXAgRFJPUAogICAgICAgICAgICAgICAgc2VydmljZSBpcHRhYmxlcyBzYXZlCgogICAgICAgICAgICAgICAgL29wdC9hd3MvYmluL2Nmbi1zaWduYWwgICAgICAgICAgICAgICAgICAgICAtLXJlZ2lvbiAiJHtBV1NfUkVHSU9OfSIgICAgICAgICAgICAgICAgICAgICAtLXN0YWNrICJhcGktc2NhbGUtMzIwNGEyYiIgICAgICAgICAgICAgICAgICAgICAtLXJlc291cmNlIEluc3RhbmNlcwogICAgICAgIA=="
+eventsink.go:59] }
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Found rule for Security Group Rule (sgrule-1338656963): {
+eventsink.go:59]   FromPort: 80,
+eventsink.go:59]   IpProtocol: "tcp",
+eventsink.go:59]   ToPort: 80,
+eventsink.go:59]   UserIdGroupPairs: [{
+eventsink.go:59]       Description: "allow http from lb in",
+eventsink.go:59]       GroupId: "sg-08f8e94da05748bb0",
+eventsink.go:59]       UserId: "952442618488"
+eventsink.go:59]     }]
+eventsink.go:59] }
+eventsink.go:59] Unlocking "sg-07d57c033b1495bd5"
+eventsink.go:59] Unlocked "sg-07d57c033b1495bd5"
+eventsink.go:59] Computed group rule ID sgrule-1443021134
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResource RPC finished: resource:lb-sg-in[aws:ec2/securityGroupRule:SecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:IngressSecurityGroupRule$aws:ec2/securityGroupRule:SecurityGroupRule::lb-sg-in,sgrule-1338656963,__meta,,,{"schema_version":"2"},description,,,allow http from lb in,fromPort,,80,id,,,sgrule-1338656963,protocol,,,tcp,securityGroupId,,,sg-07d57c033b1495bd5,self,,,,false,sourceSecurityGroupId,,,sg-08f8e94da05748bb0,toPort,,80,type,,,ingress,,
+eventsink.go:59] Waiting 500ms before next try
+eventsink.go:59] Waiting 800ms before next try
+eventsink.go:59] Found rule for Security Group Rule (sgrule-1443021134): {
+eventsink.go:59]   FromPort: 443,
+eventsink.go:59]   IpProtocol: "tcp",
+eventsink.go:59]   IpRanges: [{
+eventsink.go:59]       CidrIp: "0.0.0.0/0",
+eventsink.go:59]       Description: "Externally available at port 443"
+eventsink.go:59]     }],
+eventsink.go:59]   ToPort: 443
+eventsink.go:59] }
+eventsink.go:59] Unlocking "sg-08f8e94da05748bb0"
+eventsink.go:59] Unlocked "sg-08f8e94da05748bb0"
+eventsink.go:59] Locked "sg-08f8e94da05748bb0"
+eventsink.go:59] RegisterResource RPC finished: resource:https-listener-external-0-egress[aws:ec2/securityGroupRule:SecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$awsx:x:ec2:EgressSecurityGroupRule$aws:ec2/securityGroupRule:SecurityGroupRule::https-listener-external-0-egress,sgrule-1443021134,__meta,,,{"schema_version":"2"},cidrBlocks,,,,,,,,0.0.0.0/0,description,,,Externally available at port 443,fromPort,,443,id,,,sgrule-1443021134,protocol,,,tcp,securityGroupId,,,sg-08f8e94da05748bb0,self,,,,false,toPort,,443,type,,,egress,,
+eventsink.go:59] Authorizing security group sg-08f8e94da05748bb0 Egress rule: {
+eventsink.go:59]   FromPort: 80,
+eventsink.go:59]   IpProtocol: "tcp",
+eventsink.go:59]   IpRanges: [{
+eventsink.go:59]       CidrIp: "0.0.0.0/0",
+eventsink.go:59]       Description: "allow http out"
+eventsink.go:59]     }],
+eventsink.go:59]   ToPort: 80
+eventsink.go:59] }
+eventsink.go:59] RegisterResource RPC finished: resource:http-target[aws:lb/targetGroup:TargetGroup]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$aws:lb/targetGroup:TargetGroup::http-target,arn:aws:elasticloadbalancing:us-east-1:952442618488:targetgroup/http-target-6ca5930/968e760e775490a0,arn,,,arn:aws:elasticloadbalancing:us-east-1:952442618488:targetgroup/http-target-6ca5930/968e760e775490a0,arnSuffix,,,targetgroup/http-target-6ca5930/968e760e775490a0,deregistrationDelay,,300,healthCheck,,,,,enabled,,,,true,healthyThreshold,,5,interval,,30,matcher,,,200,path,,,/,port,,,traffic-port,protocol,,,HTTP,timeout,,5,unhealthyThreshold,,2,id,,,arn:aws:elasticloadbalancing:us-east-1:952442618488:targetgroup/http-target-6ca5930/968e760e775490a0,lambdaMultiValueHeadersEnabled,,,,false,loadBalancingAlgorithmType,,,round_robin,name,,,http-target-6ca5930,port,,80,protocol,,,HTTP,proxyProtocolV2,,,,false,slowStart,,0,stickiness,,,,,cookieDuration,,86400,enabled,,,,false,type,,,lb_cookie,tags,,,,,Name,,,http-target,targetType,,,ip,vpcId,,,vpc-05614b92f1559e423,,
+eventsink.go:59] Waiting 1s before next try
+eventsink.go:59] Computed group rule ID sgrule-641289879
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] LB ID: arn:aws:elasticloadbalancing:us-east-1:952442618488:loadbalancer/app/api-alb-096856a/954e0aba91ff0ca9
+eventsink.go:59] Waiting for state to become: [active]
+eventsink.go:59] Waiting 1.6s before next try
+eventsink.go:59] Found rule for Security Group Rule (sgrule-641289879): {
+eventsink.go:59]   FromPort: 80,
+eventsink.go:59]   IpProtocol: "tcp",
+eventsink.go:59]   IpRanges: [{
+eventsink.go:59]       CidrIp: "0.0.0.0/0",
+eventsink.go:59]       Description: "allow http out"
+eventsink.go:59]     }],
+eventsink.go:59]   ToPort: 80
+eventsink.go:59] }
+eventsink.go:59] Unlocking "sg-08f8e94da05748bb0"
+eventsink.go:59] Unlocked "sg-08f8e94da05748bb0"
+eventsink.go:59] RegisterResource RPC finished: resource:http-out[aws:ec2/securityGroupRule:SecurityGroupRule]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:SecurityGroup$awsx:x:ec2:EgressSecurityGroupRule$aws:ec2/securityGroupRule:SecurityGroupRule::http-out,sgrule-641289879,__meta,,,{"schema_version":"2"},cidrBlocks,,,,,,,,0.0.0.0/0,description,,,allow http out,fromPort,,80,id,,,sgrule-641289879,protocol,,,tcp,securityGroupId,,,sg-08f8e94da05748bb0,self,,,,false,toPort,,80,type,,,egress,,
+eventsink.go:59] launch configuration ID: api-scale-89cb5e3
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] launch configuration describe configuration: {
+eventsink.go:59]   LaunchConfigurationNames: ["api-scale-89cb5e3"]
+eventsink.go:59] }
+eventsink.go:59] launch configuration output: {
+eventsink.go:59]   BlockDeviceMappings: [{
+eventsink.go:59]       DeviceName: "/dev/xvdb",
+eventsink.go:59]       Ebs: {
+eventsink.go:59]         DeleteOnTermination: true,
+eventsink.go:59]         VolumeSize: 5,
+eventsink.go:59]         VolumeType: "gp2"
+eventsink.go:59]       }
+eventsink.go:59]     },{
+eventsink.go:59]       DeviceName: "/dev/xvdcz",
+eventsink.go:59]       Ebs: {
+eventsink.go:59]         DeleteOnTermination: true,
+eventsink.go:59]         VolumeSize: 50,
+eventsink.go:59]         VolumeType: "gp2"
+eventsink.go:59]       }
+eventsink.go:59]     },{
+eventsink.go:59]       DeviceName: "/dev/xvda",
+eventsink.go:59]       Ebs: {
+eventsink.go:59]         DeleteOnTermination: true,
+eventsink.go:59]         VolumeSize: 8,
+eventsink.go:59]         VolumeType: "gp2"
+eventsink.go:59]       }
+eventsink.go:59]     }],
+eventsink.go:59]   CreatedTime: 2020-05-15 16:47:49.028 +0000 UTC,
+eventsink.go:59]   EbsOptimized: false,
+eventsink.go:59]   IamInstanceProfile: "api-scale-202570a",
+eventsink.go:59]   ImageId: "ami-040d7258a1baecb27",
+eventsink.go:59]   InstanceMonitoring: {
+eventsink.go:59]     Enabled: true
+eventsink.go:59]   },
+eventsink.go:59]   InstanceType: "t2.nano",
+eventsink.go:59]   KernelId: "",
+eventsink.go:59]   KeyName: "",
+eventsink.go:59]   LaunchConfigurationARN: "arn:aws:autoscaling:us-east-1:952442618488:launchConfiguration:62883190-1568-4fe7-94e8-514955a34929:launchConfigurationName/api-scale-89cb5e3",
+eventsink.go:59]   LaunchConfigurationName: "api-scale-89cb5e3",
+eventsink.go:59]   PlacementTenancy: "default",
+eventsink.go:59]   RamdiskId: "",
+eventsink.go:59]   SecurityGroups: ["sg-07d57c033b1495bd5"],
+eventsink.go:59]   UserData: "I2Nsb3VkLWNvbmZpZwogICAgICAgIHJlcG9fdXBncmFkZV9leGNsdWRlOgogICAgICAgICAgICAtIGtlcm5lbCoKICAgICAgICBwYWNrYWdlczoKICAgICAgICAgICAgLSBhd3MtY2ZuLWJvb3RzdHJhcAogICAgICAgICAgICAtIGF3cy1jbGkKICAgICAgICAgICAgLSBuZnMtdXRpbHMKICAgICAgICBtb3VudHM6CiAgICAgICAgICAgIC0gWycvZGV2L3h2ZGInLCAnbm9uZScsICdzd2FwJywgJ3N3JywgJzAnLCAnMCddCiAgICAgICAgYm9vdGNtZDoKICAgICAgICAgICAgLSBta3N3YXAgL2Rldi94dmRiCiAgICAgICAgICAgIC0gc3dhcG9uIC9kZXYveHZkYgogICAgICAgICAgICAtIGVjaG8gRUNTX0VOR0lORV9BVVRIX1RZUEU9ZG9ja2VyID4+IC9ldGMvZWNzL2Vjcy5jb25maWcKICAgICAgICAgICAgLSBlY2hvIEVDU19DTFVTVEVSPSdhcm46YXdzOmVjczp1cy1lYXN0LTE6OTUyNDQyNjE4NDg4OmNsdXN0ZXIvYXBpLWNsdXN0ZXItYWUwMmQ5NScgPj4gL2V0Yy9lY3MvZWNzLmNvbmZpZwogICAgICAgIHJ1bmNtZDoKICAgICAgICAgICAgIyBTZXQgYW5kIHVzZSB2YXJpYWJsZXMgaW4gdGhlIHNhbWUgY29tbWFuZCwgc2luY2UgaXQncyBub3Qgb2J2aW91cyBpZgogICAgICAgICAgICAjIGRpZmZlcmVudCBjb21tYW5kcyB3aWxsIHJ1biBpbiBkaWZmZXJlbnQgc2hlbGxzLgogICAgICAgICAgICAtIHwKICAgICAgICAgICAgICAgICMgS25vY2sgb25lIGxldHRlciBvZmYgb2YgYXZhaWxhYmlsaXR5IHpvbmUgdG8gZ2V0IHJlZ2lvbi4KICAgICAgICAgICAgICAgIEFXU19BVkFJTEFCSUxJVFlfWk9ORT0kKGN1cmwgLXMgMTY5LjI1NC4xNjkuMjU0LzIwMTYtMDktMDIvbWV0YS1kYXRhL3BsYWNlbWVudC9hdmFpbGFiaWxpdHktem9uZSkKICAgICAgICAgICAgICAgIEFXU19SRUdJT049JChlY2hvICRBV1NfQVZBSUxBQklMSVRZX1pPTkUgfCBzZWQgJ3MvLiQvLycpCgoKICAgICAgICAgICAgICAgICMgRGlzYWJsZSBjb250YWluZXIgYWNjZXNzIHRvIEVDMiBtZXRhZGF0YSBpbnN0YW5jZQogICAgICAgICAgICAgICAgIyBTZWUgaHR0cDovL2RvY3MuYXdzLmFtYXpvbi5jb20vQW1hem9uRUNTL2xhdGVzdC9kZXZlbG9wZXJndWlkZS9pbnN0YW5jZV9JQU1fcm9sZS5odG1sCiAgICAgICAgICAgICAgICBpcHRhYmxlcyAtLWluc2VydCBGT1JXQVJEIDEgLS1pbi1pbnRlcmZhY2UgZG9ja2VyKyAtLWRlc3RpbmF0aW9uIDE2OS4yNTQuMTY5LjI1NC8zMiAtLWp1bXAgRFJPUAogICAgICAgICAgICAgICAgc2VydmljZSBpcHRhYmxlcyBzYXZlCgogICAgICAgICAgICAgICAgL29wdC9hd3MvYmluL2Nmbi1zaWduYWwgICAgICAgICAgICAgICAgICAgICAtLXJlZ2lvbiAiJHtBV1NfUkVHSU9OfSIgICAgICAgICAgICAgICAgICAgICAtLXN0YWNrICJhcGktc2NhbGUtMzIwNGEyYiIgICAgICAgICAgICAgICAgICAgICAtLXJlc291cmNlIEluc3RhbmNlcwogICAgICAgIA=="
+eventsink.go:59] }
+eventsink.go:59] Describing AMI "ami-040d7258a1baecb27" to get root block device name
+eventsink.go:59] Waiting 3.2s before next try
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[aws:ec2/launchConfiguration:LaunchConfiguration]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$awsx:x:autoscaling:AutoScalingLaunchConfiguration$aws:ec2/launchConfiguration:LaunchConfiguration::api-scale,api-scale-89cb5e3,arn,,,arn:aws:autoscaling:us-east-1:952442618488:launchConfiguration:62883190-1568-4fe7-94e8-514955a34929:launchConfigurationName/api-scale-89cb5e3,associatePublicIpAddress,,,,false,ebsBlockDevices,,,,,,,,,,deleteOnTermination,,,,true,deviceName,,,/dev/xvdcz,encrypted,,,,false,iops,,0,noDevice,,,,false,snapshotId,,,,volumeSize,,50,volumeType,,,gp2,,,,,deleteOnTermination,,,,true,deviceName,,,/dev/xvdb,encrypted,,,,false,iops,,0,noDevice,,,,false,snapshotId,,,,volumeSize,,5,volumeType,,,gp2,ebsOptimized,,,,false,enableMonitoring,,,,true,ephemeralBlockDevices,,,,,,,iamInstanceProfile,,,api-scale-202570a,id,,,api-scale-89cb5e3,imageId,,,ami-040d7258a1baecb27,instanceType,,,t2.nano,keyName,,,,name,,,api-scale-89cb5e3,placementTenancy,,,default,rootBlockDevice,,,,,deleteOnTermination,,,,true,encrypted,,,,false,iops,,0,volumeSize,,8,volumeType,,,gp2,securityGroups,,,,,,,,sg-07d57c033b1495bd5,spotPrice,,,,userData,,,cd7049465669126120a6800e45cd94264edd712c,vpcClassicLinkId,,,,vpcClassicLinkSecurityGroups,,,,,,,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:cloudformation/stack:Stack, name=api-scale
+eventsink.go:59] Creating CloudFormation Stack: {
+eventsink.go:59]   StackName: "api-scale-3204a2b",
+eventsink.go:59]   TemplateBody: "\n    AWSTemplateFormatVersion: '2010-09-09'\n    Outputs:\n        Instances:\n            Value: !Ref Instances\n    Resources:\n        Instances:\n            Type: AWS::AutoScaling::AutoScalingGroup\n            Properties:\n                Cooldown: 300\n                DesiredCapacity: 2\n                HealthCheckGracePeriod: 120\n                HealthCheckType: EC2\n                LaunchConfigurationName: \"api-scale-89cb5e3\"\n                MaxSize: 10\n                MetricsCollection:\n                -   Granularity: 1Minute\n                MinSize: 2\n                VPCZoneIdentifier: [\"subnet-0d77706e6075f470a\",\"subnet-0ae6b2f2df0813293\"]\n                Tags:\n                -   Key: Name\n                    Value: api-scale\n                    PropagateAtLaunch: true\n            CreationPolicy:\n                ResourceSignal:\n                    Count: 2\n                    Timeout: PT15M\n            UpdatePolicy:\n                AutoScalingRollingUpdate:\n                    MaxBatchSize: 1\n                    MinInstancesInService: 2\n                    PauseTime: PT15M\n                    SuspendProcesses:\n                    -   ScheduledActions\n                    WaitOnResourceSignals: true\n    "
+eventsink.go:59] }
+eventsink.go:59] Waiting for state to become: [CREATE_COMPLETE CREATE_FAILED DELETE_COMPLETE DELETE_FAILED ROLLBACK_COMPLETE ROLLBACK_FAILED]
+eventsink.go:59] Current CloudFormation stack status: "CREATE_IN_PROGRESS"
+eventsink.go:59] Waiting 1s before next try
+eventsink.go:59] Current CloudFormation stack status: "CREATE_IN_PROGRESS"
+eventsink.go:59] Waiting 2s before next try
+eventsink.go:59] Waiting 6.4s before next try
+eventsink.go:59] Current CloudFormation stack status: "CREATE_IN_PROGRESS"
+eventsink.go:59] Waiting 4s before next try
+eventsink.go:59] Current CloudFormation stack status: "CREATE_IN_PROGRESS"
+eventsink.go:59] Waiting 8s before next try
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Current CloudFormation stack status: "CREATE_IN_PROGRESS"
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59]     build complete: f86f3e0c-container (952442618488.dkr.ecr.us-east-1.amazonaws.com/khatm-images-05cd386:b4fc9cedae6c4764d0fbc64c53c55752e20c90aac21bfbd09819888410544d2c)
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] LB state: provisioning
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Current CloudFormation stack status: "CREATE_IN_PROGRESS"
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] LB state: provisioning
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Current CloudFormation stack status: "CREATE_IN_PROGRESS"
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Current CloudFormation stack status: "CREATE_IN_PROGRESS"
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] LB state: provisioning
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Current CloudFormation stack status: "CREATE_IN_PROGRESS"
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] LB state: provisioning
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Current CloudFormation stack status: "CREATE_IN_PROGRESS"
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] LB state: provisioning
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Current CloudFormation stack status: "CREATE_COMPLETE"
+eventsink.go:59] CloudFormation Stack "arn:aws:cloudformation:us-east-1:952442618488:stack/api-scale-3204a2b/d0788bf0-96cb-11ea-ade4-0e715b49d7c1" created
+eventsink.go:59] Received CloudFormation stack: {
+eventsink.go:59]   CreationTime: 2020-05-15 16:47:50.867 +0000 UTC,
+eventsink.go:59]   DisableRollback: false,
+eventsink.go:59]   DriftInformation: {
+eventsink.go:59]     StackDriftStatus: "NOT_CHECKED"
+eventsink.go:59]   },
+eventsink.go:59]   EnableTerminationProtection: false,
+eventsink.go:59]   Outputs: [{
+eventsink.go:59]       OutputKey: "Instances",
+eventsink.go:59]       OutputValue: "api-scale-3204a2b-Instances-147S7KUJEABBF"
+eventsink.go:59]     }],
+eventsink.go:59]   RollbackConfiguration: {
+eventsink.go:59]
+eventsink.go:59]   },
+eventsink.go:59]   StackId: "arn:aws:cloudformation:us-east-1:952442618488:stack/api-scale-3204a2b/d0788bf0-96cb-11ea-ade4-0e715b49d7c1",
+eventsink.go:59]   StackName: "api-scale-3204a2b",
+eventsink.go:59]   StackStatus: "CREATE_COMPLETE"
+eventsink.go:59] }
+eventsink.go:59] RegisterResource RPC finished: resource:api-scale[aws:cloudformation/stack:Stack]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$aws:cloudformation/stack:Stack::api-scale,arn:aws:cloudformation:us-east-1:952442618488:stack/api-scale-3204a2b/d0788bf0-96cb-11ea-ade4-0e715b49d7c1,disableRollback,,,,false,iamRoleArn,,,,id,,,arn:aws:cloudformation:us-east-1:952442618488:stack/api-scale-3204a2b/d0788bf0-96cb-11ea-ade4-0e715b49d7c1,name,,,api-scale-3204a2b,outputs,,,,,Instances,,,api-scale-3204a2b-Instances-147S7KUJEABBF,parameters,,,,,,tags,,,,,,templateBody,,,
+    AWSTemplateFormatVersion: '2010-09-09'
+    Outputs:
+        Instances:
+            Value: !Ref Instances
+    Resources:
+        Instances:
+            Type: AWS::AutoScaling::AutoScalingGroup
+            Properties:
+                Cooldown: 300
+                DesiredCapacity: 2
+                HealthCheckGracePeriod: 120
+                HealthCheckType: EC2
+                LaunchConfigurationName: "api-scale-89cb5e3"
+                MaxSize: 10
+                MetricsCollection:
+                -   Granularity: 1Minute
+                MinSize: 2
+                VPCZoneIdentifier: ["subnet-0d77706e6075f470a","subnet-0ae6b2f2df0813293"]
+                Tags:
+                -   Key: Name
+                    Value: api-scale
+                    PropagateAtLaunch: true
+            CreationPolicy:
+                ResourceSignal:
+                    Count: 2
+                    Timeout: PT15M
+            UpdatePolicy:
+                AutoScalingRollingUpdate:
+                    MaxBatchSize: 1
+                    MinInstancesInService: 2
+                    PauseTime: PT15M
+                    SuspendProcesses:
+                    -   ScheduledActions
+                    WaitOnResourceSignals: true
+    ,,
+eventsink.go:59] ReadResource RPC prepared: id=api-scale-3204a2b-Instances-147S7KUJEABBF, t=aws:autoscaling/group:Group, name=api-scale
+eventsink.go:59] AutoScaling Group describe configuration: {
+eventsink.go:59]   AutoScalingGroupNames: ["api-scale-3204a2b-Instances-147S7KUJEABBF"]
+eventsink.go:59] }
+eventsink.go:59] ReadResource RPC finished: resource:api-scale[aws:autoscaling/group:Group]#...; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:Cluster$awsx:x:autoscaling:AutoScalingGroup$aws:autoscaling/group:Group::api-scale,arn,,,arn:aws:autoscaling:us-east-1:952442618488:autoScalingGroup:55348119-5b54-4866-8886-708a3785bdd0:autoScalingGroupName/api-scale-3204a2b-Instances-147S7KUJEABBF,availabilityZones,,,,,,,,us-east-1b,,,us-east-1a,defaultCooldown,,300,desiredCapacity,,2,enabledMetrics,,,,,,,,GroupStandbyInstances,,,GroupTotalInstances,,,GroupTotalCapacity,,,GroupInServiceCapacity,,,GroupStandbyCapacity,,,GroupPendingInstances,,,GroupTerminatingInstances,,,GroupDesiredCapacity,,,GroupInServiceInstances,,,GroupTerminatingCapacity,,,GroupMinSize,,,GroupMaxSize,,,GroupPendingCapacity,healthCheckGracePeriod,,120,healthCheckType,,,EC2,id,,,api-scale-3204a2b-Instances-147S7KUJEABBF,launchConfiguration,,,api-scale-89cb5e3,launchTemplate,0,loadBalancers,,,,,,,maxInstanceLifetime,,0,maxSize,,10,metricsGranularity,,,1Minute,minSize,,2,mixedInstancesPolicy,0,name,,,api-scale-3204a2b-Instances-147S7KUJEABBF,placementGroup,0,protectFromScaleIn,,,,false,serviceLinkedRoleArn,,,arn:aws:iam::952442618488:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling,suspendedProcesses,,,,,,,tags,,,,,,,,,,key,,,Name,propagateAtLaunch,,,,true,value,,,api-scale,,,,,key,,,aws:cloudformation:stack-name,propagateAtLaunch,,,,true,value,,,api-scale-3204a2b,,,,,key,,,aws:cloudformation:logical-id,propagateAtLaunch,,,,true,value,,,Instances,,,,,key,,,aws:cloudformation:stack-id,propagateAtLaunch,,,,true,value,,,arn:aws:cloudformation:us-east-1:952442618488:stack/api-scale-3204a2b/d0788bf0-96cb-11ea-ade4-0e715b49d7c1,targetGroupArns,,,,,,,terminationPolicies,,,,,,,vpcZoneIdentifiers,,,,,,,,subnet-0ae6b2f2df0813293,,,subnet-0d77706e6075f470a
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-0[aws:ec2/natGateway:NatGateway]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:NatGateway$aws:ec2/natGateway:NatGateway::khatm-app-vpc-0,nat-0ed76984facee455b,allocationId,,,eipalloc-0318eb9f1688acb39,id,,,nat-0ed76984facee455b,networkInterfaceId,,,eni-03a393872b28f6373,privateIp,,,10.0.58.210,publicIp,,,3.232.145.134,subnetId,,,subnet-0d77706e6075f470a,tags,,,,,,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/route:Route, name=khatm-app-vpc-private-0-nat-0
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ec2/route:Route, name=khatm-app-vpc-private-1-nat-1
+eventsink.go:59] Route create config: {
+eventsink.go:59]   DestinationCidrBlock: "0.0.0.0/0",
+eventsink.go:59]   NatGatewayId: "nat-0ed76984facee455b",
+eventsink.go:59]   RouteTableId: "rtb-0379c21bd3e8f867d"
+eventsink.go:59] }
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Route create config: {
+eventsink.go:59]   DestinationCidrBlock: "0.0.0.0/0",
+eventsink.go:59]   NatGatewayId: "nat-0ed76984facee455b",
+eventsink.go:59]   RouteTableId: "rtb-072d97cfde6c31b3b"
+eventsink.go:59] }
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] LB state: provisioning
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-0-nat-0[aws:ec2/route:Route]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/route:Route::khatm-app-vpc-private-0-nat-0,r-rtb-0379c21bd3e8f867d1080289494,destinationCidrBlock,,,0.0.0.0/0,destinationPrefixListId,,,,egressOnlyGatewayId,,,,gatewayId,,,,id,,,r-rtb-0379c21bd3e8f867d1080289494,instanceId,,,,instanceOwnerId,,,,natGatewayId,,,nat-0ed76984facee455b,networkInterfaceId,,,,origin,,,CreateRoute,routeTableId,,,rtb-0379c21bd3e8f867d,state,,,active,transitGatewayId,,,,vpcPeeringConnectionId,,,,,
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-app-vpc-private-1-nat-1[aws:ec2/route:Route]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ec2:Vpc$awsx:x:ec2:Subnet$aws:ec2/route:Route::khatm-app-vpc-private-1-nat-1,r-rtb-072d97cfde6c31b3b1080289494,destinationCidrBlock,,,0.0.0.0/0,destinationPrefixListId,,,,egressOnlyGatewayId,,,,gatewayId,,,,id,,,r-rtb-072d97cfde6c31b3b1080289494,instanceId,,,,instanceOwnerId,,,,natGatewayId,,,nat-0ed76984facee455b,networkInterfaceId,,,,origin,,,CreateRoute,routeTableId,,,rtb-072d97cfde6c31b3b,state,,,active,transitGatewayId,,,,vpcPeeringConnectionId,,,,,
+eventsink.go:59] RegisterResource RPC finished: resource:api-alb[aws:lb/loadBalancer:LoadBalancer]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$aws:lb/loadBalancer:LoadBalancer::api-alb,arn:aws:elasticloadbalancing:us-east-1:952442618488:loadbalancer/app/api-alb-096856a/954e0aba91ff0ca9,accessLogs,,,,,bucket,,,,enabled,,,,false,prefix,,,,arn,,,arn:aws:elasticloadbalancing:us-east-1:952442618488:loadbalancer/app/api-alb-096856a/954e0aba91ff0ca9,arnSuffix,,,app/api-alb-096856a/954e0aba91ff0ca9,dnsName,,,api-alb-096856a-652080065.us-east-1.elb.amazonaws.com,dropInvalidHeaderFields,,,,false,enableDeletionProtection,,,,false,enableHttp2,,,,true,id,,,arn:aws:elasticloadbalancing:us-east-1:952442618488:loadbalancer/app/api-alb-096856a/954e0aba91ff0ca9,idleTimeout,,60,internal,,,,false,ipAddressType,,,ipv4,loadBalancerType,,,application,name,,,api-alb-096856a,securityGroups,,,,,,,,sg-08f8e94da05748bb0,subnetMappings,,,,,,,,,,allocationId,,,,subnetId,,,subnet-0ae6b2f2df0813293,,,,,allocationId,,,,subnetId,,,subnet-0d77706e6075f470a,subnets,,,,,,,,subnet-0ae6b2f2df0813293,,,subnet-0d77706e6075f470a,tags,,,,,Name,,,api-alb,vpcId,,,vpc-05614b92f1559e423,zoneId,,,Z35SXDOTRQ7X7K,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:lb/listener:Listener, name=https-listener
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Creating LB listener for ARN: arn:aws:elasticloadbalancing:us-east-1:952442618488:loadbalancer/app/api-alb-096856a/954e0aba91ff0ca9
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] RegisterResource RPC finished: resource:https-listener[aws:lb/listener:Listener]; err: null, resp: urn:pulumi:production::khatm::aws:lb:ApplicationLoadBalancer$awsx:lb:ApplicationTargetGroup$awsx:lb:ApplicationListener$aws:lb/listener:Listener::https-listener,arn:aws:elasticloadbalancing:us-east-1:952442618488:listener/app/api-alb-096856a/954e0aba91ff0ca9/172f3005d5f1389e,arn,,,arn:aws:elasticloadbalancing:us-east-1:952442618488:listener/app/api-alb-096856a/954e0aba91ff0ca9/172f3005d5f1389e,certificateArn,,,arn:aws:acm:us-east-1:952442618488:certificate/3fc83113-436f-4019-aedc-bc17a936c755,defaultActions,,,,,,,,,,authenticateCognito,0,authenticateOidc,0,fixedResponse,0,order,,1,redirect,0,targetGroupArn,,,arn:aws:elasticloadbalancing:us-east-1:952442618488:targetgroup/http-target-6ca5930/968e760e775490a0,type,,,forward,id,,,arn:aws:elasticloadbalancing:us-east-1:952442618488:listener/app/api-alb-096856a/954e0aba91ff0ca9/172f3005d5f1389e,loadBalancerArn,,,arn:aws:elasticloadbalancing:us-east-1:952442618488:loadbalancer/app/api-alb-096856a/954e0aba91ff0ca9,port,,443,protocol,,,HTTPS,sslPolicy,,,ELBSecurityPolicy-2016-08,,
+eventsink.go:59] RegisterResourceOutputs RPC prepared: urn=urn:pulumi:production::khatm::pulumi:pulumi:Stack::khatm-production
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ecs/taskDefinition:TaskDefinition, name=api-orchestrator
+eventsink.go:59] RegisterResource RPC prepared: t=cloudflare:index/record:Record, name=api-record
+eventsink.go:59] RegisterResourceOutputs RPC finished: urn=urn:pulumi:production::khatm::pulumi:pulumi:Stack::khatm-production; err: null, resp:
+eventsink.go:59] Registering ECS task definition: {
+eventsink.go:59]   ContainerDefinitions: [{
+eventsink.go:59]       Environment: [],
+eventsink.go:59]       Image: "952442618488.dkr.ecr.us-east-1.amazonaws.com/khatm-images-05cd386:b4fc9cedae6c4764d0fbc64c53c55752e20c90aac21bfbd09819888410544d2c",
+eventsink.go:59]       LogConfiguration: {
+eventsink.go:59]         LogDriver: "awslogs",
+eventsink.go:59]         Options: {
+eventsink.go:59]           awslogs-group: "api-orchestrator-b8645fb",
+eventsink.go:59]           awslogs-region: "us-east-1",
+eventsink.go:59]           awslogs-stream-prefix: "nginx"
+eventsink.go:59]         }
+eventsink.go:59]       },
+eventsink.go:59]       Memory: 128,
+eventsink.go:59]       Name: "nginx",
+eventsink.go:59]       PortMappings: [{
+eventsink.go:59]           ContainerPort: 80,
+eventsink.go:59]           HostPort: 80
+eventsink.go:59]         }]
+eventsink.go:59]     }],
+eventsink.go:59]   ExecutionRoleArn: "arn:aws:iam::952442618488:role/api-orchestrator-execution-5022e89",
+eventsink.go:59]   Family: "api-orchestrator-06f404f5",
+eventsink.go:59]   NetworkMode: "awsvpc",
+eventsink.go:59]   RequiresCompatibilities: ["EC2"],
+eventsink.go:59]   TaskRoleArn: "arn:aws:iam::952442618488:role/api-orchestrator-task-e4c01f5"
+eventsink.go:59] }
+eventsink.go:59] Cloudflare Client configured for user: mmislam101@gmail.com
+eventsink.go:59] Data found in config: map[string]interface {}{}
+eventsink.go:59] Cloudflare Record create configuration: cloudflare.DNSRecord{ID:"", Type:"CNAME", Name:"api", Content:"api-alb-096856a-652080065.us-east-1.elb.amazonaws.com", Proxiable:false, Proxied:true, TTL:0, Locked:false, ZoneID:"7cd2d7064f6b0f7e4af0cc47f7f686f8", ZoneName:"", CreatedOn:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, ModifiedOn:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, Data:interface {}(nil), Meta:interface {}(nil), Priority:0}
+eventsink.go:59] ECS task definition registered: "arn:aws:ecs:us-east-1:952442618488:task-definition/api-orchestrator-06f404f5:47" (rev. 47)
+eventsink.go:59] Reading task definition api-orchestrator-06f404f5
+eventsink.go:59] Received task definition api-orchestrator-06f404f5, status:ACTIVE
+eventsink.go:59]  {
+eventsink.go:59]   Tags: [],
+eventsink.go:59]   TaskDefinition: {
+eventsink.go:59]     Compatibilities: ["EC2"],
+eventsink.go:59]     ContainerDefinitions: [{
+eventsink.go:59]         Cpu: 0,
+eventsink.go:59]         Environment: [],
+eventsink.go:59]         Essential: true,
+eventsink.go:59]         Image: "952442618488.dkr.ecr.us-east-1.amazonaws.com/khatm-images-05cd386:b4fc9cedae6c4764d0fbc64c53c55752e20c90aac21bfbd09819888410544d2c",
+eventsink.go:59]         LogConfiguration: {
+eventsink.go:59]           LogDriver: "awslogs",
+eventsink.go:59]           Options: {
+eventsink.go:59]             awslogs-stream-prefix: "nginx",
+eventsink.go:59]             awslogs-group: "api-orchestrator-b8645fb",
+eventsink.go:59]             awslogs-region: "us-east-1"
+eventsink.go:59]           }
+eventsink.go:59]         },
+eventsink.go:59]         Memory: 128,
+eventsink.go:59]         MountPoints: [],
+eventsink.go:59]         Name: "nginx",
+eventsink.go:59]         PortMappings: [{
+eventsink.go:59]             ContainerPort: 80,
+eventsink.go:59]             HostPort: 80,
+eventsink.go:59]             Protocol: "tcp"
+eventsink.go:59]           }],
+eventsink.go:59]         VolumesFrom: []
+eventsink.go:59]       }],
+eventsink.go:59]     ExecutionRoleArn: "arn:aws:iam::952442618488:role/api-orchestrator-execution-5022e89",
+eventsink.go:59]     Family: "api-orchestrator-06f404f5",
+eventsink.go:59]     NetworkMode: "awsvpc",
+eventsink.go:59]     PlacementConstraints: [],
+eventsink.go:59]     RequiresAttributes: [
+eventsink.go:59]       {
+eventsink.go:59]         Name: "com.amazonaws.ecs.capability.logging-driver.awslogs"
+eventsink.go:59]       },
+eventsink.go:59]       {
+eventsink.go:59]         Name: "ecs.capability.execution-role-awslogs"
+eventsink.go:59]       },
+eventsink.go:59]       {
+eventsink.go:59]         Name: "com.amazonaws.ecs.capability.ecr-auth"
+eventsink.go:59]       },
+eventsink.go:59]       {
+eventsink.go:59]         Name: "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+eventsink.go:59]       },
+eventsink.go:59]       {
+eventsink.go:59]         Name: "com.amazonaws.ecs.capability.task-iam-role"
+eventsink.go:59]       },
+eventsink.go:59]       {
+eventsink.go:59]         Name: "ecs.capability.execution-role-ecr-pull"
+eventsink.go:59]       },
+eventsink.go:59]       {
+eventsink.go:59]         Name: "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+eventsink.go:59]       },
+eventsink.go:59]       {
+eventsink.go:59]         Name: "ecs.capability.task-eni"
+eventsink.go:59]       }
+eventsink.go:59]     ],
+eventsink.go:59]     RequiresCompatibilities: ["EC2"],
+eventsink.go:59]     Revision: 47,
+eventsink.go:59]     Status: "ACTIVE",
+eventsink.go:59]     TaskDefinitionArn: "arn:aws:ecs:us-east-1:952442618488:task-definition/api-orchestrator-06f404f5:47",
+eventsink.go:59]     TaskRoleArn: "arn:aws:iam::952442618488:role/api-orchestrator-task-e4c01f5",
+eventsink.go:59]     Volumes: []
+eventsink.go:59]   }
+eventsink.go:59] }
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator[aws:ecs/taskDefinition:TaskDefinition]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2TaskDefinition$aws:ecs/taskDefinition:TaskDefinition::api-orchestrator,api-orchestrator-06f404f5,__meta,,,{"schema_version":"1"},arn,,,arn:aws:ecs:us-east-1:952442618488:task-definition/api-orchestrator-06f404f5:47,containerDefinitions,,,[{"cpu":0,"environment":[],"essential":true,"image":"952442618488.dkr.ecr.us-east-1.amazonaws.com/khatm-images-05cd386:b4fc9cedae6c4764d0fbc64c53c55752e20c90aac21bfbd09819888410544d2c","logConfiguration":{"logDriver":"awslogs","options":{"awslogs-group":"api-orchestrator-b8645fb","awslogs-region":"us-east-1","awslogs-stream-prefix":"nginx"}},"memory":128,"mountPoints":[],"name":"nginx","portMappings":[{"containerPort":80,"hostPort":80,"protocol":"tcp"}],"volumesFrom":[]}],cpu,,,,executionRoleArn,,,arn:aws:iam::952442618488:role/api-orchestrator-execution-5022e89,family,,,api-orchestrator-06f404f5,id,,,api-orchestrator-06f404f5,inferenceAccelerators,,,,,,,ipcMode,,,,memory,,,,networkMode,,,awsvpc,pidMode,,,,placementConstraints,,,,,,,proxyConfiguration,0,requiresCompatibilities,,,,,,,,EC2,revision,,47,tags,,,,,,taskRoleArn,,,arn:aws:iam::952442618488:role/api-orchestrator-task-e4c01f5,volumes,,,,,,,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:ecs/service:Service, name=api-orchestrator
+eventsink.go:59] Cloudflare Record ID: c2ae05535851214213afb5d8c2efecd5
+eventsink.go:59] Adding ECS load balancers: [{
+eventsink.go:59]   ContainerName: "nginx",
+eventsink.go:59]   ContainerPort: 80,
+eventsink.go:59]   TargetGroupArn: "arn:aws:elasticloadbalancing:us-east-1:952442618488:targetgroup/http-target-6ca5930/968e760e775490a0"
+eventsink.go:59] }]
+eventsink.go:59] Creating ECS service: {
+eventsink.go:59]   CapacityProviderStrategy: [],
+eventsink.go:59]   ClientToken: "terraform-20200515165118929800000006",
+eventsink.go:59]   Cluster: "arn:aws:ecs:us-east-1:952442618488:cluster/api-cluster-ae02d95",
+eventsink.go:59]   DeploymentConfiguration: {
+eventsink.go:59]     MaximumPercent: 200,
+eventsink.go:59]     MinimumHealthyPercent: 100
+eventsink.go:59]   },
+eventsink.go:59]   DesiredCount: 1,
+eventsink.go:59]   EnableECSManagedTags: false,
+eventsink.go:59]   LaunchType: "EC2",
+eventsink.go:59]   LoadBalancers: [{
+eventsink.go:59]       ContainerName: "nginx",
+eventsink.go:59]       ContainerPort: 80,
+eventsink.go:59]       TargetGroupArn: "arn:aws:elasticloadbalancing:us-east-1:952442618488:targetgroup/http-target-6ca5930/968e760e775490a0"
+eventsink.go:59]     }],
+eventsink.go:59]   NetworkConfiguration: {
+eventsink.go:59]     AwsvpcConfiguration: {
+eventsink.go:59]       AssignPublicIp: "DISABLED",
+eventsink.go:59]       SecurityGroups: ["sg-07d57c033b1495bd5"],
+eventsink.go:59]       Subnets: ["subnet-0ae6b2f2df0813293","subnet-0d77706e6075f470a"]
+eventsink.go:59]     }
+eventsink.go:59]   },
+eventsink.go:59]   SchedulingStrategy: "REPLICA",
+eventsink.go:59]   ServiceName: "api-orchestrator-f8a6e9c",
+eventsink.go:59]   Tags: [],
+eventsink.go:59]   TaskDefinition: "arn:aws:ecs:us-east-1:952442618488:task-definition/api-orchestrator-06f404f5:47"
+eventsink.go:59] }
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Data found in config: map[string]interface {}{}
+eventsink.go:59] RegisterResource RPC finished: resource:api-record[cloudflare:index/record:Record]; err: null, resp: urn:pulumi:production::khatm::cloudflare:index/record:Record::api-record,c2ae05535851214213afb5d8c2efecd5,__meta,,,{"schema_version":"1"},createdOn,,,2020-05-15T16:51:18.558216Z,data,,,,,,hostname,,,api.khatmapp.com,id,,,c2ae05535851214213afb5d8c2efecd5,metadata,,,,,auto_added,,,false,managed_by_apps,,,false,managed_by_argo_tunnel,,,false,source,,,primary,modifiedOn,,,2020-05-15T16:51:18.558216Z,name,,,api,priority,,0,proxiable,,,,true,proxied,,,,true,ttl,,1,type,,,CNAME,value,,,api-alb-096856a-652080065.us-east-1.elb.amazonaws.com,zoneId,,,7cd2d7064f6b0f7e4af0cc47f7f686f8,,
+eventsink.go:59] ECS service created: arn:aws:ecs:us-east-1:952442618488:service/api-orchestrator-f8a6e9c
+eventsink.go:59] Waiting for service to reach a steady state
+eventsink.go:59] Waiting for state to become: [true]
+eventsink.go:59] Waiting 1s before next try
+eventsink.go:59] Waiting 2s before next try
+eventsink.go:59] Waiting 4s before next try
+eventsink.go:59] Waiting 8s before next try
+eventsink.go:59] Waiting 10s before next try
+eventsink.go:59] Reading ECS service arn:aws:ecs:us-east-1:952442618488:service/api-orchestrator-f8a6e9c
+eventsink.go:59] Waiting for state to become: [success]
+eventsink.go:59] Received ECS service {
+eventsink.go:59]   ClusterArn: "arn:aws:ecs:us-east-1:952442618488:cluster/api-cluster-ae02d95",
+eventsink.go:59]   CreatedAt: 2020-05-15 16:51:19 +0000 UTC,
+eventsink.go:59]   DeploymentConfiguration: {
+eventsink.go:59]     MaximumPercent: 200,
+eventsink.go:59]     MinimumHealthyPercent: 100
+eventsink.go:59]   },
+eventsink.go:59]   Deployments: [{
+eventsink.go:59]       CreatedAt: 2020-05-15 16:51:19 +0000 UTC,
+eventsink.go:59]       DesiredCount: 1,
+eventsink.go:59]       Id: "ecs-svc/3941888880520064810",
+eventsink.go:59]       LaunchType: "EC2",
+eventsink.go:59]       NetworkConfiguration: {
+eventsink.go:59]         AwsvpcConfiguration: {
+eventsink.go:59]           AssignPublicIp: "DISABLED",
+eventsink.go:59]           SecurityGroups: ["sg-07d57c033b1495bd5"],
+eventsink.go:59]           Subnets: ["subnet-0d77706e6075f470a","subnet-0ae6b2f2df0813293"]
+eventsink.go:59]         }
+eventsink.go:59]       },
+eventsink.go:59]       PendingCount: 0,
+eventsink.go:59]       RunningCount: 1,
+eventsink.go:59]       Status: "PRIMARY",
+eventsink.go:59]       TaskDefinition: "arn:aws:ecs:us-east-1:952442618488:task-definition/api-orchestrator-06f404f5:47",
+eventsink.go:59]       UpdatedAt: 2020-05-15 16:51:19 +0000 UTC
+eventsink.go:59]     }],
+eventsink.go:59]   DesiredCount: 1,
+eventsink.go:59]   EnableECSManagedTags: false,
+eventsink.go:59]   Events: [{
+eventsink.go:59]       CreatedAt: 2020-05-15 16:51:29 +0000 UTC,
+eventsink.go:59]       Id: "e11f8bd3-a92f-4042-9b92-ee82e3c57d8a",
+eventsink.go:59]       Message: "(service api-orchestrator-f8a6e9c) has started 1 tasks: (task 0d7058e1-4abc-4bee-a827-1212afb2bd85)."
+eventsink.go:59]     }],
+eventsink.go:59]   HealthCheckGracePeriodSeconds: 0,
+eventsink.go:59]   LaunchType: "EC2",
+eventsink.go:59]   LoadBalancers: [{
+eventsink.go:59]       ContainerName: "nginx",
+eventsink.go:59]       ContainerPort: 80,
+eventsink.go:59]       TargetGroupArn: "arn:aws:elasticloadbalancing:us-east-1:952442618488:targetgroup/http-target-6ca5930/968e760e775490a0"
+eventsink.go:59]     }],
+eventsink.go:59]   NetworkConfiguration: {
+eventsink.go:59]     AwsvpcConfiguration: {
+eventsink.go:59]       AssignPublicIp: "DISABLED",
+eventsink.go:59]       SecurityGroups: ["sg-07d57c033b1495bd5"],
+eventsink.go:59]       Subnets: ["subnet-0d77706e6075f470a","subnet-0ae6b2f2df0813293"]
+eventsink.go:59]     }
+eventsink.go:59]   },
+eventsink.go:59]   PendingCount: 0,
+eventsink.go:59]   PlacementConstraints: [],
+eventsink.go:59]   PlacementStrategy: [],
+eventsink.go:59]   PropagateTags: "NONE",
+eventsink.go:59]   RoleArn: "arn:aws:iam::952442618488:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+eventsink.go:59]   RunningCount: 1,
+eventsink.go:59]   SchedulingStrategy: "REPLICA",
+eventsink.go:59]   ServiceArn: "arn:aws:ecs:us-east-1:952442618488:service/api-orchestrator-f8a6e9c",
+eventsink.go:59]   ServiceName: "api-orchestrator-f8a6e9c",
+eventsink.go:59]   ServiceRegistries: [],
+eventsink.go:59]   Status: "ACTIVE",
+eventsink.go:59]   TaskDefinition: "arn:aws:ecs:us-east-1:952442618488:task-definition/api-orchestrator-06f404f5:47"
+eventsink.go:59] }
+eventsink.go:59] RegisterResource RPC finished: resource:api-orchestrator[aws:ecs/service:Service]; err: null, resp: urn:pulumi:production::khatm::awsx:x:ecs:EC2Service$aws:ecs/service:Service::api-orchestrator,arn:aws:ecs:us-east-1:952442618488:service/api-orchestrator-f8a6e9c,capacityProviderStrategies,,,,,,,cluster,,,arn:aws:ecs:us-east-1:952442618488:cluster/api-cluster-ae02d95,deploymentController,,,,,type,,,ECS,deploymentMaximumPercent,,200,deploymentMinimumHealthyPercent,,100,desiredCount,,1,enableEcsManagedTags,,,,false,healthCheckGracePeriodSeconds,,0,iamRole,,,aws-service-role,id,,,arn:aws:ecs:us-east-1:952442618488:service/api-orchestrator-f8a6e9c,launchType,,,EC2,loadBalancers,,,,,,,,,,containerName,,,nginx,containerPort,,80,elbName,,,,targetGroupArn,,,arn:aws:elasticloadbalancing:us-east-1:952442618488:targetgroup/http-target-6ca5930/968e760e775490a0,name,,,api-orchestrator-f8a6e9c,networkConfiguration,,,,,assignPublicIp,,,,false,securityGroups,,,,,,,,sg-07d57c033b1495bd5,subnets,,,,,,,,subnet-0ae6b2f2df0813293,,,subnet-0d77706e6075f470a,orderedPlacementStrategies,,,,,,,placementConstraints,,,,,,,placementStrategies,,,,,,,platformVersion,,,,propagateTags,,,NONE,schedulingStrategy,,,REPLICA,serviceRegistries,0,tags,,,,,,taskDefinition,,,arn:aws:ecs:us-east-1:952442618488:task-definition/api-orchestrator-06f404f5:47,waitForSteadyState,,,,true,,
+eventsink.go:59] RegisterResource RPC prepared: t=aws:cloudwatch/dashboard:Dashboard, name=khatm-api
+eventsink.go:59] Putting CloudWatch Dashboard: {
+eventsink.go:59]   DashboardBody: "{\"widgets\":[{\"x\":0,\"y\":0,\"width\":8,\"height\":6,\"type\":\"metric\",\"properties\":{\"metrics\":[[\"AWS/ECS\",\"CPUUtilization\",\"ServiceName\",\"api-orchestrator-f8a6e9c\",\"ClusterName\",\"api-cluster-ae02d95\",{\"stat\":\"Average\",\"period\":300,\"visible\":true,\"yAxis\":\"left\"}],[\"AWS/ECS\",\"MemoryUtilization\",\"ServiceName\",\"api-orchestrator-f8a6e9c\",\"ClusterName\",\"api-cluster-ae02d95\",{\"stat\":\"Average\",\"period\":300,\"visible\":true,\"yAxis\":\"left\"}]],\"title\":\"ECS Service\",\"period\":300,\"region\":\"us-east-1\",\"view\":\"singleValue\",\"stacked\":false}},{\"x\":8,\"y\":0,\"width\":16,\"height\":6,\"type\":\"metric\",\"properties\":{\"metrics\":[[\"AWS/ECS\",\"CPUUtilization\",\"ServiceName\",\"api-orchestrator-f8a6e9c\",\"ClusterName\",\"api-cluster-ae02d95\",{\"stat\":\"Average\",\"period\":300,\"visible\":true,\"yAxis\":\"left\"}]],\"title\":\"ECS Service CPU\",\"period\":300,\"region\":\"us-east-1\",\"view\":\"timeSeries\",\"stacked\":false}},{\"x\":0,\"y\":6,\"width\":8,\"height\":6,\"type\":\"metric\",\"properties\":{\"metrics\":[[\"AWS/ECS\",\"MemoryReservation\",\"ClusterName\",\"api-cluster-ae02d95\",{\"stat\":\"Average\",\"period\":300,\"visible\":true,\"yAxis\":\"left\"}],[\"AWS/ECS\",\"MemoryUtilization\",\"ClusterName\",\"api-cluster-ae02d95\",{\"stat\":\"Average\",\"period\":300,\"visible\":true,\"yAxis\":\"left\"}]],\"title\":\"ECS Cluster Memory\",\"period\":300,\"region\":\"us-east-1\",\"view\":\"singleValue\",\"stacked\":false}},{\"x\":8,\"y\":6,\"width\":16,\"height\":6,\"type\":\"metric\",\"properties\":{\"metrics\":[[\"AWS/ECS\",\"CPUUtilization\",\"ClusterName\",\"api-cluster-ae02d95\",{\"stat\":\"Average\",\"period\":300,\"visible\":true,\"yAxis\":\"left\"}]],\"title\":\"ECS Cluster CPU\",\"period\":300,\"region\":\"us-east-1\",\"view\":\"timeSeries\",\"stacked\":false}}]}",
+eventsink.go:59]   DashboardName: "khatm-api"
+eventsink.go:59] }
+eventsink.go:59] CloudWatch Dashboard put finished
+eventsink.go:59] Reading CloudWatch Dashboard: khatm-api
+eventsink.go:59] RegisterResource RPC finished: resource:khatm-api[aws:cloudwatch/dashboard:Dashboard]; err: null, resp: urn:pulumi:production::khatm::aws:cloudwatch/dashboard:Dashboard::khatm-api,khatm-api,dashboardArn,,,arn:aws:cloudwatch::952442618488:dashboard/khatm-api,dashboardBody,,,{"widgets":[{"x":0,"y":0,"width":8,"height":6,"type":"metric","properties":{"metrics":[["AWS/ECS","CPUUtilization","ServiceName","api-orchestrator-f8a6e9c","ClusterName","api-cluster-ae02d95",{"stat":"Average","period":300,"visible":true,"yAxis":"left"}],["AWS/ECS","MemoryUtilization","ServiceName","api-orchestrator-f8a6e9c","ClusterName","api-cluster-ae02d95",{"stat":"Average","period":300,"visible":true,"yAxis":"left"}]],"title":"ECS Service","period":300,"region":"us-east-1","view":"singleValue","stacked":false}},{"x":8,"y":0,"width":16,"height":6,"type":"metric","properties":{"metrics":[["AWS/ECS","CPUUtilization","ServiceName","api-orchestrator-f8a6e9c","ClusterName","api-cluster-ae02d95",{"stat":"Average","period":300,"visible":true,"yAxis":"left"}]],"title":"ECS Service CPU","period":300,"region":"us-east-1","view":"timeSeries","stacked":false}},{"x":0,"y":6,"width":8,"height":6,"type":"metric","properties":{"metrics":[["AWS/ECS","MemoryReservation","ClusterName","api-cluster-ae02d95",{"stat":"Average","period":300,"visible":true,"yAxis":"left"}],["AWS/ECS","MemoryUtilization","ClusterName","api-cluster-ae02d95",{"stat":"Average","period":300,"visible":true,"yAxis":"left"}]],"title":"ECS Cluster Memory","period":300,"region":"us-east-1","view":"singleValue","stacked":false}},{"x":8,"y":6,"width":16,"height":6,"type":"metric","properties":{"metrics":[["AWS/ECS","CPUUtilization","ClusterName","api-cluster-ae02d95",{"stat":"Average","period":300,"visible":true,"yAxis":"left"}]],"title":"ECS Cluster CPU","period":300,"region":"us-east-1","view":"timeSeries","stacked":false}}]},dashboardName,,,khatm-api,id,,,khatm-api,,
+ignore.go:44] Explicitly ignoring and discarding error: rpc error: code = Canceled desc = grpc: the client connection is closing

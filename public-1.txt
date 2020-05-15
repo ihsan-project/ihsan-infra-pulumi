@@ -1,0 +1,103 @@
+I0515 01:07:28.171282   67718 backend.go:410] found username for access token
+I0515 01:07:28.551157   67718 backend.go:410] found username for access token
+I0515 01:07:31.304508   67718 plan_executor.go:125] planExecutor.Execute(...): signalling cancellation to providers...
+I0515 01:07:31.304667   67718 plan_executor.go:391] planExecutor.retirePendingDeletes(...): no pending deletions
+I0515 01:07:31.304705   67718 plan_executor.go:215] planExecutor.Execute(...): waiting for incoming events
+I0515 01:07:31.304719   67718 step_executor.go:321] StepExecutor worker(-2): worker coming online
+I0515 01:07:31.304722   67718 plan_executor.go:244] planExecutor.Execute(...): context finished: context canceled
+I0515 01:07:31.304742   67718 step_executor.go:321] StepExecutor worker(-2): worker waiting for incoming chains
+I0515 01:07:31.304757   67718 step_executor.go:321] StepExecutor worker(-1): StepExecutor.waitForCompletion(): waiting for worker threads to exit
+I0515 01:07:31.304766   67718 step_executor.go:321] StepExecutor worker(-2): worker exiting due to cancellation
+I0515 01:07:31.304793   67718 step_executor.go:321] StepExecutor worker(-1): StepExecutor.waitForCompletion(): worker threads all exited
+I0515 01:07:31.304813   67718 plan_executor.go:254] planExecutor.Execute(...): step executor has completed
+I0515 01:07:31.304818   67718 ignore.go:44] Explicitly ignoring and discarding error: rpc error: code = Canceled desc = grpc: the client connection is closing
+I0515 01:07:31.304845   67718 eventsink.go:86] eventSink::Error(<{%reset%}>preview canceled<{%reset%}>)
+I0515 01:07:31.305818   67718 ignore.go:44] Explicitly ignoring and discarding error: 1 error occurred:
+	* operation not permitted
+
+I0515 01:07:31.305898   67718 source_eval.go:167] EvalSourceIterator ended with an error: grpc: the client connection is closing
+I0515 01:07:31.305927   67718 plan_executor.go:200] planExecutor.Execute(...): incoming events goroutine exiting
+I0515 01:07:31.497139   67718 sink.go:154] defaultSink::Error([38;5;1merror: [0m[0man error occurred while advancing the preview
+github.com/pulumi/pulumi/sdk/v2/go/common/util/result.Error
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/sdk/go/common/util/result/result.go:71
+github.com/pulumi/pulumi/pkg/v2/engine.printPlan
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/engine/plan.go:241
+github.com/pulumi/pulumi/pkg/v2/engine.update
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/engine/update.go:433
+github.com/pulumi/pulumi/pkg/v2/engine.Update
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/engine/update.go:177
+github.com/pulumi/pulumi/pkg/v2/backend/httpstate.(*cloudBackend).runEngineAction
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/httpstate/backend.go:1006
+github.com/pulumi/pulumi/pkg/v2/backend/httpstate.(*cloudBackend).apply
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/httpstate/backend.go:932
+github.com/pulumi/pulumi/pkg/v2/backend.PreviewThenPrompt
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/apply.go:114
+github.com/pulumi/pulumi/pkg/v2/backend.PreviewThenPromptThenExecute
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/apply.go:199
+github.com/pulumi/pulumi/pkg/v2/backend/httpstate.(*cloudBackend).Update
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/httpstate/backend.go:812
+github.com/pulumi/pulumi/pkg/v2/backend.UpdateStack
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/stack.go:82
+github.com/pulumi/pulumi/pkg/v2/backend/httpstate.(*cloudStack).Update
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/httpstate/stack.go:148
+main.newUpCmd.func1
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/cmd/pulumi/up.go:133
+main.newUpCmd.func3
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/cmd/pulumi/up.go:372
+github.com/pulumi/pulumi/sdk/v2/go/common/util/cmdutil.RunResultFunc.func1
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/sdk/go/common/util/cmdutil/exit.go:112
+github.com/spf13/cobra.(*Command).execute
+	/private/tmp/pulumi-20200514-76481-19mqsc6/pkg/mod/github.com/spf13/cobra@v1.0.0/command.go:846
+github.com/spf13/cobra.(*Command).ExecuteC
+	/private/tmp/pulumi-20200514-76481-19mqsc6/pkg/mod/github.com/spf13/cobra@v1.0.0/command.go:950
+github.com/spf13/cobra.(*Command).Execute
+	/private/tmp/pulumi-20200514-76481-19mqsc6/pkg/mod/github.com/spf13/cobra@v1.0.0/command.go:887
+main.main
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/cmd/pulumi/main.go:48
+runtime.main
+	/usr/local/Cellar/go/1.14.2_1/libexec/src/runtime/proc.go:203
+runtime.goexit
+	/usr/local/Cellar/go/1.14.2_1/libexec/src/runtime/asm_amd64.s:1373
+[0m)
+[38;5;1merror: [0m[0man error occurred while advancing the preview
+github.com/pulumi/pulumi/sdk/v2/go/common/util/result.Error
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/sdk/go/common/util/result/result.go:71
+github.com/pulumi/pulumi/pkg/v2/engine.printPlan
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/engine/plan.go:241
+github.com/pulumi/pulumi/pkg/v2/engine.update
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/engine/update.go:433
+github.com/pulumi/pulumi/pkg/v2/engine.Update
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/engine/update.go:177
+github.com/pulumi/pulumi/pkg/v2/backend/httpstate.(*cloudBackend).runEngineAction
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/httpstate/backend.go:1006
+github.com/pulumi/pulumi/pkg/v2/backend/httpstate.(*cloudBackend).apply
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/httpstate/backend.go:932
+github.com/pulumi/pulumi/pkg/v2/backend.PreviewThenPrompt
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/apply.go:114
+github.com/pulumi/pulumi/pkg/v2/backend.PreviewThenPromptThenExecute
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/apply.go:199
+github.com/pulumi/pulumi/pkg/v2/backend/httpstate.(*cloudBackend).Update
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/httpstate/backend.go:812
+github.com/pulumi/pulumi/pkg/v2/backend.UpdateStack
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/stack.go:82
+github.com/pulumi/pulumi/pkg/v2/backend/httpstate.(*cloudStack).Update
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/backend/httpstate/stack.go:148
+main.newUpCmd.func1
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/cmd/pulumi/up.go:133
+main.newUpCmd.func3
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/cmd/pulumi/up.go:372
+github.com/pulumi/pulumi/sdk/v2/go/common/util/cmdutil.RunResultFunc.func1
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/sdk/go/common/util/cmdutil/exit.go:112
+github.com/spf13/cobra.(*Command).execute
+	/private/tmp/pulumi-20200514-76481-19mqsc6/pkg/mod/github.com/spf13/cobra@v1.0.0/command.go:846
+github.com/spf13/cobra.(*Command).ExecuteC
+	/private/tmp/pulumi-20200514-76481-19mqsc6/pkg/mod/github.com/spf13/cobra@v1.0.0/command.go:950
+github.com/spf13/cobra.(*Command).Execute
+	/private/tmp/pulumi-20200514-76481-19mqsc6/pkg/mod/github.com/spf13/cobra@v1.0.0/command.go:887
+main.main
+	/private/tmp/pulumi-20200514-76481-19mqsc6/src/github.com/pulumi/pulumi/pkg/cmd/pulumi/main.go:48
+runtime.main
+	/usr/local/Cellar/go/1.14.2_1/libexec/src/runtime/proc.go:203
+runtime.goexit
+	/usr/local/Cellar/go/1.14.2_1/libexec/src/runtime/asm_amd64.s:1373
+[0m
