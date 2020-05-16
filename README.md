@@ -11,5 +11,6 @@
     - RDS_DATABASE_NAME
     - RDS_DATABASE_USER
     - RDS_DATABASE_PASSWORD
+    - SECRETS_MANAGER_ARN. Where the application environments exist in ASM
 1. Install [Docker Engine](https://docs.docker.com/get-docker/)
     - Docker Desktop is fine when running on local machine
