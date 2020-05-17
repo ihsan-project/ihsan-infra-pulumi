@@ -25,13 +25,7 @@ const services = {
 const dashboardName = "khatm-api";
 createCloudWatchDashboard(dashboardName, services);
 
-// const secret = aws.secretsmanager.getSecretVersion({
-//     secretId: "khatm/production/google_sso_client_id",
-// });
-
-exports.frontendURL = pulumi.interpolate `http://${listener.endpoint.hostname}/`;
+exports.lbURL = pulumi.interpolate `http://${listener.endpoint.hostname}/`;
 exports.dashboardUrl =
     `https://${aws.config.region}.console.aws.amazon.com/cloudwatch/home?` +
         `region=${aws.config.region}#dashboards:name=${dashboardName}`;
-// exports.secret = pulumi.interpolate `monkey: ${secret.toString()}`;
-// exports.test = secret;
