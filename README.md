@@ -6,10 +6,10 @@
     - AWS_SECRET_ACCESS_KEY
     - CLOUDFLARE_EMAIL. This is the user's account, not the owner account
     - CLOUDFLARE_API_KEY. This is the user's only api key, not a created API Token
-    - CLOUDFLARE_ZONE_ID
+    - CLOUDFLARE_ZONE_ID. Get this from the Cloudflare dashboard
     - DOMAIN_CERTIFICATE_ARN. This is the ARN of the AWS ACM cert created for the domain you own
-    - RDS_DATABASE_NAME
-    - RDS_DATABASE_USER
-    - RDS_DATABASE_PASSWORD
+    - SECRETS_MANAGER_ARN. Where the application environments exist in ASM. Eg. `arn:aws:secretsmanager:<zone>:<userid>:secret:*`. You can replace the `*` to restrict access
+    - SECRETS_KMS_ARN. Eg. `arn:aws:kms:<zone>:<userid>:key/*`
+    - ACM_DOMAIN. As displayed in the domain section of the ACM certificate, eg. `*.domain.com`
 1. Install [Docker Engine](https://docs.docker.com/get-docker/)
     - Docker Desktop is fine when running on local machine
