@@ -10,5 +10,6 @@
     - DOMAIN_CERTIFICATE_ARN. This is the ARN of the AWS ACM cert created for the domain you own
     - SECRETS_MANAGER_ARN. Where the application environments exist in ASM. Eg. `arn:aws:secretsmanager:<zone>:<userid>:secret:*`. You can replace the `*` to restrict access
     - SECRETS_KMS_ARN. Eg. `arn:aws:kms:<zone>:<userid>:key/*`
+    - ACM_DOMAIN. As displayed in the domain section of the ACM certificate, eg. `*.domain.com`
 1. Install [Docker Engine](https://docs.docker.com/get-docker/)
     - Docker Desktop is fine when running on local machine
