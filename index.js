@@ -10,9 +10,8 @@ const {createRoles} = require("./lib/roles.js");
 const {createPipeline} = require("./lib/code_pipeline.js");
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 
-
 // createStaticSPASite("admin.khatmapp.com"); // TODO: Disable this for now. Causing problems when updating
-const security = createVPC("khatm-app");
+// const security = createVPC("khatm-app");
 const roles = createRoles();
 // const db = createRDS(security);
 // const {listener, service, cluster} = createECS(security, db, roles);
