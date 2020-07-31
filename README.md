@@ -12,5 +12,8 @@
     - SECRETS_KMS_ARN. Eg. `arn:aws:kms:<zone>:<userid>:key/*`
     - ACM_DOMAIN. As displayed in the domain section of the ACM certificate, eg. `*.domain.com`
     - ECR_REPOSITORY_URI. The URI for your long living ECR repository.
+    - GITHUB_REPO_URL. The `.git` url to your repository
+    - GITHUB_ACCESS_TOKEN. Generate a Personal Access Token. Minimum scope needed is `repo`
+    - GITHUB_BRANCH. The branch to observe for code changes
 1. Install [Docker Engine](https://docs.docker.com/get-docker/)
     - Docker Desktop is fine when running on local machine
