@@ -7,8 +7,8 @@ const {createECS} = require("./lib/ecs.js");
 const {createVPC} = require("./lib/vpc.js");
 const {createRDS} = require("./lib/rds.js");
 const {createRoles} = require("./lib/roles.js");
+const {createPipeline} = require("./lib/code_pipeline.js");
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
-
 
 // createStaticSPASite("admin.khatmapp.com"); // TODO: Disable this for now. Causing problems when updating
 const security = createVPC("khatm-app");
@@ -24,6 +24,8 @@ const services = {
 }
 const dashboardName = "khatm-api";
 createCloudWatchDashboard(dashboardName, services);
+
+createPipeline(roles);
 
 exports.lbURL = pulumi.interpolate `http://${listener.endpoint.hostname}/`;
 exports.dashboardUrl =
