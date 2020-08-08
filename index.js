@@ -1,4 +1,6 @@
 "use strict";
+require('dotenv').config({ path: `${process.cwd()}/.env` }) // Prepare the have multiple projects share single .env
+
 const aws = require("@pulumi/aws");
 const pulumi = require("@pulumi/pulumi");
 const {createStaticSPASite} = require("./lib/static_site.js");
