@@ -8,6 +8,12 @@
 1. Install [Docker Engine](https://docs.docker.com/get-docker/)
     - Docker Desktop is fine when running on local machine
 
+## Run
+
+From top level of this project you can run the following:
+- `npm run deploy:application` to create the application layer of resources
+- `npm run destroy:application` to destroy the application layer of resources
+
 ## Debug
 
 Common failures seen:

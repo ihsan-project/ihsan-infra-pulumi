@@ -1,0 +1,7 @@
+{
+    "name": "infrastructure",
+    "scripts": {
+        "deploy:application": "cd application ; pulumi up",
+        "destroy:application": "cd application ; pulumi destroy"
+    }
+}
