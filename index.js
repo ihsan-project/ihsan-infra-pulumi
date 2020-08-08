@@ -23,7 +23,7 @@ const services = {
     ecs: {service, cluster}
 }
 const dashboardName = "khatm-api";
-createCloudWatchDashboard(dashboardName, services);
+// createCloudWatchDashboard(dashboardName, services);
 
 createPipeline(roles);
 
