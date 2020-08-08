@@ -4,30 +4,35 @@ const pulumi = require("@pulumi/pulumi");
 const {createStaticSPASite} = require("./lib/static_site.js");
 const {recordCNAME} = require("./lib/dns.js");
 const {createECS} = require("./lib/ecs.js");
-const {createVPC} = require("./lib/vpc.js");
+const {createEnvironment} = require("./lib/vpc.js");
 const {createRDS} = require("./lib/rds.js");
-const {createRoles} = require("./lib/roles.js");
 const {createPipeline} = require("./lib/code_pipeline.js");
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 
-// createStaticSPASite("admin.khatmapp.com"); // TODO: Disable this for now. Causing problems when updating
-const security = createVPC("khatm-app");
-const roles = createRoles();
-const db = createRDS(security);
-const {listener, service, cluster} = createECS(security, db, roles);
+const appName = process.env.APP_NAME || 'khatm';
 
-recordCNAME("api", listener.endpoint.hostname); // Creates api.khatmapp.com CNAME entry in DNS
+// Setup Foundations
+const environment = createEnvironment(appName);
+recordCNAME("api", environment.alb.albListener.endpoint.hostname); // Create api.hostname.com CNAME entry in DNS
+const db = createRDS(appName, environment);
+createPipeline(appName);
 
-const services = {
+// TODO: Dependencies cause the Foundations to be setup before the following can be setup
+//       Sure we can use dependencies, but we need to seperate these concerns anways into two different pulumi apps:
+//       https://github.com/khatm-org/khatm-infrastructure/issues/27
+
+// Setup Apps
+const {service, cluster} = createECS(appName, environment, db);
+createCloudWatchDashboard(appName, {
     db,
     ecs: {service, cluster}
-}
-const dashboardName = "khatm-api";
-createCloudWatchDashboard(dashboardName, services);
+});
 
-createPipeline(roles);
 
-exports.lbURL = pulumi.interpolate `http://${listener.endpoint.hostname}/`;
+// TODO: Disable this for now. Causing problems when updating
+// createStaticSPASite("admin.khatmapp.com");
+
+exports.lbURL = pulumi.interpolate `http://${environment.alb.albListener.endpoint.hostname}/`;
 exports.dashboardUrl =
     `https://${aws.config.region}.console.aws.amazon.com/cloudwatch/home?` +
-        `region=${aws.config.region}#dashboards:name=${dashboardName}`;
+        `region=${aws.config.region}#dashboards:name=${appName}`;
