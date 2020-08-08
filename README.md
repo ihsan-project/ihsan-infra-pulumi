@@ -1,7 +1,10 @@
 # Khatm Infrastructure as Code
 
 ## Setup Environment
-1. Run `cp .env-keep .env` and fill in each key
+1. Add the following environment variables to your `~/.bash_profile` or `~/.zshrc`. For some reason it doesn't work in the `.env`
+    - CLOUDFLARE_EMAIL. This is the user's account, not the owner account
+    - CLOUDFLARE_API_KEY. This is the user's only api key, not a created API Token
+1. Run `cp .env-keep .env` and fill in each key following the provided hints
 1. Install [Docker Engine](https://docs.docker.com/get-docker/)
     - Docker Desktop is fine when running on local machine
 
