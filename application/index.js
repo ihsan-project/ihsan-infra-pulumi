@@ -1,5 +1,5 @@
 "use strict";
-require('dotenv').config({ path: `${process.cwd()}/.env` }) // Prepare the have multiple projects share single .env
+require('dotenv').config({ path: `${process.cwd()}/../.env` }) // Prepare the have multiple projects share single .env
 
 const aws = require("@pulumi/aws");
 const pulumi = require("@pulumi/pulumi");
@@ -15,20 +15,20 @@ const appName = process.env.APP_NAME || 'khatm';
 
 // Setup Foundations
 const environment = createEnvironment(appName);
-recordCNAME("api", environment.alb.albListener.endpoint.hostname); // Create api.hostname.com CNAME entry in DNS
-const db = createRDS(appName, environment);
-createPipeline(appName);
+// recordCNAME("api", environment.alb.albListener.endpoint.hostname); // Create api.hostname.com CNAME entry in DNS
+// const db = createRDS(appName, environment);
+// createPipeline(appName);
 
 // TODO: Dependencies cause the Foundations to be setup before the following can be setup
 //       Sure we can use dependencies, but we need to seperate these concerns anways into two different pulumi apps:
 //       https://github.com/khatm-org/khatm-infrastructure/issues/27
 
 // Setup Apps
-const {service, cluster} = createECS(appName, environment, db);
-createCloudWatchDashboard(appName, {
-    db,
-    ecs: {service, cluster}
-});
+// const {service, cluster} = createECS(appName, environment, db);
+// createCloudWatchDashboard(appName, {
+//     db,
+//     ecs: {service, cluster}
+// });
 
 
 // TODO: Disable this for now. Causing problems when updating
