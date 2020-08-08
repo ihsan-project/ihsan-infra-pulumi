@@ -10,24 +10,26 @@ const {createRoles} = require("./lib/roles.js");
 const {createPipeline} = require("./lib/code_pipeline.js");
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 
-// createStaticSPASite("admin.khatmapp.com"); // TODO: Disable this for now. Causing problems when updating
-const security = createVPC("khatm-app");
-const roles = createRoles();
-const db = createRDS(security);
-const {listener, service, cluster} = createECS(security, db, roles);
+const appName = process.env.APP_NAME || 'khatm';
 
-recordCNAME("api", listener.endpoint.hostname); // Creates api.khatmapp.com CNAME entry in DNS
+// createStaticSPASite("admin.khatmapp.com"); // TODO: Disable this for now. Causing problems when updating
+const security = createVPC(appName);
+const roles = createRoles(appName);
+const db = createRDS(appName, security);
+const {listener, service, cluster} = createECS(appName, security, db, roles);
+
+// Create api.hostname.com CNAME entry in DNS
+recordCNAME("api", listener.endpoint.hostname);
 
 const services = {
     db,
     ecs: {service, cluster}
 }
-const dashboardName = "khatm-api";
-// createCloudWatchDashboard(dashboardName, services);
+createCloudWatchDashboard(appName, services);
 
-createPipeline(roles);
+createPipeline(appName, roles);
 
 exports.lbURL = pulumi.interpolate `http://${listener.endpoint.hostname}/`;
 exports.dashboardUrl =
     `https://${aws.config.region}.console.aws.amazon.com/cloudwatch/home?` +
-        `region=${aws.config.region}#dashboards:name=${dashboardName}`;
+        `region=${aws.config.region}#dashboards:name=${appName}`;
