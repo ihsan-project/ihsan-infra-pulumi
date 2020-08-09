@@ -13,8 +13,7 @@ const {
 } = require("./roles.js");
 
 exports.createECS = function(appName, environment, db) {
-    const { vpc, securityGroups, alb: { albTarget, albListener } } = environment;
-    const { appSg } = securityGroups;
+    const { vpc, securityGroups: { appSg }, alb: { albTarget, albListener } } = environment;
 
     const executionRole = createExecutionRole(appName);
 

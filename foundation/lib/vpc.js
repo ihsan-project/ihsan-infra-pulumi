@@ -79,5 +79,5 @@ exports.createEnvironment = function(appName) {
         protocol: "HTTPS",
     });
 
-    return {vpc, securityGroups, alb: { albTarget, albListener }};
+    return {vpc, securityGroups, lb: { alb, albTarget, albListener }};
 }
