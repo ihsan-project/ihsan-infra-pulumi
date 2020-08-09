@@ -1,6 +1,9 @@
 {
     "name": "infrastructure",
     "scripts": {
+        "deploy:foundation": "cd foundation ; pulumi up",
+        "destroy:foundation": "cd foundation ; pulumi destroy",
+        "predestroy:foundation": "npm run destroy:application",
         "deploy:application": "cd application ; pulumi up",
         "destroy:application": "cd application ; pulumi destroy"
     }

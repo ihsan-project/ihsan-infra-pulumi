@@ -11,6 +11,8 @@
 ## Run
 
 From top level of this project you can run the following:
+- `npm run deploy:foundation` to create the foundation layer of resources
+- `npm run destroy:foundation` to destroy the foundation layer of resources
 - `npm run deploy:application` to create the application layer of resources
 - `npm run destroy:application` to destroy the application layer of resources
 

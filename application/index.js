@@ -14,23 +14,22 @@ const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 const appName = process.env.APP_NAME || 'khatm';
 
 // Setup Foundations
-const environment = createEnvironment(appName);
-recordCNAME("api", environment.alb.albListener.endpoint.hostname); // Create api.hostname.com CNAME entry in DNS
-const db = createRDS(appName, environment);
-createPipeline(appName);
+// const environment = createEnvironment(appName);
+// recordCNAME("api", environment.alb.albListener.endpoint.hostname); // Create api.hostname.com CNAME entry in DNS
+// const db = createRDS(appName, environment);
+// createPipeline(appName);
 
 // Setup Apps
-// const {service, cluster} = createECS(appName, environment, db);
-// createCloudWatchDashboard(appName, {
-//     db,
-//     ecs: {service, cluster}
-// });
+const {service, cluster} = createECS(appName, environment, db);
+createCloudWatchDashboard(appName, {
+    db,
+    ecs: {service, cluster}
+});
 
 
 // TODO: Disable this for now. Causing problems when updating
 // createStaticSPASite("admin.khatmapp.com");
 
-exports.lbURL = pulumi.interpolate `http://${environment.alb.albListener.endpoint.hostname}/`;
 exports.dashboardUrl =
     `https://${aws.config.region}.console.aws.amazon.com/cloudwatch/home?` +
         `region=${aws.config.region}#dashboards:name=${appName}`;
