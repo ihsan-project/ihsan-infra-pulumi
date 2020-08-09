@@ -5,8 +5,9 @@
     - CLOUDFLARE_EMAIL. This is the user's account, not the owner account
     - CLOUDFLARE_API_KEY. This is the user's only api key, not a created API Token
 1. Run `cp .env-keep .env` and fill in each key following the provided hints
-1. Install [Docker Engine](https://docs.docker.com/get-docker/)
-    - Docker Desktop is fine when running on local machine
+1. Run `npm install` on root level
+
+The two Pulumi Projects share the `package.json`, `package-lock.json`, and `node_modules` in the root of this directory. So any updates to libraries should be done here.
 
 ## Run
 

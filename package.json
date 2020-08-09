@@ -1,10 +1,19 @@
 {
-    "name": "infrastructure",
+    "name": "khatm",
+    "main": "index.js",
     "scripts": {
         "deploy:foundation": "cd foundation ; pulumi up",
         "destroy:foundation": "cd foundation ; pulumi destroy",
         "predestroy:foundation": "npm run destroy:application",
         "deploy:application": "cd application ; pulumi up",
         "destroy:application": "cd application ; pulumi destroy"
+    },
+    "dependencies": {
+        "@pulumi/aws": "^2.3.0",
+        "@pulumi/awsx": "^0.20.0",
+        "@pulumi/cloudflare": "^2.2.0",
+        "@pulumi/pulumi": "^2.0.0",
+        "dotenv": "^8.2.0",
+        "mime": "^2.4.5"
     }
 }

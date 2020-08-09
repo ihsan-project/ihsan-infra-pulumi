@@ -1,12 +1,1 @@
-{
-    "name": "khatm",
-    "main": "index.js",
-    "dependencies": {
-        "@pulumi/aws": "^2.3.0",
-        "@pulumi/awsx": "^0.20.0",
-        "@pulumi/cloudflare": "^2.2.0",
-        "@pulumi/pulumi": "^2.0.0",
-        "dotenv": "^8.2.0",
-        "mime": "^2.4.5"
-    }
-}
+../package.json
