@@ -1,4 +1,5 @@
 "use strict";
+const pulumi = require("@pulumi/pulumi");
 const aws = require("@pulumi/aws");
 const awsx = require("@pulumi/awsx");
 const {
@@ -13,7 +14,37 @@ const {
 } = require("./roles.js");
 
 exports.createECS = function(appName, environment, db) {
-    const { vpc, securityGroups: { appSg }, alb: { albTarget, albListener } } = environment;
+    const { vpc, securityGroups: { appSg, lbSg } } = environment;
+
+    // Creates an ALB associated with our custom VPC.
+    const alb = new awsx.lb.ApplicationLoadBalancer(`${appName}-alb`, {
+        vpc,
+        securityGroups: [ lbSg ],
+    });
+
+    // The certificate for the LB to use for HTTPS:443
+    const sslCert = pulumi.output(aws.acm.getCertificate({ domain: process.env.ACM_DOMAIN, }));
+
+    // Listen on HTTPS 443, terminate SSL,
+    // output to HTTP 80 for all target EC2 instances that attach to it
+    const albTarget = alb.createTargetGroup(`${appName}-alb-trgt`, {
+        port: 80,
+        protocol: "HTTP",
+        targetType: "instance",
+        healthCheck: {
+            // The web application needs to return a 200 at this path
+            // Default path is `/`
+            path: "/api", // TODO: Get from Env
+            // The following is to give the instance in private subnet some time to come up
+            interval: 120, // Slow down how often it does health checks
+            unhealthyThreshold: 5 // Increase how unhealthy checks before it drains from the instance
+        }
+    });
+    const albListener = albTarget.createListener(`${appName}-alb-lstnr`, {
+        port: 443,
+        certificateArn: sslCert.arn,
+        protocol: "HTTPS",
+    });
 
     const executionRole = createExecutionRole(appName);
 
@@ -35,7 +66,7 @@ exports.createECS = function(appName, environment, db) {
             maxSize: 10
         },
         launchConfigurationArgs: { instanceType: "t2.nano" },
-    });
+    }, { dependsOn: [albTarget, albListener] });
 
     const service = new awsx.ecs.EC2Service(`${appName}-ecs-srvc`, {
         cluster,
@@ -82,5 +113,5 @@ exports.createECS = function(appName, environment, db) {
         },
     });
 
-    return {service, cluster};
+    return {service, cluster, albListener};
 }

@@ -11,7 +11,7 @@ const {createPipeline} = require("./lib/code_pipeline.js");
 const appName = process.env.APP_NAME || 'khatm';
 
 const environment = createEnvironment(appName);
-recordCNAME("api", environment.lb.albListener.endpoint.hostname); // Create api.hostname.com CNAME entry in DNS
+// recordCNAME("api", environment.lb.albListener.endpoint.hostname); // Create api.hostname.com CNAME entry in DNS
 const db = createRDS(appName, environment);
 createPipeline(appName);
 
@@ -20,6 +20,8 @@ createPipeline(appName);
 exports.vpc = { name: environment.vpc.arn, id: environment.vpc.id };
 exports.db = { name: db.arn, id: db.id };
 exports.appSg = { name: environment.securityGroups.appSg.arn, id: environment.securityGroups.appSg.id };
-exports.albTarget = { name: environment.lb.albTarget.targetGroup.arn, id: environment.lb.albTarget.targetGroup.id };
-exports.albListener = { name: environment.lb.albListener.listener.arn, id: environment.lb.albListener.listener.id };
-exports.alb = { name: environment.lb.alb.loadBalancer.arn, id: environment.lb.alb.loadBalancer.id };
+exports.lbSg = { name: environment.securityGroups.lbSg.arn, id: environment.securityGroups.lbSg.id };
+exports.dataSg = { name: environment.securityGroups.dataSg.arn, id: environment.securityGroups.dataSg.id };
+// exports.albTarget = { name: environment.lb.albTarget.targetGroup.arn, id: environment.lb.albTarget.targetGroup.id };
+// exports.albListener = { name: environment.lb.albListener.listener.arn, id: environment.lb.albListener.listener.id };
+// exports.alb = { name: environment.lb.alb.loadBalancer.arn, id: environment.lb.alb.loadBalancer.id };
