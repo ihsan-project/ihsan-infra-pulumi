@@ -19,10 +19,6 @@ recordCNAME("api", environment.alb.albListener.endpoint.hostname); // Create api
 const db = createRDS(appName, environment);
 createPipeline(appName);
 
-// TODO: Dependencies cause the Foundations to be setup before the following can be setup
-//       Sure we can use dependencies, but we need to seperate these concerns anways into two different pulumi apps:
-//       https://github.com/khatm-org/khatm-infrastructure/issues/27
-
 // Setup Apps
 const {service, cluster} = createECS(appName, environment, db);
 createCloudWatchDashboard(appName, {
