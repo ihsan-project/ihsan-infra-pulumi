@@ -11,11 +11,11 @@ const {createRDS} = require("./lib/rds.js");
 const {createPipeline} = require("./lib/code_pipeline.js");
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 
-const appName = process.env.APP_NAME || 'khatm';
+const appName = `${process.env.APP_NAME || 'khatm'}-${pulumi.getStack()}`;
 
 // Setup Foundations
 const environment = createEnvironment(appName);
-recordCNAME("api", environment.alb.albListener.endpoint.hostname); // Create api.hostname.com CNAME entry in DNS
+recordCNAME(`api-${pulumi.getStack()}`, environment.alb.albListener.endpoint.hostname); // Create api-staging.hostname.com CNAME entry in DNS
 const db = createRDS(appName, environment);
 createPipeline(appName);
 
