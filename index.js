@@ -15,8 +15,8 @@ const appName = `${process.env.APP_NAME || 'khatm'}-${pulumi.getStack()}`;
 
 // Setup Foundations
 const environment = createEnvironment(appName);
-// Create api-staging.hostname.com CNAME entry in DNS
-recordCNAME(appName, `api-${pulumi.getStack()}`, environment.alb.albListener.endpoint.hostname);
+const subdomain = `api-${pulumi.getStack()}`
+const record = recordCNAME(appName, subdomain, environment.alb.albListener.endpoint.hostname);
 const db = createRDS(appName, environment);
 createPipeline(appName);
 
@@ -35,3 +35,4 @@ exports.lbURL = pulumi.interpolate `http://${environment.alb.albListener.endpoin
 exports.dashboardUrl =
     `https://${aws.config.region}.console.aws.amazon.com/cloudwatch/home?` +
         `region=${aws.config.region}#dashboards:name=${appName}`;
+exports.api = pulumi.interpolate `https://${record.hostname}/`;

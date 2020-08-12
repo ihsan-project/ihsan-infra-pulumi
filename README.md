@@ -5,6 +5,12 @@
     - CLOUDFLARE_EMAIL. This is the user's account, not the owner account
     - CLOUDFLARE_API_KEY. This is the user's only api key, not a created API Token
 1. Run `cp .env-keep .env` and fill in each key following the provided hints
+    - In AWS Secrets Manager, setup the following key/values:
+        - {APP_NAME}/{Pulumi Stack}/google_sso_client_id. For example: `khatm/production/google_sso_client_id`
+        - {APP_NAME}/{Pulumi Stack}/api_key
+        - {APP_NAME}/{Pulumi Stack}/db/name.
+        - {APP_NAME}/{Pulumi Stack}/db/user.
+        - {APP_NAME}/{Pulumi Stack}/db/password.
 1. Install [Docker Engine](https://docs.docker.com/get-docker/)
     - Docker Desktop is fine when running on local machine
 
