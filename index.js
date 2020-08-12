@@ -15,7 +15,8 @@ const appName = `${process.env.APP_NAME || 'khatm'}-${pulumi.getStack()}`;
 
 // Setup Foundations
 const environment = createEnvironment(appName);
-recordCNAME(`api-${pulumi.getStack()}`, environment.alb.albListener.endpoint.hostname); // Create api-staging.hostname.com CNAME entry in DNS
+// Create api-staging.hostname.com CNAME entry in DNS
+recordCNAME(appName, `api-${pulumi.getStack()}`, environment.alb.albListener.endpoint.hostname);
 const db = createRDS(appName, environment);
 createPipeline(appName);
 
