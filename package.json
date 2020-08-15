@@ -1,6 +1,12 @@
 {
     "name": "khatm",
     "main": "index.js",
+    "scripts": {
+        "start:foundation": "PULUMI_APPLICATION=0 pulumi up",
+        "stop:foundation": "PULUMI_APPLICATION=1 pulumi destroy",
+        "start:application": "PULUMI_APPLICATION=1 pulumi up",
+        "stop:application": "PULUMI_APPLICATION=0 pulumi up"
+    },
     "dependencies": {
         "@pulumi/aws": "^2.3.0",
         "@pulumi/awsx": "^0.20.0",
