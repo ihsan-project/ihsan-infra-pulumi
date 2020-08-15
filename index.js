@@ -4,7 +4,7 @@ require('dotenv').config({ path: `${process.cwd()}/.env` }) // Prepare the have 
 const aws = require("@pulumi/aws");
 const pulumi = require("@pulumi/pulumi");
 const {createStaticSPASite} = require("./lib/static_site.js");
-const {recordCNAME} = require("./lib/dns.js");
+const {recordCNAME, setSSLPageRule} = require("./lib/dns.js");
 const {createECS} = require("./lib/ecs.js");
 const {createEnvironment} = require("./lib/vpc.js");
 const {createRDS} = require("./lib/rds.js");
@@ -18,14 +18,24 @@ const environment = createEnvironment(appName);
 const db = createRDS(appName, environment);
 createPipeline(appName);
 
-// Setup Apps
+// Setup the web server on ECS, pointed to a SQL db
 const {service, cluster, albListener} = createECS(appName, environment, db);
 createCloudWatchDashboard(appName, {
     db,
     ecs: {service, cluster}
 });
-const subdomain = 'api'//`api-${pulumi.getStack()}`;
+
+// These will set up the HTTPS url to the server for you to securely use for client apps
+const subdomain = `${pulumi.getStack()}-api`;
 const record = recordCNAME(appName, subdomain, albListener.endpoint.hostname);
+// Cloudflare free account comes with limited page rules
+// But by using wildcards, we can reuse the same rule for multiple environments
+// TODO: When using Pulumi for multiple environments (staging and production),
+//       this need to run for only one of the environments
+setSSLPageRule(appName, "https://*api.khatmapp.com/*"); // Be careful, free accounts only allow 3 page rules
+// Make Cloudflare SSL/TLS settings is set to Flexible mode
+// The reason to not use Strict mode is that it will interfere with using S3 for SPA client sites
+// Hence the page rule to target Strict mode for web servers
 
 // TODO: Disable this for now. Causing problems when updating
 // createStaticSPASite("admin.khatmapp.com");
