@@ -5,8 +5,28 @@
     - CLOUDFLARE_EMAIL. This is the user's account, not the owner account
     - CLOUDFLARE_API_KEY. This is the user's only api key, not a created API Token
 1. Run `cp .env-keep .env` and fill in each key following the provided hints
+    - In AWS Secrets Manager, setup the following key/values:
+        - {APP_NAME}/{Pulumi Stack}/google_sso_client_id. For example: `khatm/production/google_sso_client_id`
+        - {APP_NAME}/{Pulumi Stack}/api_key
+        - {APP_NAME}/{Pulumi Stack}/db/name.
+        - {APP_NAME}/{Pulumi Stack}/db/user.
+        - {APP_NAME}/{Pulumi Stack}/db/password.
 1. Install [Docker Engine](https://docs.docker.com/get-docker/)
     - Docker Desktop is fine when running on local machine
+
+## Run Commands
+
+Currently it's quite a task to seperate foundational services from application services (because we don't want to bring down our database and lose production data when we want to restart the servers) through Pulumi ([Issue 27](https://github.com/khatm-org/khatm-infrastructure/issues/27)), we're using node scripts and environment variables to control what part of the code runs.
+
+The following are to start and stop the foundation services (VPC, RDS, etc)
+- `npm run start:foundation`
+- `npm run stop:foundation`
+
+The following are to start and stop the application services (ECS, ALB, DNS entries, etc)
+- `npm run start:application`
+- `npm run stop:application`
+
+Note: Stopping foundation will also stop application services.
 
 ## Debug
 
