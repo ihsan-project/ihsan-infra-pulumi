@@ -29,17 +29,18 @@ if (process.env.PULUMI_APPLICATION == 1) {
     // These will set up the HTTPS url to the server for you to securely use for client apps
     const subdomain = `${pulumi.getStack()}-api`;
     const record = recordCNAME(appName, subdomain, albListener.endpoint.hostname);
+
     // Cloudflare free account comes with limited page rules
     // But by using wildcards, we can reuse the same rule for multiple environments
     // TODO: When using Pulumi for multiple environments (staging and production),
     //       this need to run for only one of the environments
-    setSSLPageRule(appName, "https://*api.khatmapp.com/*"); // Be careful, free accounts only allow 3 page rules
+    setSSLPageRule(appName, `https://*api.${process.env.DOMAIN}/*`); // Be careful, free accounts only allow 3 page rules
     // Make Cloudflare SSL/TLS settings is set to Flexible mode
     // The reason to not use Strict mode is that it will interfere with using S3 for SPA client sites
     // Hence the page rule to target Strict mode for web servers
 
     // TODO: Disable this for now. Causing problems when updating
-    // createStaticSPASite("admin.khatmapp.com");
+    // createStaticSPASite(`admin.${process.env.DOMAIN}`);
 
     exports.lbURL = pulumi.interpolate `http://${albListener.endpoint.hostname}/`;
     exports.dashboardUrl =
