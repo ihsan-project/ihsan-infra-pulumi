@@ -42,9 +42,8 @@ if (process.env.PULUMI_APPLICATION == 1) {
     // TODO: Disable this for now. Causing problems when updating
     // createStaticSPASite(`admin.${process.env.DOMAIN}`);
 
-    exports.lbURL = pulumi.interpolate `http://${albListener.endpoint.hostname}/`;
-    exports.dashboardUrl =
-        `https://${aws.config.region}.console.aws.amazon.com/cloudwatch/home?` +
-            `region=${aws.config.region}#dashboards:name=${appName}`;
-    exports.api = pulumi.interpolate `https://${record.hostname}/`;
+    // Output helpful URLS you should bookmark
+    exports.apiBaseURL = pulumi.interpolate `https://${record.hostname}/`;
+    exports.metricsDashboard = `https://${aws.config.region}.console.aws.amazon.com/cloudwatch/home?` +
+        `region=${aws.config.region}#dashboards:name=${appName}`;
 }
