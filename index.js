@@ -8,7 +8,7 @@ const {recordCNAME, setSSLPageRule} = require("./lib/dns.js");
 const {createECS} = require("./lib/ecs.js");
 const {createEnvironment} = require("./lib/vpc.js");
 const {createRDS} = require("./lib/rds.js");
-const {createPipeline} = require("./lib/code_pipeline.js");
+const {createBuildPhase, createPipeline} = require("./lib/code_pipeline.js");
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 
 const appName = `${process.env.APP_NAME || 'khatm'}-${pulumi.getStack()}`;
@@ -16,7 +16,8 @@ const appName = `${process.env.APP_NAME || 'khatm'}-${pulumi.getStack()}`;
 // Setup Foundations
 const environment = createEnvironment(appName);
 const db = createRDS(appName, environment);
-createPipeline(appName);
+const buildProject = createBuildPhase(appName);
+createPipeline(appName, buildProject);
 
 if (process.env.PULUMI_APPLICATION == 1) {
     // Setup the web server on ECS, pointed to a SQL db
