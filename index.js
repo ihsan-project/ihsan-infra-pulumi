@@ -17,7 +17,6 @@ const containerName = `${appName}-container`;
 // Setup Foundations
 const environment = createEnvironment(appName);
 const db = createRDS(appName, environment);
-createPipeline(appName, containerName);
 
 if (process.env.PULUMI_APPLICATION == 1) {
     // Setup the web server on ECS, pointed to a SQL db
@@ -42,6 +41,8 @@ if (process.env.PULUMI_APPLICATION == 1) {
 
     // TODO: Disable this for now. Causing problems when updating
     // createStaticSPASite(`admin.${process.env.DOMAIN}`);
+
+    createPipeline(appName, containerName, service, cluster);
 
     // Output helpful URLS you should bookmark
     exports.apiBaseURL = pulumi.interpolate `https://${record.hostname}/`;
