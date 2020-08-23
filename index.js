@@ -12,15 +12,16 @@ const {createPipeline} = require("./lib/code_pipeline.js");
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 
 const appName = `${process.env.APP_NAME || 'khatm'}-${pulumi.getStack()}`;
+const containerName = `${appName}-container`;
 
 // Setup Foundations
 const environment = createEnvironment(appName);
 const db = createRDS(appName, environment);
-createPipeline(appName);
+createPipeline(appName, containerName);
 
 if (process.env.PULUMI_APPLICATION == 1) {
     // Setup the web server on ECS, pointed to a SQL db
-    const {service, cluster, albListener} = createECS(appName, environment, db);
+    const {service, cluster, albListener} = createECS(appName, environment, db, containerName);
     createCloudWatchDashboard(appName, {
         db,
         ecs: {service, cluster}
