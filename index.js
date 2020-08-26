@@ -42,7 +42,7 @@ if (process.env.PULUMI_APPLICATION == 1) {
     // TODO: Disable this for now. Causing problems when updating
     // createStaticSPASite(`admin.${process.env.DOMAIN}`);
 
-    const webhook = createPipeline(appName, containerName, service, cluster);
+    const webhook = createPipeline(appName, containerName, service, cluster, environment, db);
     exports.gitWebhook = webhook.url;
 
     // Output helpful URLS you should bookmark
