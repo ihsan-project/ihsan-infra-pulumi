@@ -12,15 +12,16 @@ const {createPipeline} = require("./lib/code_pipeline.js");
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 
 const appName = `${process.env.APP_NAME || 'khatm'}-${pulumi.getStack()}`;
+const containerName = `${appName}-container`;
 
 // Setup Foundations
 const environment = createEnvironment(appName);
 const db = createRDS(appName, environment);
-createPipeline(appName);
+const pipelineBucket = new aws.s3.Bucket(`${appName}-pipe-bucket`, {acl: "private"});
 
 if (process.env.PULUMI_APPLICATION == 1) {
     // Setup the web server on ECS, pointed to a SQL db
-    const {service, cluster, albListener} = createECS(appName, environment, db);
+    const {service, cluster, albListener} = createECS(appName, environment, db, containerName);
     createCloudWatchDashboard(appName, {
         db,
         ecs: {service, cluster}
@@ -42,8 +43,11 @@ if (process.env.PULUMI_APPLICATION == 1) {
     // TODO: Disable this for now. Causing problems when updating
     // createStaticSPASite(`admin.${process.env.DOMAIN}`);
 
+    const webhook = createPipeline(appName, containerName, service, cluster, pipelineBucket);
+
     // Output helpful URLS you should bookmark
     exports.apiBaseURL = pulumi.interpolate `https://${record.hostname}/`;
     exports.metricsDashboard = `https://${aws.config.region}.console.aws.amazon.com/cloudwatch/home?` +
         `region=${aws.config.region}#dashboards:name=${appName}`;
+    exports.gitWebhook = webhook.url; // In Github add this to the repository's webhooks
 }
