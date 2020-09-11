@@ -1,6 +1,7 @@
 # Khatm Infrastructure as Code
 
-[The Khatm Organization](https://khatm.org/)
+- [The Khatm Organization](https://khatm.org/)
+- [The Infrastructure Architecture](https://github.com/khatm-org/khatm-infrastructure/wiki/Architecture)
 
 ## Setup Environment
 1. Add the following environment variables to your `~/.bash_profile` or `~/.zshrc`. For some reason it doesn't work in the `.env`
