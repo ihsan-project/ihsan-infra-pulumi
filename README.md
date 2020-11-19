@@ -8,17 +8,20 @@
     - CLOUDFLARE_EMAIL. This is the user's account, not the owner account
     - CLOUDFLARE_API_KEY. This is the user's only api key, not a created API Token
 1. Run `cp .env-keep .env` and fill in each key following the provided hints
-    - In AWS Secrets Manager, setup the following key/values:
-        - {APP_NAME}/{Pulumi Stack}/google_sso_client_id. For example: `khatm/staging/google_sso_client_id`
-        - {APP_NAME}/{Pulumi Stack}/api_key
-        - {APP_NAME}/{Pulumi Stack}/db/name.
-        - {APP_NAME}/{Pulumi Stack}/db/user.
-        - {APP_NAME}/{Pulumi Stack}/db/password.
+1. In AWS Secrets Manager, setup the following key/values:
+    - {APP_NAME}/{Pulumi Stack}/google_sso_client_id. For example: `khatm/staging/google_sso_client_id`
+    - {APP_NAME}/{Pulumi Stack}/api_key
+    - {APP_NAME}/{Pulumi Stack}/db/name.
+    - {APP_NAME}/{Pulumi Stack}/db/user.
+    - {APP_NAME}/{Pulumi Stack}/db/password.
     - Instructions:
         1. Navigate to AWS Secrets Manager
         1. Choose `Other types of secrets`
         1. Choose `Plaintext`. Insert the value here only as plain text, don't use JSON.
         1. Next screen, here you enter the key for the `Secret Name`. Eg. `khatm/staging/google_sso_client_id`.
+1. Create an AWS ECR repository
+    1. Go to AWS ECR
+    1. Click Create Repository, give it any name
 1. Install [Docker Engine](https://docs.docker.com/get-docker/)
     - Docker Desktop is fine when running on local machine
 
