@@ -8,7 +8,7 @@ const {recordCNAME, setSSLPageRule} = require("./lib/dns.js");
 const {createECS} = require("./lib/ecs.js");
 const {createEnvironment} = require("./lib/vpc.js");
 const {createRDS} = require("./lib/rds.js");
-const {createApiPipeline} = require("./lib/code_pipeline.js");
+const {createApiPipeline, createAndroidPipeline} = require("./lib/code_pipeline.js");
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 
 const appName = `${process.env.APP_NAME || 'khatm'}-${pulumi.getStack()}`;
@@ -43,12 +43,14 @@ if (process.env.PULUMI_APPLICATION == 1) {
     // TODO: Disable this for now. Causing problems when updating
     // createStaticSPASite(`admin.${process.env.DOMAIN}`);
 
-    const cIWebhookApi = createApiPipeline(appName, containerName, service, cluster, pipelineBucket);
+    const ApiCIWebhook = createApiPipeline(appName, containerName, service, cluster, pipelineBucket);
+    const AndroidCIWebhook = createAndroidPipeline(appName, pipelineBucket);
 
     // Output helpful URLS you should bookmark
     exports.apiBaseURL = pulumi.interpolate `https://${record.hostname}/`;
     exports.metricsDashboard = `https://${aws.config.region}.console.aws.amazon.com/cloudwatch/home?` +
         `region=${aws.config.region}#dashboards:name=${appName}`;
 
-    exports.gitWebhookAPI = cIWebhookApi.url; // In Github add this to the API repository's webhooks
+    exports.gitWebhookAPI = ApiCIWebhook.url; // In Github add this to the API repository's webhooks
+    exports.gitWebhookAndroid = AndroidCIWebhook.url; // In Github add this to the API repository's webhooks
 }
