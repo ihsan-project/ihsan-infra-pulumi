@@ -43,14 +43,19 @@ if (process.env.PULUMI_APPLICATION == 1) {
     // TODO: Disable this for now. Causing problems when updating
     // createStaticSPASite(`admin.${process.env.DOMAIN}`);
 
-    const ApiCIWebhook = createApiPipeline(appName, containerName, service, cluster, pipelineBucket);
-    const AndroidCIWebhook = createAndroidPipeline(appName, pipelineBucket);
+    const apiBaseURL = pulumi.interpolate `https://${record.hostname}/`;
+
+    const apiCIWebhook = createApiPipeline(appName, containerName, service, cluster, pipelineBucket);
+    let androidCIWebhook = {url: 'Android CI not setup'};
+    if (process.env.GITHUB_ANDROID_REPOSITORY) {
+        androidCIWebhook = createAndroidPipeline(appName, apiBaseURL, pipelineBucket);
+    }
 
     // Output helpful URLS you should bookmark
-    exports.apiBaseURL = pulumi.interpolate `https://${record.hostname}/`;
+    exports.apiBaseURL = apiBaseURL;
     exports.metricsDashboard = `https://${aws.config.region}.console.aws.amazon.com/cloudwatch/home?` +
         `region=${aws.config.region}#dashboards:name=${appName}`;
 
-    exports.gitWebhookAPI = ApiCIWebhook.url; // In Github add this to the API repository's webhooks
-    exports.gitWebhookAndroid = AndroidCIWebhook.url; // In Github add this to the API repository's webhooks
+    exports.gitWebhookAPI = apiCIWebhook.url; // In Github add this to the API repository's webhooks
+    exports.gitWebhookAndroid = androidCIWebhook.url; // In Github add this to the API repository's webhooks
 }
