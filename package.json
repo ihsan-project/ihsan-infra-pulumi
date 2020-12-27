@@ -5,7 +5,9 @@
         "start:foundation": "PULUMI_APPLICATION=0 pulumi up",
         "stop:foundation": "PULUMI_APPLICATION=1 pulumi destroy",
         "start:application": "PULUMI_APPLICATION=1 pulumi up",
-        "stop:application": "PULUMI_APPLICATION=0 pulumi up"
+        "stop:application": "PULUMI_APPLICATION=0 pulumi up",
+        "test": "PULUMI_PLAYGROUND=1 pulumi up",
+        "test:stop": "PULUMI_PLAYGROUND=1 pulumi destroy"
     },
     "dependencies": {
         "@pulumi/aws": "^2.3.0",

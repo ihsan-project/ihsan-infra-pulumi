@@ -39,6 +39,13 @@ The following are to start and stop the application services (ECS, ALB, DNS entr
 
 Note: Stopping foundation will also stop application services.
 
+## Development
+
+In `index.js` there is a playground area where you can try out new mini stacks and experiments without having to load and unload the entire stack or comment out all of index.js.
+
+- `npm test` - will run the code in the playground area
+- `npm run test:stop` - will shut down the resources created within the playground
+
 ## Debug
 
 Common failures seen:

@@ -16,6 +16,14 @@ const {pushLambda} = require("./lib/lambdas.js");
 const appName = `${process.env.APP_NAME || 'khatm'}-${pulumi.getStack()}`;
 const containerName = `${appName}-container`;
 
+if (process.env.PULUMI_PLAYGROUND) {
+    /* ~~~~~~ PLAYGROUND AREA - START - ~~~~~~ */
+    const queue = createSQS(`${appName}-push`, pushLambda)
+
+    /* ~~~~~~ PLAYGROUND AREA - STOP - ~~~~~~ */
+    return;
+}
+
 // Setup Foundations
 const environment = createEnvironment(appName);
 const db = createRDS(appName, environment);
