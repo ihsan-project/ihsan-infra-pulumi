@@ -13,13 +13,18 @@ const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 const {createSQS} = require("./lib/sqs.js");
 const {pushLambda} = require("./lib/lambdas.js");
 const {createLambdaSQSRole} = require("./lib/roles.js");
+const {createGCMApplication} = require("./lib/sns.js");
 
 const appName = `${process.env.APP_NAME || 'khatm'}-${pulumi.getStack()}`;
 const containerName = `${appName}-container`;
 
 if (process.env.PULUMI_PLAYGROUND) {
     /* ~~~~~~ PLAYGROUND AREA - START - ~~~~~~ */
-    const queue = createSQS(`${appName}-push`, pushLambda(appName, createLambdaSQSRole(appName)));
+    const sqsRole = createLambdaSQSRole(appName);
+    const gcmSNSApp = createGCMApplication(appName);
+    const queue = createSQS(`${appName}-push`, pushLambda(appName, sqsRole, gcmSNSApp));
+
+    exports.gcmARN = gcmSNSApp.id;
 
     /* ~~~~~~ PLAYGROUND AREA - STOP - ~~~~~~ */
     return;
