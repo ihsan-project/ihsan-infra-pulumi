@@ -11,7 +11,7 @@ const {createRDS} = require("./lib/rds.js");
 const {createApiPipeline, createAndroidPipeline} = require("./lib/code_pipeline.js");
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 
-const appName = `${process.env.APP_NAME || 'khatm'}-${pulumi.getStack()}`;
+const appName = `${process.env.APP_NAME || 'ihsan'}-${pulumi.getStack()}`;
 const containerName = `${appName}-container`;
 
 // Setup Foundations
