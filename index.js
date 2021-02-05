@@ -10,18 +10,36 @@ const {createEnvironment} = require("./lib/vpc.js");
 const {createRDS} = require("./lib/rds.js");
 const {createApiPipeline, createAndroidPipeline} = require("./lib/code_pipeline.js");
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
+const {createSQS} = require("./lib/sqs.js");
+const {pushLambda} = require("./lib/lambdas.js");
+const {createLambdaSQSRole} = require("./lib/roles.js");
+const {createGCMApplication} = require("./lib/sns.js");
 
 const appName = `${process.env.APP_NAME || 'khatm'}-${pulumi.getStack()}`;
 const containerName = `${appName}-container`;
+
+if (process.env.PULUMI_PLAYGROUND) {
+    /* ~~~~~~ PLAYGROUND AREA - START - ~~~~~~ */
+    const sqsRole = createLambdaSQSRole(appName);
+    const gcmSNSApp = createGCMApplication(appName);
+    const queue = createSQS(`${appName}-push`, pushLambda(appName, sqsRole, gcmSNSApp));
+
+    exports.gcmARN = gcmSNSApp.id;
+
+    /* ~~~~~~ PLAYGROUND AREA - STOP - ~~~~~~ */
+    return;
+}
 
 // Setup Foundations
 const environment = createEnvironment(appName);
 const db = createRDS(appName, environment);
 const pipelineBucket = new aws.s3.Bucket(`${appName}-pipe-bucket`, {acl: "private"});
 
+
 if (process.env.PULUMI_APPLICATION == 1) {
-    // Setup the web server on ECS, pointed to a SQL db
-    const {service, cluster, albListener} = createECS(appName, environment, db, containerName);
+    const queue = createSQS(`${appName}-push`, pushLambda())
+
+    const {service, cluster, albListener} = createECS(appName, environment, db, containerName, queue);
     createCloudWatchDashboard(appName, {
         db,
         ecs: {service, cluster}
@@ -36,11 +54,11 @@ if (process.env.PULUMI_APPLICATION == 1) {
     // TODO: When using Pulumi for multiple environments (staging and production),
     //       this need to run for only one of the environments
     setSSLPageRule(appName, `https://*api.${process.env.DOMAIN}/*`); // Be careful, free accounts only allow 3 page rules
-    // Make Cloudflare SSL/TLS settings is set to Flexible mode
+    // Make sure Cloudflare SSL/TLS settings is set to Flexible mode
     // The reason to not use Strict mode is that it will interfere with using S3 for SPA client sites
     // Hence the page rule to target Strict mode for web servers
 
-    // TODO: Disable this for now. Causing problems when updating
+    // TODO: Disable this for now. Causing problems when doing subsequent pulumi up
     // createStaticSPASite(`admin.${process.env.DOMAIN}`);
 
     const apiBaseURL = pulumi.interpolate `https://${record.hostname}/`;
