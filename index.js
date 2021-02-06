@@ -12,7 +12,7 @@ const {createApiPipeline, createAndroidPipeline} = require("./lib/code_pipeline.
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 
 const appName = `${process.env.APP_NAME || 'ihsan'}-${pulumi.getStack()}`;
-const containerName = `${appName}-container`;
+const containerName = process.env.ECS_CONTAINER_NAME;
 
 // Setup Foundations
 const environment = createEnvironment(appName);
