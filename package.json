@@ -1,5 +1,5 @@
 {
-    "name": "khatm",
+    "name": "ihsan",
     "main": "index.js",
     "scripts": {
         "start:foundation": "PULUMI_APPLICATION=0 pulumi up",
