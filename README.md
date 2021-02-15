@@ -4,13 +4,17 @@
 - [The Infrastructure Architecture](https://github.com/ihsan-project/ihsan-infra-pulumi/wiki/Architecture)
 
 ## Setup Environment
+1. Create an account with [Pulumi](https://app.pulumi.com/signin?reason=401).
+    - There's an option to host your own. Look into this for future projects.
+1. Update the `Pulumi.yaml` with the project name.
+1. Install the pulumi CLI and login to account
+    - `brew install pulumi`
+    - `pulumi login`
+    - Enter token from the Pulumi dashboard: https://app.pulumi.com/account/tokens
 1. Add the following environment variables to your `~/.bash_profile` or `~/.zshrc`. For some reason it doesn't work in the `.env`
     - CLOUDFLARE_EMAIL. This is the user's account, not the owner account
-    - CLOUDFLARE_API_KEY. This is the user's only api key, not a created API Token
+    - CLOUDFLARE_API_KEY. This is the Global API Key from https://dash.cloudflare.com/profile/api-tokens
 1. Run `cp .env-keep .env` and fill in each key following the provided hints
-    - Open your bash config file (eg. `.zshrc`) and add the following two ENV
-      - CLOUDFLARE_EMAIL. The email of the account you login with
-      - CLOUDFLARE_API_KEY. This is the Global API Key from https://dash.cloudflare.com/profile/api-tokens
 1. In AWS Secrets Manager, setup the following key/values:
     - {APP_NAME}/{Pulumi Stack}/google_sso_client_id. For example: `ihsan/staging/google_sso_client_id`
     - {APP_NAME}/{Pulumi Stack}/api_key
