@@ -17,11 +17,11 @@
     - CLOUDFLARE_API_KEY. This is the Global API Key from https://dash.cloudflare.com/profile/api-tokens
 1. Run `cp .env-keep .env` and fill in each key following the provided hints
 1. In AWS Secrets Manager, setup the following key/values:
-    - {APP_NAME}/{Pulumi Stack}/google_sso_client_id. For example: `ihsan/staging/google_sso_client_id`
-    - {APP_NAME}/{Pulumi Stack}/api_key
-    - {APP_NAME}/{Pulumi Stack}/db/name.
-    - {APP_NAME}/{Pulumi Stack}/db/user.
-    - {APP_NAME}/{Pulumi Stack}/db/password.
+    - {APP_NAME}/{Pulumi Stack}/google_sso_client_id. In the `google-services.json` file, this is the client_id of any `client_type: 3`
+    - {APP_NAME}/{Pulumi Stack}/api_key. Generate some random secret yourself.
+    - {APP_NAME}/{Pulumi Stack}/db/name. Determine the name yourself.
+    - {APP_NAME}/{Pulumi Stack}/db/user. Determine the name yourself.
+    - {APP_NAME}/{Pulumi Stack}/db/password. Generate some random secret yourself.
     - Instructions:
         1. Navigate to AWS Secrets Manager
         1. Choose `Other types of secrets`
@@ -32,6 +32,11 @@
     1. Click Create Repository, give it any name
 1. Install [Docker Engine](https://docs.docker.com/get-docker/)
     - Docker Desktop is fine when running on local machine
+1. Prime the ECR instance with a hello world image. We need this because there's a circular dependency on the ECS running before CodePipeline is configured and the first real backend image is built and pushed to ECR. So need to prime the ECR instance with a sample project that will bring up ECS properly. We're going to use the latest ngnix image.
+    1. Locally run `docker pull nginx:latest`. Now running `docker images` should show the ngnix latest image
+    1. Tag the image for ECR `docker tag nginx:latest [ECR URI]`
+    1. Go to ECR and click `Push commands` and run the first command to login to ECR locally. You may need to make sure you have the latest AWS CLI and Docker.
+    1. Push the image up with `docker push [ECR URI]`
 
 ## Run Commands
 
