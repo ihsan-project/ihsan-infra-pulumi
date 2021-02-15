@@ -12,7 +12,10 @@ const {createApiPipeline, createAndroidPipeline} = require("./lib/code_pipeline.
 const {createCloudWatchDashboard} = require("./lib/cloudwatch.js");
 
 const appName = `${process.env.APP_NAME || 'ihsan'}-${pulumi.getStack()}`;
-const containerName = process.env.ECS_CONTAINER_NAME;
+
+// This is the container name that needs to be associated with the buildspec.yml of the API code.
+// See the name key printed at the end of the build in https://github.com/ihsan-project/ihsan-api-hapi/blob/master/buildspec.yml
+const containerName = `${appName}-container`;
 
 // Setup Foundations
 const environment = createEnvironment(appName);
