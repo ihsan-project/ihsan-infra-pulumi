@@ -11,6 +11,7 @@
     - `brew install pulumi`
     - `pulumi login`
     - Enter token from the Pulumi dashboard: https://app.pulumi.com/account/tokens
+1. Follow [these instructions](https://github.com/ihsan-project/ihsan-infra-pulumi/wiki/Secure-TLS-Cert-between-Cloudflare-and-AWS-ACM) to allow AWS to communicate securely with Cloudflare.
 1. Add the following environment variables to your `~/.bash_profile` or `~/.zshrc`. For some reason it doesn't work in the `.env`
     - CLOUDFLARE_EMAIL. This is the user's account, not the owner account
     - CLOUDFLARE_API_KEY. This is the Global API Key from https://dash.cloudflare.com/profile/api-tokens
